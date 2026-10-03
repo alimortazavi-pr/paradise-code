@@ -1,7 +1,7 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "Paradise Code",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "identifier": "dev.paradise.code",
   "build": {
     "frontendDist": "frontend"
@@ -51,6 +51,18 @@
         "role": "Editor",
         "name": "Source Code"
       }
-    ]
+    ],
+    "createUpdaterArtifacts": true,
+    "homepage": "https://paradisecode.ir",
+    "publisher": "Paradise Code"
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDJFNkI1MzdCRDM1NDBCMTQKUldRVUMxVFRlMU5yTGg0dlJvSldHTzFDOXYrbnhMd0grTFluRVAzU1grcDdjUzZvUFVGV1NwL3IK",
+      "endpoints": [
+        "https://github.com/alimortazavi-pr/paradise-code/releases/latest/download/latest.json"
+      ],
+      "requireSignedVersion": true
+    }
   }
 }

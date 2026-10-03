@@ -4,13 +4,15 @@ let size = 1024
 let rep = NSBitmapImageRep(bitmapDataPlanes:nil,pixelsWide:size,pixelsHigh:size,bitsPerSample:8,samplesPerPixel:4,hasAlpha:true,isPlanar:false,colorSpaceName:.deviceRGB,bytesPerRow:0,bitsPerPixel:0)!
 NSGraphicsContext.saveGraphicsState()
 NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep:rep)
-NSColor(calibratedRed:0.055,green:0.09,blue:0.11,alpha:1).setFill()
-NSBezierPath(roundedRect:NSRect(x:40,y:40,width:944,height:944),xRadius:210,yRadius:210).fill()
-let color=NSColor(calibratedRed:0.44,green:0.91,blue:0.80,alpha:1)
-color.setStroke()
-let left=NSBezierPath();left.move(to:NSPoint(x:360,y:715));left.line(to:NSPoint(x:170,y:512));left.line(to:NSPoint(x:360,y:309));left.lineWidth=58;left.lineCapStyle = .round;left.lineJoinStyle = .round;left.stroke()
-let right=NSBezierPath();right.move(to:NSPoint(x:690,y:715));right.line(to:NSPoint(x:880,y:512));right.line(to:NSPoint(x:690,y:309));right.lineWidth=58;right.lineCapStyle = .round;right.lineJoinStyle = .round;right.stroke()
-NSColor.white.setStroke()
-let stem=NSBezierPath();stem.move(to:NSPoint(x:462,y:278));stem.line(to:NSPoint(x:462,y:733));stem.line(to:NSPoint(x:528,y:733));stem.curve(to:NSPoint(x:528,y:500),controlPoint1:NSPoint(x:688,y:733),controlPoint2:NSPoint(x:688,y:500));stem.line(to:NSPoint(x:462,y:500));stem.lineWidth=52;stem.lineCapStyle = .round;stem.lineJoinStyle = .round;stem.stroke()
+let background = NSBezierPath(roundedRect:NSRect(x:52,y:52,width:920,height:920),xRadius:208,yRadius:208)
+NSGradient(starting:NSColor(calibratedRed:0.17,green:0.14,blue:0.26,alpha:1),ending:NSColor(calibratedRed:0.055,green:0.05,blue:0.08,alpha:1))!.draw(in:background,angle:270)
+func face(_ points:[(Double,Double)], _ color:NSColor) {
+    let p=NSBezierPath();for (i,point) in points.enumerated(){let pt=NSPoint(x:point.0*3.4+77,y:1024-(point.1*3.4+65));if i==0{p.move(to:pt)}else{p.line(to:pt)}};p.close();color.setFill();p.fill()
+}
+face([(56,58),(150,34),(208,70),(208,138),(110,166),(110,226),(56,195)],NSColor(calibratedRed:0.66,green:0.63,blue:1,alpha:1))
+face([(56,58),(110,90),(110,226),(56,195)],NSColor(calibratedRed:0.91,green:0.90,blue:1,alpha:1))
+face([(56,58),(150,34),(208,70),(110,98)],.white)
+face([(110,98),(208,70),(208,138),(110,166),(110,129),(170,112),(170,94),(110,112)],NSColor(calibratedRed:0.59,green:0.53,blue:1,alpha:1))
+face([(110,98),(170,81),(170,112),(110,129)],NSColor(calibratedRed:0.09,green:0.08,blue:0.14,alpha:1))
 NSGraphicsContext.restoreGraphicsState()
 try rep.representation(using:.png,properties:[:])!.write(to:URL(fileURLWithPath:output))

@@ -233,10 +233,10 @@ index 64e1c4d2..1a373afc 100644
 +	}
  }
 diff --git a/src/vs/code/browser/workbench/workbench.ts b/src/vs/code/browser/workbench/workbench.ts
-index e52f0625..8ce4dceb 100644
+index e52f0625..5688cc9e 100644
 --- a/src/vs/code/browser/workbench/workbench.ts
 +++ b/src/vs/code/browser/workbench/workbench.ts
-@@ -21,7 +21,38 @@ import { isFolderToOpen, isWorkspaceToOpen } from '../../../platform/window/comm
+@@ -21,7 +21,39 @@ import { isFolderToOpen, isWorkspaceToOpen } from '../../../platform/window/comm
  import type { IWorkbenchConstructionOptions, IWorkspace, IWorkspaceProvider } from '../../../workbench/browser/web.api.js';
  import { AuthenticationSessionInfo } from '../../../workbench/services/authentication/browser/authenticationService.js';
  import type { IURLCallbackProvider } from '../../../workbench/services/url/browser/urlService.js';
@@ -250,7 +250,7 @@ index e52f0625..8ce4dceb 100644
 +import { ILifecycleService } from '../../../workbench/services/lifecycle/common/lifecycle.js';
 +import { localize } from '../../../nls.js';
 +
-+CommandsRegistry.registerCommand('paradise.prepareClose', async accessor => {
++CommandsRegistry.registerCommand('paradise.prepareClose', async (accessor, updating = false) => {
 +	const workingCopies = accessor.get(IWorkingCopyService);
 +	const dialogs = accessor.get(IDialogService);
 +	const editors = accessor.get(IEditorService);
@@ -264,13 +264,14 @@ index e52f0625..8ce4dceb 100644
 +		const answer = await dialogs.confirm({ message: localize('paradise.terminals', 'Close this window and stop its terminals?'), primaryButton: localize('paradise.close', 'Close Window') });
 +		if (!answer.confirmed) { return false; }
 +	}
-+	await lifecycle.shutdown();
++	if (!updating) { await lifecycle.shutdown(); }
 +	return true;
 +});
 +
 +Object.defineProperty(mainWindow, 'paradiseWorkbench', { value: {
 +	executeCommand: commands.executeCommand,
-+	prepareClose: () => commands.executeCommand('paradise.prepareClose')
++	prepareClose: () => commands.executeCommand('paradise.prepareClose'),
++	prepareUpdate: () => commands.executeCommand('paradise.prepareClose', true)
 +} });
 +
  
@@ -369,6 +370,62 @@ index 6629ce5f..bd24b8fe 100644
  			this.error(`Refusing to watch ${realPath} for changes using fs.watch() for possibly being a network share where watching is unreliable and unstable.`);
  
  			return;
+diff --git a/src/vs/platform/remote/browser/browserSocketFactory.ts b/src/vs/platform/remote/browser/browserSocketFactory.ts
+index d558e4ee..11790559 100644
+--- a/src/vs/platform/remote/browser/browserSocketFactory.ts
++++ b/src/vs/platform/remote/browser/browserSocketFactory.ts
+@@ -63,9 +63,6 @@ class BrowserWebSocket extends Disposable implements IWebSocket {
+ 
+ 	private readonly _debugLabel: string;
+ 	private readonly _socket: WebSocket;
+-	private readonly _fileReader: FileReader;
+-	private readonly _queue: Blob[];
+-	private _isReading: boolean;
+ 	private _isClosed: boolean;
+ 
+ 	private readonly _socketMessageListener: (ev: MessageEvent) => void;
+@@ -79,37 +76,11 @@ class BrowserWebSocket extends Disposable implements IWebSocket {
+ 		this._debugLabel = debugLabel;
+ 		this._socket = new WebSocket(url);
+ 		this.traceSocketEvent(SocketDiagnosticsEventType.Created, { type: 'BrowserWebSocket', url });
+-		this._fileReader = new FileReader();
+-		this._queue = [];
+-		this._isReading = false;
++		this._socket.binaryType = 'arraybuffer';
+ 		this._isClosed = false;
+-
+-		this._fileReader.onload = (event) => {
+-			this._isReading = false;
+-			// eslint-disable-next-line local/code-no-any-casts
+-			const buff = <ArrayBuffer>(<any>event.target).result;
+-
+-			this.traceSocketEvent(SocketDiagnosticsEventType.Read, buff);
+-			this._onData.fire(buff);
+-
+-			if (this._queue.length > 0) {
+-				enqueue(this._queue.shift()!);
+-			}
+-		};
+-
+-		const enqueue = (blob: Blob) => {
+-			if (this._isReading) {
+-				this._queue.push(blob);
+-				return;
+-			}
+-			this._isReading = true;
+-			this._fileReader.readAsArrayBuffer(blob);
+-		};
+-
+-		this._socketMessageListener = (ev: MessageEvent) => {
+-			const blob = (<Blob>ev.data);
+-			this.traceSocketEvent(SocketDiagnosticsEventType.BrowserWebSocketBlobReceived, { type: blob.type, size: blob.size });
+-			enqueue(blob);
++		this._socketMessageListener = (event: MessageEvent<ArrayBuffer>) => {
++			this.traceSocketEvent(SocketDiagnosticsEventType.Read, event.data);
++			this._onData.fire(event.data);
+ 		};
+ 		this._socket.addEventListener('message', this._socketMessageListener);
+ 
 diff --git a/src/vs/server/node/remoteExtensionHostAgentServer.ts b/src/vs/server/node/remoteExtensionHostAgentServer.ts
 index 72273fb3..d2b67c63 100644
 --- a/src/vs/server/node/remoteExtensionHostAgentServer.ts
@@ -430,3 +487,34 @@ index ebbfe1c5..9f606f2b 100644
  			serverBasePath: basePath,
  			_wrapWebWorkerExtHostInIframe,
  			developmentOptions: { enableSmokeTestDriver: this._environmentService.args['enable-smoke-test-driver'] ? true : undefined, logLevel: this._logService.getLevel() },
+diff --git a/src/vs/workbench/services/dialogs/browser/abstractFileDialogService.ts b/src/vs/workbench/services/dialogs/browser/abstractFileDialogService.ts
+index dbab19f2..083e21f5 100644
+--- a/src/vs/workbench/services/dialogs/browser/abstractFileDialogService.ts
++++ b/src/vs/workbench/services/dialogs/browser/abstractFileDialogService.ts
+@@ -327,11 +327,26 @@ export abstract class AbstractFileDialogService implements IFileDialogService {
+ 		return this.instantiationService.createInstance(SimpleFileDialog);
+ 	}
+ 
++	private paradisePicker(options: IOpenDialogOptions | ISaveDialogOptions, save: boolean): Promise<URI[] | undefined> | undefined {
++		const host = window as Window & { paradiseDesktop?: { pick(options: unknown): Promise<string[] | null> } };
++		if (!host.paradiseDesktop) { return undefined; }
++		const open = options as IOpenDialogOptions;
++		return host.paradiseDesktop.pick({ save, folders: !!open.canSelectFolders && !open.canSelectFiles, multiple: !!open.canSelectMany,
++			title: options.title, defaultPath: options.defaultUri?.path, filters: options.filters ?? []
++		}).then(paths => paths?.map(path => URI.from({ scheme: Schemas.vscodeRemote, authority: this.environmentService.remoteAuthority, path })));
++	}
++
+ 	private pickResource(options: IOpenDialogOptions): Promise<URI[] | undefined> {
++		const native = this.paradisePicker(options, false);
++		if (native) { return native; }
++
+ 		return this.getSimpleFileDialog().showOpenDialog(options);
+ 	}
+ 
+ 	private saveRemoteResource(options: ISaveDialogOptions): Promise<URI | undefined> {
++		const native = this.paradisePicker(options, true);
++		if (native) { return native.then(paths => paths?.[0]); }
++
+ 		return this.getSimpleFileDialog().showSaveDialog(options);
+ 	}
+ 

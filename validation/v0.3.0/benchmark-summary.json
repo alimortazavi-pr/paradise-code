@@ -1,0 +1,21 @@
+{
+  "paradise": {
+    "footprintMiB": 1637.5706420898437,
+    "rssMiB": 1000.6266447368421,
+    "readyMs": 3895,
+    "symbolsMs": 1.970103999999992,
+    "searchMs": 12.697979000000487,
+    "idleCPU": 3.4830546153189728,
+    "activeCPU": 35.94923451929894
+  },
+  "vscode": {
+    "footprintMiB": 1014.663644087942,
+    "rssMiB": 1369.657894736842,
+    "readyMs": 3309,
+    "symbolsMs": 0.42762500000026193,
+    "searchMs": 6.233041499999672,
+    "idleCPU": 8.343952140081107,
+    "activeCPU": 86.4122865924442
+  },
+  "targetPassed": false
+}

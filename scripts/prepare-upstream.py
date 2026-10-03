@@ -12,7 +12,7 @@ def original(name):
 
 def edit(name, old, new):
     s=changes.get(name, original(name))
-    if new in s: return
+    if new and new in s: return
     if old not in s: raise RuntimeError(f'Upstream patch no longer applies: {name}')
     changes[name]=s.replace(old,new,1)
 
@@ -63,7 +63,7 @@ import { ITerminalService } from '../../../workbench/contrib/terminal/browser/te
 import { ILifecycleService } from '../../../workbench/services/lifecycle/common/lifecycle.js';
 import { localize } from '../../../nls.js';
 
-CommandsRegistry.registerCommand('paradise.prepareClose', async accessor => {
+CommandsRegistry.registerCommand('paradise.prepareClose', async (accessor, updating = false) => {
 	const workingCopies = accessor.get(IWorkingCopyService);
 	const dialogs = accessor.get(IDialogService);
 	const editors = accessor.get(IEditorService);
@@ -77,13 +77,14 @@ CommandsRegistry.registerCommand('paradise.prepareClose', async accessor => {
 		const answer = await dialogs.confirm({ message: localize('paradise.terminals', 'Close this window and stop its terminals?'), primaryButton: localize('paradise.close', 'Close Window') });
 		if (!answer.confirmed) { return false; }
 	}
-	await lifecycle.shutdown();
+	if (!updating) { await lifecycle.shutdown(); }
 	return true;
 });
 
 Object.defineProperty(mainWindow, 'paradiseWorkbench', { value: {
 	executeCommand: commands.executeCommand,
-	prepareClose: () => commands.executeCommand('paradise.prepareClose')
+	prepareClose: () => commands.executeCommand('paradise.prepareClose'),
+	prepareUpdate: () => commands.executeCommand('paradise.prepareClose', true)
 } });
 """)
 name='src/vs/server/node/webClientServer.ts'
@@ -140,8 +141,43 @@ edit(name, "\t\tlet module: typeof vsceSign;", """		if (this.productService.exte
 			}
 		}
 		let module: typeof vsceSign;""")
+
+# No upstream source is deleted; all changes remain inspectable as a single patch.
+# Receive binary frames directly: avoid Blob/FileReader allocation and asynchronous queues.
+name='src/vs/platform/remote/browser/browserSocketFactory.ts'
+source=original(name)
+start=source.index('\t\tthis._fileReader = new FileReader();')
+end=source.index("\t\tthis._socket.addEventListener('message'", start)
+edit(name,source[start:end],"""\t\tthis._socket.binaryType = 'arraybuffer';
+\t\tthis._isClosed = false;
+\t\tthis._socketMessageListener = (event: MessageEvent<ArrayBuffer>) => {
+\t\t\tthis.traceSocketEvent(SocketDiagnosticsEventType.Read, event.data);
+\t\t\tthis._onData.fire(event.data);
+\t\t};
+""")
+for declaration in ['\tprivate readonly _fileReader: FileReader;\n','\tprivate readonly _queue: Blob[];\n','\tprivate _isReading: boolean;\n']:
+    edit(name,declaration,'')
+# All simplified dialogs (Open, folder, Save As, VSIX) use the native panel.
+name='src/vs/workbench/services/dialogs/browser/abstractFileDialogService.ts'
+edit(name, "\tprivate pickResource(options: IOpenDialogOptions): Promise<URI[] | undefined> {", """\tprivate paradisePicker(options: IOpenDialogOptions | ISaveDialogOptions, save: boolean): Promise<URI[] | undefined> | undefined {
+\t\tconst host = window as Window & { paradiseDesktop?: { pick(options: unknown): Promise<string[] | null> } };
+\t\tif (!host.paradiseDesktop) { return undefined; }
+\t\tconst open = options as IOpenDialogOptions;
+\t\treturn host.paradiseDesktop.pick({ save, folders: !!open.canSelectFolders && !open.canSelectFiles, multiple: !!open.canSelectMany,
+\t\t\ttitle: options.title, defaultPath: options.defaultUri?.path, filters: options.filters ?? []
+\t\t}).then(paths => paths?.map(path => URI.from({ scheme: Schemas.vscodeRemote, authority: this.environmentService.remoteAuthority, path })));
+\t}
+
+\tprivate pickResource(options: IOpenDialogOptions): Promise<URI[] | undefined> {
+\t\tconst native = this.paradisePicker(options, false);
+\t\tif (native) { return native; }
+""")
+edit(name, "\tprivate saveRemoteResource(options: ISaveDialogOptions): Promise<URI | undefined> {", """\tprivate saveRemoteResource(options: ISaveDialogOptions): Promise<URI | undefined> {
+\t\tconst native = this.paradisePicker(options, true);
+\t\tif (native) { return native.then(paths => paths?.[0]); }
+""")
+
 for name, content in changes.items():
     (up/name).write_text(content)
 
-# No upstream source is deleted; all changes remain inspectable as a single patch.
-(root/'patches/paradise.patch').write_bytes(subprocess.check_output(['git','diff','--','product.json','src/vs/server/node/webClientServer.ts','src/vs/server/node/remoteExtensionHostAgentServer.ts','src/vs/code/browser/workbench/workbench.ts','build/gulpfile.reh.ts','src/vs/platform/extensionManagement/node/extensionSignatureVerificationService.ts','src/vs/platform/extensionManagement/common/extensionGalleryService.ts','src/vs/platform/files/node/watcher/nodejs/nodejsWatcherLib.ts'],cwd=up))
+(root/'patches/paradise.patch').write_bytes(subprocess.check_output(['git','diff','--','product.json','src/vs/workbench/services/dialogs/browser/abstractFileDialogService.ts','src/vs/platform/remote/browser/browserSocketFactory.ts','src/vs/server/node/webClientServer.ts','src/vs/server/node/remoteExtensionHostAgentServer.ts','src/vs/code/browser/workbench/workbench.ts','build/gulpfile.reh.ts','src/vs/platform/extensionManagement/node/extensionSignatureVerificationService.ts','src/vs/platform/extensionManagement/common/extensionGalleryService.ts','src/vs/platform/files/node/watcher/nodejs/nodejsWatcherLib.ts'],cwd=up))

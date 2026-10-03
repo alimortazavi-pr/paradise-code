@@ -1,0 +1,90 @@
+[
+  {
+    "name": "node-extension-host",
+    "passed": true,
+    "detail": {
+      "node": "24.21.0",
+      "platform": "darwin",
+      "arch": "arm64"
+    }
+  },
+  {
+    "name": "read-and-edit-file",
+    "passed": true,
+    "detail": "سلام Paradise\nsaved through extension API\n"
+  },
+  {
+    "name": "typescript-language-service",
+    "passed": true,
+    "detail": {
+      "symbols": 3
+    }
+  },
+  {
+    "name": "git-extension",
+    "passed": true,
+    "detail": {
+      "repositories": 1
+    }
+  },
+  {
+    "name": "terminal-process",
+    "passed": true,
+    "detail": "PTY command completed"
+  },
+  {
+    "name": "file-watcher",
+    "passed": true,
+    "detail": "File creation observed"
+  },
+  {
+    "name": "workspace-search",
+    "passed": true,
+    "detail": {
+      "files": 2
+    }
+  },
+  {
+    "name": "prettier-format",
+    "passed": true,
+    "detail": "const formatted = { hello: \"world\" };\n"
+  },
+  {
+    "name": "eslint-diagnostics",
+    "passed": true,
+    "detail": {
+      "diagnostics": 1
+    }
+  },
+  {
+    "name": "git-stage-commit",
+    "passed": true,
+    "detail": {
+      "commit": "eecd5e00799cb5b3a7ebc635939183273dd293e6"
+    }
+  },
+  {
+    "name": "task-execution",
+    "passed": true,
+    "detail": {
+      "exitCode": 0
+    }
+  },
+  {
+    "name": "node-debug-breakpoint",
+    "passed": true,
+    "detail": {
+      "reason": "breakpoint",
+      "line": 2
+    }
+  },
+  {
+    "name": "webview-worker-and-bridge-isolation",
+    "passed": true,
+    "detail": {
+      "worker": true,
+      "bridge": false,
+      "parentBlocked": true
+    }
+  }
+]

@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 import argparse,json,os,plistlib,signal,subprocess,time
 from pathlib import Path
-p=argparse.ArgumentParser();p.add_argument('app');p.add_argument('name');p.add_argument('--vscode',action='store_true');p.add_argument('--quit',action='store_true');a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('app');p.add_argument('name');p.add_argument('--vscode',action='store_true');p.add_argument('--quit',action='store_true');p.add_argument('--profile');a=p.parse_args()
 volume=Path('/Volumes/ParadiseCodeBuild');out=volume/'artifacts/benchmark';out.mkdir(exist_ok=True)
 result=out/(a.name+'-operations.json');result.unlink(missing_ok=True)
 start=time.time();cmd=['open','-n','--env',f'PARADISE_BENCHMARK_FILE={result}','--env',f'PARADISE_BENCHMARK_START={int(start*1000)}','-a',a.app]
+if a.profile:cmd[2:2]=['--env',f'PARADISE_PROFILE={a.profile}']
 if a.vscode:cmd+=['--args','--user-data-dir',str(volume/'profiles/vscode-benchmark'),'--extensions-dir',str(volume/'profiles/vscode-benchmark/extensions'),'--disable-updates','--skip-welcome','--skip-release-notes','--disable-workspace-trust',str(volume/'qa/workspace فارسی')]
 subprocess.run(cmd,check=True)
 active_sample=None

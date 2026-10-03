@@ -27,7 +27,7 @@ function startBackend() {
 child = spawn(process.execPath, [path.join(backend,'out/server-main.js'), '--host','127.0.0.1','--port',port,
   '--connection-token-file',tokenFile,'--server-data-dir',path.join(profile,'server-data'),'--extensions-dir',path.join(profile,'extensions'),
   '--accept-server-license-terms','--disable-telemetry'], {
-  cwd: backend, stdio:['ignore','pipe','pipe'], env: {...process.env, PARADISE_ORIGIN:origin, PARADISE_LOCAL_VOLUME:"/Volumes/ParadiseCodeBuild",
+  cwd: backend, stdio:['ignore','pipe','pipe'], env: {...process.env, PARADISE_ORIGIN:origin, PARADISE_LOCAL_VOLUME:process.env.PARADISE_LOCAL_VOLUME,
     PARADISE_WEBVIEW_ORIGIN:`http://{{uuid}}.localhost:${assets.address().port}`, BROWSER:'none'}
 });
 const token = fs.readFileSync(tokenFile,'utf8').trim();

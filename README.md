@@ -1,50 +1,56 @@
 # Paradise Code
 
-An experimental macOS Apple Silicon editor: Tauri 2 / WKWebView, the full Code - OSS web workbench, and a bundled local Node extension host. This repository contains the shell, reproducible upstream integration, and acceptance tests. It is not a Microsoft VS Code distribution and does not include the Microsoft Marketplace, Copilot, cloud sync, SSH, or Containers.
+A local, open-source editor for Apple Silicon Macs. The real Code – OSS workbench, a Tauri 2 / Rust shell, and a bundled Node.js extension host. Built by [Paradise Code](https://paradisecode.ir).
 
-## Storage and build
+[Website](https://ide.paradisecode.ir) · [Download for Apple Silicon](https://github.com/alimortazavi-pr/paradise-code/releases/latest/download/Paradise-Code-macos-arm64.zip) · [Releases](https://github.com/alimortazavi-pr/paradise-code/releases) · [Measured results](validation/REPORT.md)
 
-All build data is kept in an APFS sparsebundle on the external SSD. The app intentionally requires `/Volumes/ParadiseCodeBuild` and never substitutes an internal-disk profile. Run `Open Paradise Code.command` in the original SSD folder to mount the image and launch the installed app. `Mount Paradise Code.command` opens the source folder instead.
+![Paradise Code](website/assets/workbench.jpg)
 
-For a new machine, install Xcode Command Line Tools and Rust, then create the image without repartitioning the SSD:
+## Install
+
+Download the ZIP, verify its accompanying SHA-256 checksum, extract it, and move **Paradise Code.app** to a writable folder such as Applications. Node and npm are included. macOS 14+ is configured; testing currently covers Apple Silicon on macOS 27. This preview is ad-hoc signed, **not Apple notarized**. If macOS blocks the app, use **System Settings → Privacy & Security → Open Anyway** after verifying the source.
+
+**Paradise Code → Check for Updates…** downloads a signed update from this repository. The application verifies its signature and version before installation, asks you to save your work, and restarts. No GitHub credentials are stored in the application. Versions before 0.2.0 require one manual upgrade.
+
+## The editor
+
+- Integrated Mac title bar, native file/folder/save dialogs, familiar shortcuts, multiple windows, and Finder file opening.
+- Explorer, tabs, split editors, search/replace, Git and diffs, real terminals, Tasks, Node debugging, web language IntelliSense, themes, and settings.
+- Open VSX and local VSIX installation. ESLint, Prettier, JavaScript, TypeScript, and Persian text are acceptance paths.
+- Local operation with installed tools and dependencies. Unsaved-work recovery and separate settings from VS Code.
+
+This is a **public preview**. The memory-performance target has **not been met**. It must not be described as lower-RAM, fully compatible with Microsoft VS Code, or production certified. Microsoft Marketplace, proprietary Microsoft services, Copilot, cloud sync, SSH, and Containers are not included. See [validation](validation/REPORT.md) for actual results and limitations.
+
+## Storage
+
+On a new Mac, user data lives in `~/Library/Application Support/ParadiseCodeData`. Existing external-SSD installations keep their original profile and require that drive; a missing drive never silently creates an internal replacement. A small preferences file remembers the storage location. VS Code settings are not imported automatically.
+
+The project’s build environment is entirely on `/Volumes/ParadiseCodeBuild`, an APFS sparsebundle stored on the external SSD. Source, dependencies, caches, profiles, temporary files and artifacts remain there. `scripts/env.sh` fails if the volume is absent. System-managed swap and caches are outside application control.
+
+## Build
+
+Install Xcode Command Line Tools and Rust. Create and mount an APFS sparsebundle on the external SSD without repartitioning it, then clone here:
 
 ```sh
-hdiutil create -size 160g -type SPARSEBUNDLE -fs APFS -volname ParadiseCodeBuild \
-  '/Volumes/Extreme SSD/Programming/Projects/Paradise Code IDE/ParadiseCodeBuild.sparsebundle'
-hdiutil attach '/Volumes/Extreme SSD/Programming/Projects/Paradise Code IDE/ParadiseCodeBuild.sparsebundle' \
-  -mountpoint /Volumes/ParadiseCodeBuild -nobrowse
-touch /Volumes/ParadiseCodeBuild/.paradise-volume
 git clone git@github.com:alimortazavi-pr/paradise-code.git /Volumes/ParadiseCodeBuild/project
 cd /Volumes/ParadiseCodeBuild/project
 bash scripts/bootstrap.sh
 ```
 
-`upstream.json` pins Code - OSS 1.140.0 and its commit. The build uses upstream's Node 24.18.0; the packaged server runtime is the version selected by upstream's remote build. npm/npx are included. `scripts/prepare-upstream.py` produces `patches/paradise.patch` deterministically. The source, patches, caches, profiles, temporary files, and artifacts live on the APFS volume. Existing system Rust/Xcode installations are reused. OS-managed swap and caches are outside the app's control.
+`upstream.json` pins Code – OSS 1.140.0 and its source commit. Build Node follows upstream’s `.nvmrc`; the packaged runtime follows the upstream remote build. `scripts/prepare-upstream.py` generates the tracked integration patch. Packaging requires a private Tauri updater signing key at `$PARADISE_VOLUME/secrets/updater.key` or `TAURI_SIGNING_PRIVATE_KEY`; use your own key and public-key configuration for a fork. Private keys are never committed.
 
-Release output: `/Volumes/ParadiseCodeBuild/artifacts/Paradise-Code-0.1.0-macos-arm64.zip` and its `.sha256`. Extract the ZIP into `/Volumes/ParadiseCodeBuild/Applications` before using `scripts/launch.command`. The app uses ad-hoc signing, not Apple notarization. Updates are manual. No GitHub credentials are embedded.
+`scripts/prepare-release.py` prepares the ZIP, checksum, updater archive, signature and versioned `latest.json` after packaging. The static `website/` directory deploys to Vercel. Release metadata is updated only after assets are published.
 
-## Architecture and boundaries
+## Security and verification
 
-- Node binds only to `127.0.0.1`; an ephemeral token authenticates each launch. HTTP Host/Origin and WebSocket Origin are validated.
-- Extension webviews use separate hashed localhost origins, local assets, and service workers. macOS ATS exceptions are limited to localhost.
-- No Tauri IPC capabilities are granted to remote web content. Native window-close approval uses a per-window random nonce available only to the trusted top-level workbench.
-- Extensions execute local code with your user permissions, as in Code - OSS. Only install trusted extensions.
-- Open VSX canonical asset URLs and registry Ed25519 signatures are supported; Microsoft Marketplace signatures/services are separate.
-- Profiles are separate from VS Code. Three application-specific Library directories are symlinked into the external profile; existing unrelated data is never replaced.
-- The backend restarts up to three times on unexpected exit. The workbench may require **Reload Window** after a backend crash. Unsaved edits use upstream backup storage.
-- Quit asks about dirty files and active terminals. The shell stops the backend process tree, including PTYs with separate sessions.
-
-## Validation
+Node binds to loopback with a random per-launch token. HTTP Host/Origin and WebSocket Origin are checked. Extension webviews use separate hashed localhost origins. No Tauri IPC permissions are granted to web content; the limited native bridge is available only in the trusted top-level workbench. Extensions still execute local code with your user permissions.
 
 ```sh
 source scripts/env.sh
 cargo check
-# Against a running app with its default test profile:
-npm test
+PARADISE_PROFILE=/path/to/running/test/profile node --test tests/*.test.mjs
 ```
 
-`tests/qa-extension` is a development-only VS Code extension; copy it into the test profile's `extensions/paradise-acceptance`, open a copy of `tests/fixture`, run `npm ci`, trust that fixture, and run **Paradise: Run Acceptance Checks**. It creates and edits fixture files, commits in the fixture Git repository, executes tasks/terminals, and exercises debugger breakpoints. It is never bundled with the application. Results go to the fixture's `qa-results.json`.
+The development-only `tests/qa-extension` exercises file editing, TypeScript, Git commits, terminals, Tasks, breakpoints, format/lint, and isolated webviews in a disposable fixture. It is never bundled. `scripts/benchmark-run.py` compares the same project and extensions with VS Code; coalition measurements include WebKit helpers. Test evidence and remaining risks live in `validation/`.
 
-`measure-processes.py` groups macOS processes by resource coalition, including launchd-owned WKWebView helpers. See [the validation report](validation/REPORT.md) for measured outcomes and remaining compatibility limits. The current performance target failed; this is an experimental build, not a lower-RAM replacement claim. A successful build is not a claim of complete VS Code parity or lower resource use.
-
-Code - OSS and bundled components retain their upstream license files. The shell and integration are MIT licensed.
+The shell and integration are MIT licensed. Code – OSS and bundled components retain their upstream licenses.

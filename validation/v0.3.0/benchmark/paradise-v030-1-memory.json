@@ -1,0 +1,2530 @@
+{
+  "coalition": 11815,
+  "pid": 28804,
+  "cpu_counter_ns_per_tick": 41.666666666666664,
+  "cpu_percent_one_core": 2.783981413484821,
+  "footprint_mean_bytes": 1717117273.6,
+  "rss_mean_bytes": 861230694.4,
+  "samples": [
+    {
+      "time": 0.058531416,
+      "processes": [
+        {
+          "pid": 28804,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/MacOS/paradise-code",
+          "cpu_ns": 644777125.0,
+          "footprint": 27788368,
+          "resident": 83968000
+        },
+        {
+          "pid": 28805,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend-launcher.mjs /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend /Volumes/ParadiseCodeBuild/profiles/v020-benchmark 50768 /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token",
+          "cpu_ns": 58869000.0,
+          "footprint": 22023000,
+          "resident": 39944192
+        },
+        {
+          "pid": 28806,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/server-main.js --host 127.0.0.1 --port 50768 --connection-token-file /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token --server-data-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data --extensions-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions --accept-server-license-terms --disable-telemetry",
+          "cpu_ns": 1508771208.3333333,
+          "footprint": 127878112,
+          "resident": 98648064
+        },
+        {
+          "pid": 28807,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 22764458.333333332,
+          "footprint": 3064192,
+          "resident": 4046848
+        },
+        {
+          "pid": 28809,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+          "cpu_ns": 448259625.0,
+          "footprint": 26149872,
+          "resident": 21970944
+        },
+        {
+          "pid": 28810,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+          "cpu_ns": 5822828333.333333,
+          "footprint": 830752592,
+          "resident": 195166208
+        },
+        {
+          "pid": 28812,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+          "cpu_ns": 981094125.0,
+          "footprint": 13222488,
+          "resident": 13877248
+        },
+        {
+          "pid": 28814,
+          "command": "/System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper",
+          "cpu_ns": 19231208.333333332,
+          "footprint": 3293736,
+          "resident": 6635520
+        },
+        {
+          "pid": 28815,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=fileWatcher",
+          "cpu_ns": 95021083.33333333,
+          "footprint": 27594400,
+          "resident": 38453248
+        },
+        {
+          "pid": 28819,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --dns-result-order=ipv4first /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false",
+          "cpu_ns": 2490079833.333333,
+          "footprint": 174069864,
+          "resident": 156778496
+        },
+        {
+          "pid": 28821,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=ptyHost --logsPath /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data/data/logs/20261003T210457",
+          "cpu_ns": 219013375.0,
+          "footprint": 36753848,
+          "resident": 45973504
+        },
+        {
+          "pid": 28831,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-1127aaf1229edd75f8e6.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 641463125.0,
+          "footprint": 157960960,
+          "resident": 42942464
+        },
+        {
+          "pid": 28832,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-b9683f48e99f25cd5934.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 610600041.6666666,
+          "footprint": 159565992,
+          "resident": 41172992
+        },
+        {
+          "pid": 28842,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Volumes/ParadiseCodeBuild/cache/xdg/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 71029916.66666666,
+          "footprint": 43635008,
+          "resident": 38453248
+        },
+        {
+          "pid": 28847,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=28819",
+          "cpu_ns": 142655791.66666666,
+          "footprint": 36935728,
+          "resident": 43745280
+        },
+        {
+          "pid": 29769,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=28819",
+          "cpu_ns": 64209375.0,
+          "footprint": 24054640,
+          "resident": 43139072
+        },
+        {
+          "pid": 28880,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 16662458.333333332,
+          "footprint": 2277808,
+          "resident": 1671168
+        }
+      ],
+      "footprint": 1717020608,
+      "resident": 916586496
+    },
+    {
+      "time": 0.600397791,
+      "processes": [
+        {
+          "pid": 28804,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/MacOS/paradise-code",
+          "cpu_ns": 646968708.3333333,
+          "footprint": 27788368,
+          "resident": 83968000
+        },
+        {
+          "pid": 28805,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend-launcher.mjs /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend /Volumes/ParadiseCodeBuild/profiles/v020-benchmark 50768 /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token",
+          "cpu_ns": 58869000.0,
+          "footprint": 22023000,
+          "resident": 39944192
+        },
+        {
+          "pid": 28806,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/server-main.js --host 127.0.0.1 --port 50768 --connection-token-file /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token --server-data-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data --extensions-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions --accept-server-license-terms --disable-telemetry",
+          "cpu_ns": 1508965458.3333333,
+          "footprint": 127878112,
+          "resident": 79216640
+        },
+        {
+          "pid": 28807,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 22764458.333333332,
+          "footprint": 3064192,
+          "resident": 4046848
+        },
+        {
+          "pid": 28809,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+          "cpu_ns": 448656791.6666666,
+          "footprint": 26149872,
+          "resident": 21970944
+        },
+        {
+          "pid": 28810,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+          "cpu_ns": 5824966916.666666,
+          "footprint": 830752592,
+          "resident": 185516032
+        },
+        {
+          "pid": 28812,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+          "cpu_ns": 981313041.6666666,
+          "footprint": 13222488,
+          "resident": 13877248
+        },
+        {
+          "pid": 28814,
+          "command": "/System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper",
+          "cpu_ns": 19231208.333333332,
+          "footprint": 3293736,
+          "resident": 6635520
+        },
+        {
+          "pid": 28815,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=fileWatcher",
+          "cpu_ns": 95021083.33333333,
+          "footprint": 27594400,
+          "resident": 38453248
+        },
+        {
+          "pid": 28819,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --dns-result-order=ipv4first /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false",
+          "cpu_ns": 2490150916.6666665,
+          "footprint": 174069864,
+          "resident": 156499968
+        },
+        {
+          "pid": 28821,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=ptyHost --logsPath /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data/data/logs/20261003T210457",
+          "cpu_ns": 219556041.66666666,
+          "footprint": 36753848,
+          "resident": 45973504
+        },
+        {
+          "pid": 28831,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-1127aaf1229edd75f8e6.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 641463125.0,
+          "footprint": 157960960,
+          "resident": 42942464
+        },
+        {
+          "pid": 28832,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-b9683f48e99f25cd5934.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 610600041.6666666,
+          "footprint": 159565992,
+          "resident": 41172992
+        },
+        {
+          "pid": 28842,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Volumes/ParadiseCodeBuild/cache/xdg/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 71029916.66666666,
+          "footprint": 43635008,
+          "resident": 38453248
+        },
+        {
+          "pid": 28847,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=28819",
+          "cpu_ns": 142655791.66666666,
+          "footprint": 36935728,
+          "resident": 43745280
+        },
+        {
+          "pid": 29769,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=28819",
+          "cpu_ns": 64379416.666666664,
+          "footprint": 24054640,
+          "resident": 43155456
+        },
+        {
+          "pid": 28880,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 16662458.333333332,
+          "footprint": 2277808,
+          "resident": 1671168
+        }
+      ],
+      "footprint": 1717020608,
+      "resident": 887242752
+    },
+    {
+      "time": 1.14490625,
+      "processes": [
+        {
+          "pid": 28804,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/MacOS/paradise-code",
+          "cpu_ns": 654262916.6666666,
+          "footprint": 27788368,
+          "resident": 83968000
+        },
+        {
+          "pid": 28805,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend-launcher.mjs /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend /Volumes/ParadiseCodeBuild/profiles/v020-benchmark 50768 /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token",
+          "cpu_ns": 58869000.0,
+          "footprint": 22023000,
+          "resident": 39944192
+        },
+        {
+          "pid": 28806,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/server-main.js --host 127.0.0.1 --port 50768 --connection-token-file /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token --server-data-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data --extensions-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions --accept-server-license-terms --disable-telemetry",
+          "cpu_ns": 1508965458.3333333,
+          "footprint": 127878112,
+          "resident": 79167488
+        },
+        {
+          "pid": 28807,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 22764458.333333332,
+          "footprint": 3064192,
+          "resident": 4046848
+        },
+        {
+          "pid": 28809,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+          "cpu_ns": 449390333.3333333,
+          "footprint": 26149872,
+          "resident": 21987328
+        },
+        {
+          "pid": 28810,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+          "cpu_ns": 5832948208.333333,
+          "footprint": 830752592,
+          "resident": 185466880
+        },
+        {
+          "pid": 28812,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+          "cpu_ns": 981452833.3333333,
+          "footprint": 13222488,
+          "resident": 13877248
+        },
+        {
+          "pid": 28814,
+          "command": "/System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper",
+          "cpu_ns": 19231208.333333332,
+          "footprint": 3293736,
+          "resident": 6635520
+        },
+        {
+          "pid": 28815,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=fileWatcher",
+          "cpu_ns": 95021083.33333333,
+          "footprint": 27594400,
+          "resident": 38453248
+        },
+        {
+          "pid": 28819,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --dns-result-order=ipv4first /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false",
+          "cpu_ns": 2490742875.0,
+          "footprint": 174069864,
+          "resident": 156499968
+        },
+        {
+          "pid": 28821,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=ptyHost --logsPath /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data/data/logs/20261003T210457",
+          "cpu_ns": 220239666.66666666,
+          "footprint": 36753848,
+          "resident": 45973504
+        },
+        {
+          "pid": 28831,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-1127aaf1229edd75f8e6.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 641463125.0,
+          "footprint": 157960960,
+          "resident": 42942464
+        },
+        {
+          "pid": 28832,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-b9683f48e99f25cd5934.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 610600041.6666666,
+          "footprint": 159565992,
+          "resident": 41172992
+        },
+        {
+          "pid": 28842,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Volumes/ParadiseCodeBuild/cache/xdg/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 71029916.66666666,
+          "footprint": 43635008,
+          "resident": 38453248
+        },
+        {
+          "pid": 28847,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=28819",
+          "cpu_ns": 142655791.66666666,
+          "footprint": 36935728,
+          "resident": 43745280
+        },
+        {
+          "pid": 29769,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=28819",
+          "cpu_ns": 64379416.666666664,
+          "footprint": 24054640,
+          "resident": 43155456
+        },
+        {
+          "pid": 28880,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 16662458.333333332,
+          "footprint": 2277808,
+          "resident": 1671168
+        }
+      ],
+      "footprint": 1717020608,
+      "resident": 887160832
+    },
+    {
+      "time": 1.690813583,
+      "processes": [
+        {
+          "pid": 28804,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/MacOS/paradise-code",
+          "cpu_ns": 658254500.0,
+          "footprint": 27788368,
+          "resident": 83968000
+        },
+        {
+          "pid": 28805,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend-launcher.mjs /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend /Volumes/ParadiseCodeBuild/profiles/v020-benchmark 50768 /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token",
+          "cpu_ns": 58869000.0,
+          "footprint": 22023000,
+          "resident": 39944192
+        },
+        {
+          "pid": 28806,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/server-main.js --host 127.0.0.1 --port 50768 --connection-token-file /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token --server-data-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data --extensions-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions --accept-server-license-terms --disable-telemetry",
+          "cpu_ns": 1509038666.6666665,
+          "footprint": 127878112,
+          "resident": 79167488
+        },
+        {
+          "pid": 28807,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 22764458.333333332,
+          "footprint": 3064192,
+          "resident": 4046848
+        },
+        {
+          "pid": 28809,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+          "cpu_ns": 449882375.0,
+          "footprint": 26149872,
+          "resident": 21987328
+        },
+        {
+          "pid": 28810,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+          "cpu_ns": 5836784000.0,
+          "footprint": 830752592,
+          "resident": 185466880
+        },
+        {
+          "pid": 28812,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+          "cpu_ns": 981452833.3333333,
+          "footprint": 13222488,
+          "resident": 13877248
+        },
+        {
+          "pid": 28814,
+          "command": "/System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper",
+          "cpu_ns": 19231208.333333332,
+          "footprint": 3293736,
+          "resident": 6635520
+        },
+        {
+          "pid": 28815,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=fileWatcher",
+          "cpu_ns": 95021083.33333333,
+          "footprint": 27594400,
+          "resident": 38453248
+        },
+        {
+          "pid": 28819,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --dns-result-order=ipv4first /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false",
+          "cpu_ns": 2490813958.333333,
+          "footprint": 174069864,
+          "resident": 156499968
+        },
+        {
+          "pid": 28821,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=ptyHost --logsPath /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data/data/logs/20261003T210457",
+          "cpu_ns": 221084375.0,
+          "footprint": 36753848,
+          "resident": 45989888
+        },
+        {
+          "pid": 28831,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-1127aaf1229edd75f8e6.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 641463125.0,
+          "footprint": 157960960,
+          "resident": 42942464
+        },
+        {
+          "pid": 28832,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-b9683f48e99f25cd5934.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 610600041.6666666,
+          "footprint": 159565992,
+          "resident": 41172992
+        },
+        {
+          "pid": 28842,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Volumes/ParadiseCodeBuild/cache/xdg/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 71029916.66666666,
+          "footprint": 43635008,
+          "resident": 38453248
+        },
+        {
+          "pid": 28847,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=28819",
+          "cpu_ns": 142788583.3333333,
+          "footprint": 36935728,
+          "resident": 43745280
+        },
+        {
+          "pid": 29769,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=28819",
+          "cpu_ns": 64379416.666666664,
+          "footprint": 24054640,
+          "resident": 43155456
+        },
+        {
+          "pid": 28880,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 16662458.333333332,
+          "footprint": 2277808,
+          "resident": 1671168
+        }
+      ],
+      "footprint": 1717020608,
+      "resident": 887177216
+    },
+    {
+      "time": 2.236657166,
+      "processes": [
+        {
+          "pid": 28804,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/MacOS/paradise-code",
+          "cpu_ns": 663772833.3333333,
+          "footprint": 27771984,
+          "resident": 83968000
+        },
+        {
+          "pid": 28805,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend-launcher.mjs /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend /Volumes/ParadiseCodeBuild/profiles/v020-benchmark 50768 /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token",
+          "cpu_ns": 58869000.0,
+          "footprint": 22023000,
+          "resident": 39944192
+        },
+        {
+          "pid": 28806,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/server-main.js --host 127.0.0.1 --port 50768 --connection-token-file /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token --server-data-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data --extensions-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions --accept-server-license-terms --disable-telemetry",
+          "cpu_ns": 1509038666.6666665,
+          "footprint": 127878112,
+          "resident": 79167488
+        },
+        {
+          "pid": 28807,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 22764458.333333332,
+          "footprint": 3064192,
+          "resident": 4046848
+        },
+        {
+          "pid": 28809,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+          "cpu_ns": 450588833.3333333,
+          "footprint": 26133488,
+          "resident": 21987328
+        },
+        {
+          "pid": 28810,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+          "cpu_ns": 5842875916.666666,
+          "footprint": 830752592,
+          "resident": 185466880
+        },
+        {
+          "pid": 28812,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+          "cpu_ns": 981452833.3333333,
+          "footprint": 13222488,
+          "resident": 13877248
+        },
+        {
+          "pid": 28814,
+          "command": "/System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper",
+          "cpu_ns": 19231208.333333332,
+          "footprint": 3293736,
+          "resident": 6635520
+        },
+        {
+          "pid": 28815,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=fileWatcher",
+          "cpu_ns": 95021083.33333333,
+          "footprint": 27594400,
+          "resident": 38453248
+        },
+        {
+          "pid": 28819,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --dns-result-order=ipv4first /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false",
+          "cpu_ns": 2491598541.6666665,
+          "footprint": 174069864,
+          "resident": 156499968
+        },
+        {
+          "pid": 28821,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=ptyHost --logsPath /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data/data/logs/20261003T210457",
+          "cpu_ns": 221591375.0,
+          "footprint": 36753848,
+          "resident": 45989888
+        },
+        {
+          "pid": 28831,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-1127aaf1229edd75f8e6.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 641463125.0,
+          "footprint": 157960960,
+          "resident": 42942464
+        },
+        {
+          "pid": 28832,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-b9683f48e99f25cd5934.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 610600041.6666666,
+          "footprint": 159565992,
+          "resident": 41172992
+        },
+        {
+          "pid": 28842,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Volumes/ParadiseCodeBuild/cache/xdg/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 71029916.66666666,
+          "footprint": 43635008,
+          "resident": 38453248
+        },
+        {
+          "pid": 28847,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=28819",
+          "cpu_ns": 142788583.3333333,
+          "footprint": 36935728,
+          "resident": 43745280
+        },
+        {
+          "pid": 29769,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=28819",
+          "cpu_ns": 64379416.666666664,
+          "footprint": 24054640,
+          "resident": 43155456
+        },
+        {
+          "pid": 28880,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 16662458.333333332,
+          "footprint": 2277808,
+          "resident": 1671168
+        }
+      ],
+      "footprint": 1716987840,
+      "resident": 887177216
+    },
+    {
+      "time": 2.780465791,
+      "processes": [
+        {
+          "pid": 28804,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/MacOS/paradise-code",
+          "cpu_ns": 668136875.0,
+          "footprint": 27771984,
+          "resident": 83968000
+        },
+        {
+          "pid": 28805,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend-launcher.mjs /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend /Volumes/ParadiseCodeBuild/profiles/v020-benchmark 50768 /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token",
+          "cpu_ns": 58869000.0,
+          "footprint": 22023000,
+          "resident": 39944192
+        },
+        {
+          "pid": 28806,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/server-main.js --host 127.0.0.1 --port 50768 --connection-token-file /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token --server-data-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data --extensions-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions --accept-server-license-terms --disable-telemetry",
+          "cpu_ns": 1509234708.3333333,
+          "footprint": 127878112,
+          "resident": 79167488
+        },
+        {
+          "pid": 28807,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 22764458.333333332,
+          "footprint": 3064192,
+          "resident": 4046848
+        },
+        {
+          "pid": 28809,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+          "cpu_ns": 451125791.6666666,
+          "footprint": 26133488,
+          "resident": 21987328
+        },
+        {
+          "pid": 28810,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+          "cpu_ns": 5847649250.0,
+          "footprint": 830670672,
+          "resident": 185466880
+        },
+        {
+          "pid": 28812,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+          "cpu_ns": 981452833.3333333,
+          "footprint": 13222488,
+          "resident": 13877248
+        },
+        {
+          "pid": 28814,
+          "command": "/System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper",
+          "cpu_ns": 19231208.333333332,
+          "footprint": 3293736,
+          "resident": 6635520
+        },
+        {
+          "pid": 28815,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=fileWatcher",
+          "cpu_ns": 95021083.33333333,
+          "footprint": 27594400,
+          "resident": 38453248
+        },
+        {
+          "pid": 28819,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --dns-result-order=ipv4first /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false",
+          "cpu_ns": 2491739083.333333,
+          "footprint": 174069864,
+          "resident": 156499968
+        },
+        {
+          "pid": 28821,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=ptyHost --logsPath /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data/data/logs/20261003T210457",
+          "cpu_ns": 222345833.3333333,
+          "footprint": 36753848,
+          "resident": 45989888
+        },
+        {
+          "pid": 28831,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-1127aaf1229edd75f8e6.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 641463125.0,
+          "footprint": 157960960,
+          "resident": 42942464
+        },
+        {
+          "pid": 28832,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-b9683f48e99f25cd5934.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 610600041.6666666,
+          "footprint": 159565992,
+          "resident": 41172992
+        },
+        {
+          "pid": 28842,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Volumes/ParadiseCodeBuild/cache/xdg/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 71029916.66666666,
+          "footprint": 43635008,
+          "resident": 38453248
+        },
+        {
+          "pid": 28847,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=28819",
+          "cpu_ns": 142788583.3333333,
+          "footprint": 36935728,
+          "resident": 43745280
+        },
+        {
+          "pid": 29769,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=28819",
+          "cpu_ns": 64477000.0,
+          "footprint": 24054640,
+          "resident": 43171840
+        },
+        {
+          "pid": 28880,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 16662458.333333332,
+          "footprint": 2277808,
+          "resident": 1671168
+        }
+      ],
+      "footprint": 1716905920,
+      "resident": 887193600
+    },
+    {
+      "time": 3.326419416,
+      "processes": [
+        {
+          "pid": 28804,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/MacOS/paradise-code",
+          "cpu_ns": 672760875.0,
+          "footprint": 27771984,
+          "resident": 83968000
+        },
+        {
+          "pid": 28805,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend-launcher.mjs /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend /Volumes/ParadiseCodeBuild/profiles/v020-benchmark 50768 /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token",
+          "cpu_ns": 58965000.0,
+          "footprint": 22023000,
+          "resident": 39944192
+        },
+        {
+          "pid": 28806,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/server-main.js --host 127.0.0.1 --port 50768 --connection-token-file /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token --server-data-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data --extensions-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions --accept-server-license-terms --disable-telemetry",
+          "cpu_ns": 1509287541.6666665,
+          "footprint": 127878112,
+          "resident": 79167488
+        },
+        {
+          "pid": 28807,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 22764458.333333332,
+          "footprint": 3064192,
+          "resident": 4046848
+        },
+        {
+          "pid": 28809,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+          "cpu_ns": 451613666.6666666,
+          "footprint": 26133488,
+          "resident": 21987328
+        },
+        {
+          "pid": 28810,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+          "cpu_ns": 5852358625.0,
+          "footprint": 830670672,
+          "resident": 185466880
+        },
+        {
+          "pid": 28812,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+          "cpu_ns": 981452833.3333333,
+          "footprint": 13222488,
+          "resident": 13877248
+        },
+        {
+          "pid": 28814,
+          "command": "/System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper",
+          "cpu_ns": 19231208.333333332,
+          "footprint": 3293736,
+          "resident": 6635520
+        },
+        {
+          "pid": 28815,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=fileWatcher",
+          "cpu_ns": 95021083.33333333,
+          "footprint": 27594400,
+          "resident": 38453248
+        },
+        {
+          "pid": 28819,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --dns-result-order=ipv4first /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false",
+          "cpu_ns": 2492481458.333333,
+          "footprint": 174069864,
+          "resident": 156499968
+        },
+        {
+          "pid": 28821,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=ptyHost --logsPath /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data/data/logs/20261003T210457",
+          "cpu_ns": 223092625.0,
+          "footprint": 36753848,
+          "resident": 45989888
+        },
+        {
+          "pid": 28831,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-1127aaf1229edd75f8e6.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 641463125.0,
+          "footprint": 157960960,
+          "resident": 42942464
+        },
+        {
+          "pid": 28832,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-b9683f48e99f25cd5934.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 610600041.6666666,
+          "footprint": 159565992,
+          "resident": 41172992
+        },
+        {
+          "pid": 28842,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Volumes/ParadiseCodeBuild/cache/xdg/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 71029916.66666666,
+          "footprint": 43635008,
+          "resident": 38453248
+        },
+        {
+          "pid": 28847,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=28819",
+          "cpu_ns": 142788583.3333333,
+          "footprint": 36935728,
+          "resident": 43745280
+        },
+        {
+          "pid": 29769,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=28819",
+          "cpu_ns": 64603500.0,
+          "footprint": 24054640,
+          "resident": 43171840
+        },
+        {
+          "pid": 28880,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 16662458.333333332,
+          "footprint": 2277808,
+          "resident": 1671168
+        }
+      ],
+      "footprint": 1716905920,
+      "resident": 887193600
+    },
+    {
+      "time": 3.869858625,
+      "processes": [
+        {
+          "pid": 28804,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/MacOS/paradise-code",
+          "cpu_ns": 677358125.0,
+          "footprint": 27771984,
+          "resident": 83968000
+        },
+        {
+          "pid": 28805,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend-launcher.mjs /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend /Volumes/ParadiseCodeBuild/profiles/v020-benchmark 50768 /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token",
+          "cpu_ns": 58965000.0,
+          "footprint": 22023000,
+          "resident": 39944192
+        },
+        {
+          "pid": 28806,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/server-main.js --host 127.0.0.1 --port 50768 --connection-token-file /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token --server-data-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data --extensions-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions --accept-server-license-terms --disable-telemetry",
+          "cpu_ns": 1510046000.0,
+          "footprint": 127878112,
+          "resident": 79183872
+        },
+        {
+          "pid": 28807,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 22764458.333333332,
+          "footprint": 3064192,
+          "resident": 4046848
+        },
+        {
+          "pid": 28809,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+          "cpu_ns": 452276166.6666666,
+          "footprint": 26133488,
+          "resident": 21987328
+        },
+        {
+          "pid": 28810,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+          "cpu_ns": 5860819000.0,
+          "footprint": 830719824,
+          "resident": 186040320
+        },
+        {
+          "pid": 28812,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+          "cpu_ns": 982320375.0,
+          "footprint": 13222488,
+          "resident": 13877248
+        },
+        {
+          "pid": 28814,
+          "command": "/System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper",
+          "cpu_ns": 19231208.333333332,
+          "footprint": 3293736,
+          "resident": 6635520
+        },
+        {
+          "pid": 28815,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=fileWatcher",
+          "cpu_ns": 95021083.33333333,
+          "footprint": 27594400,
+          "resident": 38453248
+        },
+        {
+          "pid": 28819,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --dns-result-order=ipv4first /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false",
+          "cpu_ns": 2493438458.333333,
+          "footprint": 174069864,
+          "resident": 156499968
+        },
+        {
+          "pid": 28821,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=ptyHost --logsPath /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data/data/logs/20261003T210457",
+          "cpu_ns": 223575833.3333333,
+          "footprint": 36753848,
+          "resident": 45989888
+        },
+        {
+          "pid": 28831,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-1127aaf1229edd75f8e6.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 641463125.0,
+          "footprint": 157960960,
+          "resident": 42942464
+        },
+        {
+          "pid": 28832,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-b9683f48e99f25cd5934.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 610600041.6666666,
+          "footprint": 159565992,
+          "resident": 41172992
+        },
+        {
+          "pid": 28842,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Volumes/ParadiseCodeBuild/cache/xdg/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 71029916.66666666,
+          "footprint": 43635008,
+          "resident": 38453248
+        },
+        {
+          "pid": 28847,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=28819",
+          "cpu_ns": 142788583.3333333,
+          "footprint": 36935728,
+          "resident": 43745280
+        },
+        {
+          "pid": 29769,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=28819",
+          "cpu_ns": 64603500.0,
+          "footprint": 24054640,
+          "resident": 43171840
+        },
+        {
+          "pid": 28880,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 16662458.333333332,
+          "footprint": 2277808,
+          "resident": 1671168
+        }
+      ],
+      "footprint": 1716955072,
+      "resident": 887783424
+    },
+    {
+      "time": 4.4135435,
+      "processes": [
+        {
+          "pid": 28804,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/MacOS/paradise-code",
+          "cpu_ns": 682397333.3333333,
+          "footprint": 27771984,
+          "resident": 83968000
+        },
+        {
+          "pid": 28805,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend-launcher.mjs /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend /Volumes/ParadiseCodeBuild/profiles/v020-benchmark 50768 /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token",
+          "cpu_ns": 58965000.0,
+          "footprint": 22023000,
+          "resident": 39944192
+        },
+        {
+          "pid": 28806,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/server-main.js --host 127.0.0.1 --port 50768 --connection-token-file /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token --server-data-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data --extensions-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions --accept-server-license-terms --disable-telemetry",
+          "cpu_ns": 1510607625.0,
+          "footprint": 127878112,
+          "resident": 79183872
+        },
+        {
+          "pid": 28807,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 22764458.333333332,
+          "footprint": 3064192,
+          "resident": 4046848
+        },
+        {
+          "pid": 28809,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+          "cpu_ns": 452831208.3333333,
+          "footprint": 26133488,
+          "resident": 21987328
+        },
+        {
+          "pid": 28810,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+          "cpu_ns": 5866230333.333333,
+          "footprint": 830719824,
+          "resident": 186040320
+        },
+        {
+          "pid": 28812,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+          "cpu_ns": 983016166.6666666,
+          "footprint": 13222488,
+          "resident": 13877248
+        },
+        {
+          "pid": 28814,
+          "command": "/System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper",
+          "cpu_ns": 19231208.333333332,
+          "footprint": 3293736,
+          "resident": 6635520
+        },
+        {
+          "pid": 28815,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=fileWatcher",
+          "cpu_ns": 95368625.0,
+          "footprint": 27594400,
+          "resident": 38453248
+        },
+        {
+          "pid": 28819,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --dns-result-order=ipv4first /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false",
+          "cpu_ns": 2493714541.6666665,
+          "footprint": 174069864,
+          "resident": 156499968
+        },
+        {
+          "pid": 28821,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=ptyHost --logsPath /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data/data/logs/20261003T210457",
+          "cpu_ns": 224331583.3333333,
+          "footprint": 36753848,
+          "resident": 45989888
+        },
+        {
+          "pid": 28831,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-1127aaf1229edd75f8e6.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 641463125.0,
+          "footprint": 157960960,
+          "resident": 42942464
+        },
+        {
+          "pid": 28832,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-b9683f48e99f25cd5934.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 610600041.6666666,
+          "footprint": 159565992,
+          "resident": 41172992
+        },
+        {
+          "pid": 28842,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Volumes/ParadiseCodeBuild/cache/xdg/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 71029916.66666666,
+          "footprint": 43635008,
+          "resident": 38453248
+        },
+        {
+          "pid": 28847,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=28819",
+          "cpu_ns": 142905291.66666666,
+          "footprint": 36935728,
+          "resident": 43745280
+        },
+        {
+          "pid": 29769,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=28819",
+          "cpu_ns": 64603500.0,
+          "footprint": 24054640,
+          "resident": 43171840
+        },
+        {
+          "pid": 28880,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 16662458.333333332,
+          "footprint": 2277808,
+          "resident": 1671168
+        }
+      ],
+      "footprint": 1716955072,
+      "resident": 887783424
+    },
+    {
+      "time": 4.959137166,
+      "processes": [
+        {
+          "pid": 28804,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/MacOS/paradise-code",
+          "cpu_ns": 687599250.0,
+          "footprint": 27771984,
+          "resident": 83968000
+        },
+        {
+          "pid": 28805,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend-launcher.mjs /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend /Volumes/ParadiseCodeBuild/profiles/v020-benchmark 50768 /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token",
+          "cpu_ns": 58965000.0,
+          "footprint": 22023000,
+          "resident": 39944192
+        },
+        {
+          "pid": 28806,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/server-main.js --host 127.0.0.1 --port 50768 --connection-token-file /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token --server-data-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data --extensions-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions --accept-server-license-terms --disable-telemetry",
+          "cpu_ns": 1510897291.6666665,
+          "footprint": 127878112,
+          "resident": 79183872
+        },
+        {
+          "pid": 28807,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 22764458.333333332,
+          "footprint": 3064192,
+          "resident": 4046848
+        },
+        {
+          "pid": 28809,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+          "cpu_ns": 453428541.6666666,
+          "footprint": 26133488,
+          "resident": 21987328
+        },
+        {
+          "pid": 28810,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+          "cpu_ns": 5872186500.0,
+          "footprint": 830719824,
+          "resident": 186040320
+        },
+        {
+          "pid": 28812,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+          "cpu_ns": 983652708.3333333,
+          "footprint": 13222488,
+          "resident": 13877248
+        },
+        {
+          "pid": 28814,
+          "command": "/System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper",
+          "cpu_ns": 19231208.333333332,
+          "footprint": 3293736,
+          "resident": 6635520
+        },
+        {
+          "pid": 28815,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=fileWatcher",
+          "cpu_ns": 95446125.0,
+          "footprint": 27594400,
+          "resident": 38453248
+        },
+        {
+          "pid": 28819,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --dns-result-order=ipv4first /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false",
+          "cpu_ns": 2494775833.333333,
+          "footprint": 174069864,
+          "resident": 156499968
+        },
+        {
+          "pid": 28821,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=ptyHost --logsPath /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data/data/logs/20261003T210457",
+          "cpu_ns": 225539916.66666666,
+          "footprint": 36753848,
+          "resident": 46071808
+        },
+        {
+          "pid": 28831,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-1127aaf1229edd75f8e6.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 641463125.0,
+          "footprint": 157960960,
+          "resident": 42942464
+        },
+        {
+          "pid": 28832,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-b9683f48e99f25cd5934.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 610600041.6666666,
+          "footprint": 159565992,
+          "resident": 41172992
+        },
+        {
+          "pid": 28842,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Volumes/ParadiseCodeBuild/cache/xdg/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 71029916.66666666,
+          "footprint": 43635008,
+          "resident": 38453248
+        },
+        {
+          "pid": 28847,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=28819",
+          "cpu_ns": 142905291.66666666,
+          "footprint": 36935728,
+          "resident": 43745280
+        },
+        {
+          "pid": 29769,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=28819",
+          "cpu_ns": 64603500.0,
+          "footprint": 24054640,
+          "resident": 43171840
+        },
+        {
+          "pid": 28880,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 16662458.333333332,
+          "footprint": 2277808,
+          "resident": 1671168
+        }
+      ],
+      "footprint": 1716955072,
+      "resident": 887865344
+    },
+    {
+      "time": 5.504923875,
+      "processes": [
+        {
+          "pid": 28804,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/MacOS/paradise-code",
+          "cpu_ns": 691423291.6666666,
+          "footprint": 27755600,
+          "resident": 83951616
+        },
+        {
+          "pid": 28805,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend-launcher.mjs /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend /Volumes/ParadiseCodeBuild/profiles/v020-benchmark 50768 /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token",
+          "cpu_ns": 58965000.0,
+          "footprint": 22023000,
+          "resident": 39944192
+        },
+        {
+          "pid": 28806,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/server-main.js --host 127.0.0.1 --port 50768 --connection-token-file /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token --server-data-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data --extensions-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions --accept-server-license-terms --disable-telemetry",
+          "cpu_ns": 1510999291.6666665,
+          "footprint": 127878112,
+          "resident": 79183872
+        },
+        {
+          "pid": 28807,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 22764458.333333332,
+          "footprint": 3064192,
+          "resident": 4046848
+        },
+        {
+          "pid": 28809,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+          "cpu_ns": 453988750.0,
+          "footprint": 26133488,
+          "resident": 21987328
+        },
+        {
+          "pid": 28810,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+          "cpu_ns": 5876306041.666666,
+          "footprint": 830719824,
+          "resident": 186040320
+        },
+        {
+          "pid": 28812,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+          "cpu_ns": 983861625.0,
+          "footprint": 13222488,
+          "resident": 13877248
+        },
+        {
+          "pid": 28814,
+          "command": "/System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper",
+          "cpu_ns": 19231208.333333332,
+          "footprint": 3293736,
+          "resident": 6635520
+        },
+        {
+          "pid": 28815,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=fileWatcher",
+          "cpu_ns": 95446125.0,
+          "footprint": 27594400,
+          "resident": 38453248
+        },
+        {
+          "pid": 28819,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --dns-result-order=ipv4first /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false",
+          "cpu_ns": 2494841333.333333,
+          "footprint": 174069864,
+          "resident": 156499968
+        },
+        {
+          "pid": 28821,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=ptyHost --logsPath /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data/data/logs/20261003T210457",
+          "cpu_ns": 226355583.3333333,
+          "footprint": 36753848,
+          "resident": 46071808
+        },
+        {
+          "pid": 28831,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-1127aaf1229edd75f8e6.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 641463125.0,
+          "footprint": 157960960,
+          "resident": 42942464
+        },
+        {
+          "pid": 28832,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-b9683f48e99f25cd5934.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 610600041.6666666,
+          "footprint": 159565992,
+          "resident": 41172992
+        },
+        {
+          "pid": 28842,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Volumes/ParadiseCodeBuild/cache/xdg/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 71029916.66666666,
+          "footprint": 43635008,
+          "resident": 38453248
+        },
+        {
+          "pid": 28847,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=28819",
+          "cpu_ns": 142905291.66666666,
+          "footprint": 36935728,
+          "resident": 43745280
+        },
+        {
+          "pid": 29769,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=28819",
+          "cpu_ns": 64603500.0,
+          "footprint": 24054640,
+          "resident": 43171840
+        },
+        {
+          "pid": 28880,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 16662458.333333332,
+          "footprint": 2277808,
+          "resident": 1671168
+        }
+      ],
+      "footprint": 1716938688,
+      "resident": 887848960
+    },
+    {
+      "time": 6.0509205,
+      "processes": [
+        {
+          "pid": 28804,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/MacOS/paradise-code",
+          "cpu_ns": 697940916.6666666,
+          "footprint": 27771984,
+          "resident": 83968000
+        },
+        {
+          "pid": 28805,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend-launcher.mjs /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend /Volumes/ParadiseCodeBuild/profiles/v020-benchmark 50768 /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token",
+          "cpu_ns": 58965000.0,
+          "footprint": 22023000,
+          "resident": 39944192
+        },
+        {
+          "pid": 28806,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/server-main.js --host 127.0.0.1 --port 50768 --connection-token-file /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token --server-data-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data --extensions-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions --accept-server-license-terms --disable-telemetry",
+          "cpu_ns": 1511075083.3333333,
+          "footprint": 127878112,
+          "resident": 78659584
+        },
+        {
+          "pid": 28807,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 22764458.333333332,
+          "footprint": 3064192,
+          "resident": 4046848
+        },
+        {
+          "pid": 28809,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+          "cpu_ns": 454769583.3333333,
+          "footprint": 26133488,
+          "resident": 21987328
+        },
+        {
+          "pid": 28810,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+          "cpu_ns": 5883626208.333333,
+          "footprint": 830719824,
+          "resident": 184320000
+        },
+        {
+          "pid": 28812,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+          "cpu_ns": 984043250.0,
+          "footprint": 13222488,
+          "resident": 13877248
+        },
+        {
+          "pid": 28814,
+          "command": "/System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper",
+          "cpu_ns": 19231208.333333332,
+          "footprint": 3293736,
+          "resident": 6635520
+        },
+        {
+          "pid": 28815,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=fileWatcher",
+          "cpu_ns": 95446125.0,
+          "footprint": 27594400,
+          "resident": 38453248
+        },
+        {
+          "pid": 28819,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --dns-result-order=ipv4first /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false",
+          "cpu_ns": 2495785958.333333,
+          "footprint": 174069864,
+          "resident": 156254208
+        },
+        {
+          "pid": 28821,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=ptyHost --logsPath /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data/data/logs/20261003T210457",
+          "cpu_ns": 227525083.3333333,
+          "footprint": 36753848,
+          "resident": 46809088
+        },
+        {
+          "pid": 28831,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-1127aaf1229edd75f8e6.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 641524625.0,
+          "footprint": 157960960,
+          "resident": 42942464
+        },
+        {
+          "pid": 28832,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-b9683f48e99f25cd5934.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 610652958.3333333,
+          "footprint": 159565992,
+          "resident": 41172992
+        },
+        {
+          "pid": 28842,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Volumes/ParadiseCodeBuild/cache/xdg/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 71092333.33333333,
+          "footprint": 43635008,
+          "resident": 38453248
+        },
+        {
+          "pid": 28847,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=28819",
+          "cpu_ns": 142953500.0,
+          "footprint": 36935728,
+          "resident": 43745280
+        },
+        {
+          "pid": 29769,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=28819",
+          "cpu_ns": 64603500.0,
+          "footprint": 24054640,
+          "resident": 43171840
+        },
+        {
+          "pid": 28880,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 16662458.333333332,
+          "footprint": 2277808,
+          "resident": 1671168
+        }
+      ],
+      "footprint": 1716955072,
+      "resident": 886112256
+    },
+    {
+      "time": 6.599464333,
+      "processes": [
+        {
+          "pid": 28804,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/MacOS/paradise-code",
+          "cpu_ns": 700814916.6666666,
+          "footprint": 27771984,
+          "resident": 83968000
+        },
+        {
+          "pid": 28805,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend-launcher.mjs /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend /Volumes/ParadiseCodeBuild/profiles/v020-benchmark 50768 /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token",
+          "cpu_ns": 58965000.0,
+          "footprint": 22023000,
+          "resident": 38109184
+        },
+        {
+          "pid": 28806,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/server-main.js --host 127.0.0.1 --port 50768 --connection-token-file /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token --server-data-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data --extensions-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions --accept-server-license-terms --disable-telemetry",
+          "cpu_ns": 1511153166.6666665,
+          "footprint": 127878112,
+          "resident": 75628544
+        },
+        {
+          "pid": 28807,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 22764458.333333332,
+          "footprint": 3064192,
+          "resident": 4046848
+        },
+        {
+          "pid": 28809,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+          "cpu_ns": 455297375.0,
+          "footprint": 26133488,
+          "resident": 21987328
+        },
+        {
+          "pid": 28810,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+          "cpu_ns": 5886345416.666666,
+          "footprint": 830719824,
+          "resident": 177930240
+        },
+        {
+          "pid": 28812,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+          "cpu_ns": 984043250.0,
+          "footprint": 13222488,
+          "resident": 13877248
+        },
+        {
+          "pid": 28814,
+          "command": "/System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper",
+          "cpu_ns": 19231208.333333332,
+          "footprint": 3293736,
+          "resident": 6635520
+        },
+        {
+          "pid": 28815,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=fileWatcher",
+          "cpu_ns": 95446125.0,
+          "footprint": 27594400,
+          "resident": 38453248
+        },
+        {
+          "pid": 28819,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --dns-result-order=ipv4first /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false",
+          "cpu_ns": 2495866500.0,
+          "footprint": 174069864,
+          "resident": 155746304
+        },
+        {
+          "pid": 28821,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=ptyHost --logsPath /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data/data/logs/20261003T210457",
+          "cpu_ns": 228651083.3333333,
+          "footprint": 36753848,
+          "resident": 47038464
+        },
+        {
+          "pid": 28831,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-1127aaf1229edd75f8e6.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 641524625.0,
+          "footprint": 157960960,
+          "resident": 42942464
+        },
+        {
+          "pid": 28832,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-b9683f48e99f25cd5934.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 610652958.3333333,
+          "footprint": 159565992,
+          "resident": 41172992
+        },
+        {
+          "pid": 28842,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Volumes/ParadiseCodeBuild/cache/xdg/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 71092333.33333333,
+          "footprint": 43635008,
+          "resident": 38453248
+        },
+        {
+          "pid": 28847,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=28819",
+          "cpu_ns": 142953500.0,
+          "footprint": 36935728,
+          "resident": 43663360
+        },
+        {
+          "pid": 29769,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=28819",
+          "cpu_ns": 64694666.666666664,
+          "footprint": 24054640,
+          "resident": 43171840
+        },
+        {
+          "pid": 28880,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 16662458.333333332,
+          "footprint": 2277808,
+          "resident": 1671168
+        }
+      ],
+      "footprint": 1716955072,
+      "resident": 874496000
+    },
+    {
+      "time": 7.183973541,
+      "processes": [
+        {
+          "pid": 28804,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/MacOS/paradise-code",
+          "cpu_ns": 708558416.6666666,
+          "footprint": 27821136,
+          "resident": 83640320
+        },
+        {
+          "pid": 28805,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend-launcher.mjs /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend /Volumes/ParadiseCodeBuild/profiles/v020-benchmark 50768 /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token",
+          "cpu_ns": 58965000.0,
+          "footprint": 22023000,
+          "resident": 38043648
+        },
+        {
+          "pid": 28806,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/server-main.js --host 127.0.0.1 --port 50768 --connection-token-file /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token --server-data-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data --extensions-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions --accept-server-license-terms --disable-telemetry",
+          "cpu_ns": 1511380041.6666665,
+          "footprint": 127878112,
+          "resident": 66076672
+        },
+        {
+          "pid": 28807,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 22764458.333333332,
+          "footprint": 3064192,
+          "resident": 4046848
+        },
+        {
+          "pid": 28809,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+          "cpu_ns": 456273708.3333333,
+          "footprint": 26133488,
+          "resident": 20955136
+        },
+        {
+          "pid": 28810,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+          "cpu_ns": 5895257208.333333,
+          "footprint": 830818128,
+          "resident": 146309120
+        },
+        {
+          "pid": 28812,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+          "cpu_ns": 984043250.0,
+          "footprint": 13222488,
+          "resident": 12828672
+        },
+        {
+          "pid": 28814,
+          "command": "/System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper",
+          "cpu_ns": 19231208.333333332,
+          "footprint": 3293736,
+          "resident": 6635520
+        },
+        {
+          "pid": 28815,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=fileWatcher",
+          "cpu_ns": 95446125.0,
+          "footprint": 27594400,
+          "resident": 38453248
+        },
+        {
+          "pid": 28819,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --dns-result-order=ipv4first /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false",
+          "cpu_ns": 2496898625.0,
+          "footprint": 174069864,
+          "resident": 151044096
+        },
+        {
+          "pid": 28821,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=ptyHost --logsPath /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data/data/logs/20261003T210457",
+          "cpu_ns": 229242916.66666666,
+          "footprint": 36753848,
+          "resident": 46481408
+        },
+        {
+          "pid": 28831,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-1127aaf1229edd75f8e6.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 641524625.0,
+          "footprint": 157960960,
+          "resident": 42942464
+        },
+        {
+          "pid": 28832,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-b9683f48e99f25cd5934.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 610652958.3333333,
+          "footprint": 159565992,
+          "resident": 41172992
+        },
+        {
+          "pid": 28842,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Volumes/ParadiseCodeBuild/cache/xdg/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 71092333.33333333,
+          "footprint": 43635008,
+          "resident": 38436864
+        },
+        {
+          "pid": 28847,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=28819",
+          "cpu_ns": 142953500.0,
+          "footprint": 36935728,
+          "resident": 41074688
+        },
+        {
+          "pid": 29769,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=28819",
+          "cpu_ns": 64694666.666666664,
+          "footprint": 24054640,
+          "resident": 42582016
+        },
+        {
+          "pid": 28880,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 16662458.333333332,
+          "footprint": 2277808,
+          "resident": 1671168
+        }
+      ],
+      "footprint": 1717102528,
+      "resident": 822394880
+    },
+    {
+      "time": 7.734197291,
+      "processes": [
+        {
+          "pid": 28804,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/MacOS/paradise-code",
+          "cpu_ns": 711889500.0,
+          "footprint": 27870288,
+          "resident": 83623936
+        },
+        {
+          "pid": 28805,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend-launcher.mjs /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend /Volumes/ParadiseCodeBuild/profiles/v020-benchmark 50768 /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token",
+          "cpu_ns": 58965000.0,
+          "footprint": 22023000,
+          "resident": 38060032
+        },
+        {
+          "pid": 28806,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/server-main.js --host 127.0.0.1 --port 50768 --connection-token-file /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token --server-data-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data --extensions-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions --accept-server-license-terms --disable-telemetry",
+          "cpu_ns": 1511818916.6666665,
+          "footprint": 127878112,
+          "resident": 63143936
+        },
+        {
+          "pid": 28807,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 22764458.333333332,
+          "footprint": 3064192,
+          "resident": 4046848
+        },
+        {
+          "pid": 28809,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+          "cpu_ns": 456736916.6666666,
+          "footprint": 26133488,
+          "resident": 20561920
+        },
+        {
+          "pid": 28810,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+          "cpu_ns": 5899094916.666666,
+          "footprint": 830900048,
+          "resident": 129761280
+        },
+        {
+          "pid": 28812,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+          "cpu_ns": 984520083.3333333,
+          "footprint": 13222488,
+          "resident": 12288000
+        },
+        {
+          "pid": 28814,
+          "command": "/System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper",
+          "cpu_ns": 19231208.333333332,
+          "footprint": 3293736,
+          "resident": 6635520
+        },
+        {
+          "pid": 28815,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=fileWatcher",
+          "cpu_ns": 95446125.0,
+          "footprint": 27594400,
+          "resident": 37863424
+        },
+        {
+          "pid": 28819,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --dns-result-order=ipv4first /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false",
+          "cpu_ns": 2497100541.6666665,
+          "footprint": 174069864,
+          "resident": 150274048
+        },
+        {
+          "pid": 28821,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=ptyHost --logsPath /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data/data/logs/20261003T210457",
+          "cpu_ns": 229902625.0,
+          "footprint": 36753848,
+          "resident": 46071808
+        },
+        {
+          "pid": 28831,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-1127aaf1229edd75f8e6.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 641524625.0,
+          "footprint": 157960960,
+          "resident": 42942464
+        },
+        {
+          "pid": 28832,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-b9683f48e99f25cd5934.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 610652958.3333333,
+          "footprint": 159565992,
+          "resident": 41172992
+        },
+        {
+          "pid": 28842,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Volumes/ParadiseCodeBuild/cache/xdg/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 71092333.33333333,
+          "footprint": 43635008,
+          "resident": 38453248
+        },
+        {
+          "pid": 28847,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=28819",
+          "cpu_ns": 143593625.0,
+          "footprint": 36935728,
+          "resident": 41287680
+        },
+        {
+          "pid": 29769,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=28819",
+          "cpu_ns": 64694666.666666664,
+          "footprint": 24054640,
+          "resident": 42532864
+        },
+        {
+          "pid": 28880,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 16662458.333333332,
+          "footprint": 2277808,
+          "resident": 1671168
+        }
+      ],
+      "footprint": 1717233600,
+      "resident": 800391168
+    },
+    {
+      "time": 8.285730583,
+      "processes": [
+        {
+          "pid": 28804,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/MacOS/paradise-code",
+          "cpu_ns": 718081500.0,
+          "footprint": 27870288,
+          "resident": 83591168
+        },
+        {
+          "pid": 28805,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend-launcher.mjs /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend /Volumes/ParadiseCodeBuild/profiles/v020-benchmark 50768 /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token",
+          "cpu_ns": 58965000.0,
+          "footprint": 22023000,
+          "resident": 38043648
+        },
+        {
+          "pid": 28806,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/server-main.js --host 127.0.0.1 --port 50768 --connection-token-file /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token --server-data-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data --extensions-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions --accept-server-license-terms --disable-telemetry",
+          "cpu_ns": 1511818916.6666665,
+          "footprint": 127878112,
+          "resident": 61980672
+        },
+        {
+          "pid": 28807,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 22764458.333333332,
+          "footprint": 3064192,
+          "resident": 4046848
+        },
+        {
+          "pid": 28809,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+          "cpu_ns": 457529625.0,
+          "footprint": 26133488,
+          "resident": 20529152
+        },
+        {
+          "pid": 28810,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+          "cpu_ns": 5906783166.666666,
+          "footprint": 830916432,
+          "resident": 120143872
+        },
+        {
+          "pid": 28812,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+          "cpu_ns": 984520083.3333333,
+          "footprint": 13222488,
+          "resident": 11370496
+        },
+        {
+          "pid": 28814,
+          "command": "/System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper",
+          "cpu_ns": 19231208.333333332,
+          "footprint": 3293736,
+          "resident": 6619136
+        },
+        {
+          "pid": 28815,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=fileWatcher",
+          "cpu_ns": 95446125.0,
+          "footprint": 27594400,
+          "resident": 37470208
+        },
+        {
+          "pid": 28819,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --dns-result-order=ipv4first /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false",
+          "cpu_ns": 2498081500.0,
+          "footprint": 174069864,
+          "resident": 148668416
+        },
+        {
+          "pid": 28821,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=ptyHost --logsPath /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data/data/logs/20261003T210457",
+          "cpu_ns": 232323375.0,
+          "footprint": 36753848,
+          "resident": 46956544
+        },
+        {
+          "pid": 28831,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-1127aaf1229edd75f8e6.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 641524625.0,
+          "footprint": 157960960,
+          "resident": 42942464
+        },
+        {
+          "pid": 28832,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-b9683f48e99f25cd5934.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 610652958.3333333,
+          "footprint": 159565992,
+          "resident": 41172992
+        },
+        {
+          "pid": 28842,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Volumes/ParadiseCodeBuild/cache/xdg/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 71092333.33333333,
+          "footprint": 43635008,
+          "resident": 38436864
+        },
+        {
+          "pid": 28847,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=28819",
+          "cpu_ns": 143593625.0,
+          "footprint": 36935728,
+          "resident": 41222144
+        },
+        {
+          "pid": 29769,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=28819",
+          "cpu_ns": 64694666.666666664,
+          "footprint": 24054640,
+          "resident": 42532864
+        },
+        {
+          "pid": 28880,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 16662458.333333332,
+          "footprint": 2277808,
+          "resident": 1654784
+        }
+      ],
+      "footprint": 1717249984,
+      "resident": 787382272
+    },
+    {
+      "time": 8.845383375,
+      "processes": [
+        {
+          "pid": 28804,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/MacOS/paradise-code",
+          "cpu_ns": 724701500.0,
+          "footprint": 27853904,
+          "resident": 83640320
+        },
+        {
+          "pid": 28805,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend-launcher.mjs /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend /Volumes/ParadiseCodeBuild/profiles/v020-benchmark 50768 /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token",
+          "cpu_ns": 58965000.0,
+          "footprint": 22023000,
+          "resident": 38060032
+        },
+        {
+          "pid": 28806,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/server-main.js --host 127.0.0.1 --port 50768 --connection-token-file /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token --server-data-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data --extensions-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions --accept-server-license-terms --disable-telemetry",
+          "cpu_ns": 1515765500.0,
+          "footprint": 127894496,
+          "resident": 65454080
+        },
+        {
+          "pid": 28807,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 22764458.333333332,
+          "footprint": 3064192,
+          "resident": 4046848
+        },
+        {
+          "pid": 28809,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+          "cpu_ns": 458353666.6666666,
+          "footprint": 26133488,
+          "resident": 20545536
+        },
+        {
+          "pid": 28810,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+          "cpu_ns": 5926735541.666666,
+          "footprint": 831145808,
+          "resident": 140050432
+        },
+        {
+          "pid": 28812,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+          "cpu_ns": 986676166.6666666,
+          "footprint": 13255256,
+          "resident": 13156352
+        },
+        {
+          "pid": 28814,
+          "command": "/System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper",
+          "cpu_ns": 19231208.333333332,
+          "footprint": 3293736,
+          "resident": 6635520
+        },
+        {
+          "pid": 28815,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=fileWatcher",
+          "cpu_ns": 95446125.0,
+          "footprint": 27594400,
+          "resident": 37470208
+        },
+        {
+          "pid": 28819,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --dns-result-order=ipv4first /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false",
+          "cpu_ns": 2499988416.6666665,
+          "footprint": 174069864,
+          "resident": 148684800
+        },
+        {
+          "pid": 28821,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=ptyHost --logsPath /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data/data/logs/20261003T210457",
+          "cpu_ns": 234013958.3333333,
+          "footprint": 36753848,
+          "resident": 47054848
+        },
+        {
+          "pid": 28831,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-1127aaf1229edd75f8e6.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 641524625.0,
+          "footprint": 157960960,
+          "resident": 42942464
+        },
+        {
+          "pid": 28832,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-b9683f48e99f25cd5934.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 610652958.3333333,
+          "footprint": 159565992,
+          "resident": 41172992
+        },
+        {
+          "pid": 28842,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Volumes/ParadiseCodeBuild/cache/xdg/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 71092333.33333333,
+          "footprint": 43635008,
+          "resident": 38453248
+        },
+        {
+          "pid": 28847,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=28819",
+          "cpu_ns": 143593625.0,
+          "footprint": 36935728,
+          "resident": 41238528
+        },
+        {
+          "pid": 29769,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=28819",
+          "cpu_ns": 64694666.666666664,
+          "footprint": 24054640,
+          "resident": 42532864
+        },
+        {
+          "pid": 28880,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 16662458.333333332,
+          "footprint": 2277808,
+          "resident": 1671168
+        }
+      ],
+      "footprint": 1717512128,
+      "resident": 812810240
+    },
+    {
+      "time": 9.413082666,
+      "processes": [
+        {
+          "pid": 28804,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/MacOS/paradise-code",
+          "cpu_ns": 730118875.0,
+          "footprint": 27853904,
+          "resident": 83640320
+        },
+        {
+          "pid": 28805,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend-launcher.mjs /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend /Volumes/ParadiseCodeBuild/profiles/v020-benchmark 50768 /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token",
+          "cpu_ns": 58965000.0,
+          "footprint": 22023000,
+          "resident": 38060032
+        },
+        {
+          "pid": 28806,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/server-main.js --host 127.0.0.1 --port 50768 --connection-token-file /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token --server-data-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data --extensions-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions --accept-server-license-terms --disable-telemetry",
+          "cpu_ns": 1516579000.0,
+          "footprint": 127894496,
+          "resident": 65454080
+        },
+        {
+          "pid": 28807,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 22764458.333333332,
+          "footprint": 3064192,
+          "resident": 4046848
+        },
+        {
+          "pid": 28809,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+          "cpu_ns": 459065041.6666666,
+          "footprint": 26133488,
+          "resident": 20545536
+        },
+        {
+          "pid": 28810,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+          "cpu_ns": 5934074833.333333,
+          "footprint": 831129424,
+          "resident": 140230656
+        },
+        {
+          "pid": 28812,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+          "cpu_ns": 987691541.6666666,
+          "footprint": 13255256,
+          "resident": 13271040
+        },
+        {
+          "pid": 28814,
+          "command": "/System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper",
+          "cpu_ns": 19231208.333333332,
+          "footprint": 3293736,
+          "resident": 6635520
+        },
+        {
+          "pid": 28815,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=fileWatcher",
+          "cpu_ns": 96473750.0,
+          "footprint": 27594400,
+          "resident": 38551552
+        },
+        {
+          "pid": 28819,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --dns-result-order=ipv4first /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false",
+          "cpu_ns": 2501014541.6666665,
+          "footprint": 174069864,
+          "resident": 149798912
+        },
+        {
+          "pid": 28821,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=ptyHost --logsPath /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data/data/logs/20261003T210457",
+          "cpu_ns": 235265541.66666666,
+          "footprint": 36753848,
+          "resident": 47054848
+        },
+        {
+          "pid": 28831,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-1127aaf1229edd75f8e6.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 641524625.0,
+          "footprint": 157960960,
+          "resident": 42942464
+        },
+        {
+          "pid": 28832,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-b9683f48e99f25cd5934.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 610652958.3333333,
+          "footprint": 159565992,
+          "resident": 41172992
+        },
+        {
+          "pid": 28842,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Volumes/ParadiseCodeBuild/cache/xdg/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 71092333.33333333,
+          "footprint": 43635008,
+          "resident": 38453248
+        },
+        {
+          "pid": 28847,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=28819",
+          "cpu_ns": 143593625.0,
+          "footprint": 36935728,
+          "resident": 41238528
+        },
+        {
+          "pid": 29769,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=28819",
+          "cpu_ns": 64914625.0,
+          "footprint": 24054640,
+          "resident": 42582016
+        },
+        {
+          "pid": 28880,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 16662458.333333332,
+          "footprint": 2277808,
+          "resident": 1671168
+        }
+      ],
+      "footprint": 1717495744,
+      "resident": 815349760
+    },
+    {
+      "time": 9.965481208,
+      "processes": [
+        {
+          "pid": 28804,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/MacOS/paradise-code",
+          "cpu_ns": 736906458.3333333,
+          "footprint": 27984976,
+          "resident": 83836928
+        },
+        {
+          "pid": 28805,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend-launcher.mjs /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend /Volumes/ParadiseCodeBuild/profiles/v020-benchmark 50768 /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token",
+          "cpu_ns": 58965000.0,
+          "footprint": 22023000,
+          "resident": 38060032
+        },
+        {
+          "pid": 28806,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/server-main.js --host 127.0.0.1 --port 50768 --connection-token-file /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token --server-data-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data --extensions-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions --accept-server-license-terms --disable-telemetry",
+          "cpu_ns": 1517554500.0,
+          "footprint": 127894496,
+          "resident": 65830912
+        },
+        {
+          "pid": 28807,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 22764458.333333332,
+          "footprint": 3064192,
+          "resident": 4046848
+        },
+        {
+          "pid": 28809,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+          "cpu_ns": 459943375.0,
+          "footprint": 26133488,
+          "resident": 20578304
+        },
+        {
+          "pid": 28810,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+          "cpu_ns": 5942437375.0,
+          "footprint": 831113040,
+          "resident": 140345344
+        },
+        {
+          "pid": 28812,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+          "cpu_ns": 988675791.6666666,
+          "footprint": 13238872,
+          "resident": 13303808
+        },
+        {
+          "pid": 28814,
+          "command": "/System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper",
+          "cpu_ns": 19231208.333333332,
+          "footprint": 3293736,
+          "resident": 6635520
+        },
+        {
+          "pid": 28815,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=fileWatcher",
+          "cpu_ns": 96473750.0,
+          "footprint": 27594400,
+          "resident": 38551552
+        },
+        {
+          "pid": 28819,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --dns-result-order=ipv4first /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false",
+          "cpu_ns": 2503359708.333333,
+          "footprint": 174069864,
+          "resident": 149962752
+        },
+        {
+          "pid": 28821,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=ptyHost --logsPath /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data/data/logs/20261003T210457",
+          "cpu_ns": 237802541.66666666,
+          "footprint": 36753848,
+          "resident": 47267840
+        },
+        {
+          "pid": 28831,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-1127aaf1229edd75f8e6.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 641524625.0,
+          "footprint": 157960960,
+          "resident": 42942464
+        },
+        {
+          "pid": 28832,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-b9683f48e99f25cd5934.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 610652958.3333333,
+          "footprint": 159565992,
+          "resident": 41172992
+        },
+        {
+          "pid": 28842,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Volumes/ParadiseCodeBuild/cache/xdg/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 71092333.33333333,
+          "footprint": 43635008,
+          "resident": 38453248
+        },
+        {
+          "pid": 28847,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=28819",
+          "cpu_ns": 143593625.0,
+          "footprint": 36935728,
+          "resident": 41238528
+        },
+        {
+          "pid": 29769,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=28819",
+          "cpu_ns": 64914625.0,
+          "footprint": 24054640,
+          "resident": 42582016
+        },
+        {
+          "pid": 28880,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 16662458.333333332,
+          "footprint": 2277808,
+          "resident": 1671168
+        }
+      ],
+      "footprint": 1717594048,
+      "resident": 816480256
+    },
+    {
+      "time": 10.516220666,
+      "processes": [
+        {
+          "pid": 28804,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/MacOS/paradise-code",
+          "cpu_ns": 742930458.3333333,
+          "footprint": 27968592,
+          "resident": 83820544
+        },
+        {
+          "pid": 28805,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend-launcher.mjs /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend /Volumes/ParadiseCodeBuild/profiles/v020-benchmark 50768 /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token",
+          "cpu_ns": 58965000.0,
+          "footprint": 22023000,
+          "resident": 38060032
+        },
+        {
+          "pid": 28806,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/server-main.js --host 127.0.0.1 --port 50768 --connection-token-file /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/connection-token --server-data-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data --extensions-dir /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions --accept-server-license-terms --disable-telemetry",
+          "cpu_ns": 1517744208.3333333,
+          "footprint": 127894496,
+          "resident": 65830912
+        },
+        {
+          "pid": 28807,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 22764458.333333332,
+          "footprint": 3064192,
+          "resident": 4046848
+        },
+        {
+          "pid": 28809,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU",
+          "cpu_ns": 460694125.0,
+          "footprint": 26133488,
+          "resident": 20578304
+        },
+        {
+          "pid": 28810,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent",
+          "cpu_ns": 5949172500.0,
+          "footprint": 831096656,
+          "resident": 140345344
+        },
+        {
+          "pid": 28812,
+          "command": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking",
+          "cpu_ns": 989067750.0,
+          "footprint": 13238872,
+          "resident": 13303808
+        },
+        {
+          "pid": 28814,
+          "command": "/System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper",
+          "cpu_ns": 19231208.333333332,
+          "footprint": 3293736,
+          "resident": 6635520
+        },
+        {
+          "pid": 28815,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=fileWatcher",
+          "cpu_ns": 96473750.0,
+          "footprint": 27594400,
+          "resident": 38551552
+        },
+        {
+          "pid": 28819,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --dns-result-order=ipv4first /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false",
+          "cpu_ns": 2503359708.333333,
+          "footprint": 174069864,
+          "resident": 149962752
+        },
+        {
+          "pid": 28821,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/out/bootstrap-fork --type=ptyHost --logsPath /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/server-data/data/logs/20261003T210457",
+          "cpu_ns": 238535708.3333333,
+          "footprint": 36753848,
+          "resident": 47267840
+        },
+        {
+          "pid": 28831,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-1127aaf1229edd75f8e6.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 641524625.0,
+          "footprint": 157960960,
+          "resident": 42942464
+        },
+        {
+          "pid": 28832,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /Volumes/ParadiseCodeBuild/tmp/vscode-typescript501/0ab658b2bc2dca9eeaac/tscancellation-b9683f48e99f25cd5934.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 610652958.3333333,
+          "footprint": 159565992,
+          "resident": 41172992
+        },
+        {
+          "pid": 28842,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Volumes/ParadiseCodeBuild/cache/xdg/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 71092333.33333333,
+          "footprint": 43635008,
+          "resident": 38453248
+        },
+        {
+          "pid": 28847,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/profiles/v020-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=28819",
+          "cpu_ns": 144684333.3333333,
+          "footprint": 36935728,
+          "resident": 42958848
+        },
+        {
+          "pid": 29769,
+          "command": "/Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/node /Volumes/ParadiseCodeBuild/cache/target/release/bundle/macos/Paradise Code.app/Contents/Resources/resources/backend/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=28819",
+          "cpu_ns": 64914625.0,
+          "footprint": 24054640,
+          "resident": 42582016
+        },
+        {
+          "pid": 28880,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 16662458.333333332,
+          "footprint": 2277808,
+          "resident": 1671168
+        }
+      ],
+      "footprint": 1717561280,
+      "resident": 818184192
+    }
+  ]
+}

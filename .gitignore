@@ -8,3 +8,10 @@ resources/backend/
 !.env.example
 
 gen/
+
+.vercel/
+*.key
+*.key.pub
+website/node_modules/
+website/dist/
+.impeccable/

@@ -27,6 +27,8 @@ use tauri::{
 };
 use tauri_plugin_dialog::DialogExt;
 use tauri_plugin_opener::OpenerExt;
+mod picker;
+mod updates;
 
 const VOLUME: &str = "/Volumes/ParadiseCodeBuild";
 #[derive(Default, Serialize, Deserialize)]
@@ -111,16 +113,51 @@ fn write_private(path: &Path, data: &[u8]) -> std::io::Result<()> {
         .open(path)?;
     file.write_all(data)
 }
-fn start_backend(resource: &Path) -> Result<Runtime, Box<dyn std::error::Error>> {
-    if !Path::new(VOLUME).join(".paradise-volume").is_file() {
-        return Err("The Paradise SSD build volume is not mounted. Attach ParadiseCodeBuild.sparsebundle and retry.".into());
+fn storage(_app: &tauri::AppHandle) -> Result<(PathBuf, PathBuf), Box<dyn std::error::Error>> {
+    let home = PathBuf::from(std::env::var_os("HOME").ok_or("Home directory is unavailable")?);
+    let pointer = home.join("Library/Preferences/dev.paradise.code.storage.json");
+    let saved: Option<PathBuf> = if pointer.exists() {
+        Some(serde_json::from_slice(&fs::read(&pointer)?)?)
+    } else {
+        // Preserve the original external installation, including when its SSD is disconnected.
+        fs::read_link(home.join("Library/WebKit/dev.paradise.code"))
+            .ok()
+            .and_then(|p| p.parent().map(Path::to_path_buf))
+    };
+    let profile = if let Some(path) = std::env::var_os("PARADISE_PROFILE") {
+        PathBuf::from(path)
+    } else if let Some(saved) = saved {
+        saved
+    } else {
+        let profile = home.join("Library/Application Support/ParadiseCodeData");
+        fs::create_dir_all(&profile)?;
+        profile
+    };
+    if !profile.is_absolute() || !profile.is_dir() {
+        return Err(format!("Your storage folder is unavailable: {}. Reconnect its drive and reopen Paradise Code. No data was moved.",profile.display()).into());
     }
-    let profile = std::env::var_os("PARADISE_PROFILE")
-        .map(PathBuf::from)
-        .unwrap_or_else(|| Path::new(VOLUME).join("profiles/default"));
-    if !profile.starts_with(VOLUME) {
-        return Err("The profile must be on the Paradise external volume.".into());
+    if profile.starts_with(VOLUME) && !Path::new(VOLUME).join(".paradise-volume").is_file() {
+        return Err("The Paradise SSD is not mounted. Attach ParadiseCodeBuild.sparsebundle and reopen the app.".into());
     }
+    if std::env::var_os("PARADISE_PROFILE").is_none() {
+        fs::create_dir_all(pointer.parent().unwrap())?;
+        write_private(&pointer, &serde_json::to_vec(&profile)?)?;
+    }
+    let cache_root = if profile.starts_with(VOLUME) {
+        PathBuf::from(VOLUME)
+    } else {
+        profile.clone()
+    };
+    fs::create_dir_all(cache_root.join("tmp"))?;
+    // Also covers update extraction; never use the system temporary directory for app payloads.
+    std::env::set_var("TMPDIR", cache_root.join("tmp"));
+    Ok((profile, cache_root))
+}
+fn start_backend(
+    resource: &Path,
+    app: &tauri::AppHandle,
+) -> Result<Runtime, Box<dyn std::error::Error>> {
+    let (profile, cache_root) = storage(app)?;
     fs::create_dir_all(&profile)?;
     let lock = OpenOptions::new()
         .read(true)
@@ -148,6 +185,12 @@ fn start_backend(resource: &Path) -> Result<Runtime, Box<dyn std::error::Error>>
                     symlink(&target, &link)?
                 }
                 Ok(_) if fs::read_link(&link).ok().as_ref() == Some(&target) => (),
+                Ok(_)
+                    if std::env::var_os("PARADISE_PROFILE").is_some()
+                        && fs::read_link(&link).is_ok_and(|p| p.starts_with(&cache_root)) =>
+                {
+                    ()
+                }
                 _ => {
                     return Err(format!(
                         "Existing app storage at {} needs review; refusing to overwrite it.",
@@ -201,7 +244,15 @@ fn start_backend(resource: &Path) -> Result<Runtime, Box<dyn std::error::Error>>
         .arg(&profile)
         .arg(port.to_string())
         .arg(&token_file)
-        .env("TMPDIR", Path::new(VOLUME).join("tmp"))
+        .env("TMPDIR", cache_root.join("tmp"))
+        .env(
+            "PARADISE_LOCAL_VOLUME",
+            if profile.starts_with(VOLUME) {
+                VOLUME
+            } else {
+                "/"
+            },
+        )
         .env(
             "PATH",
             format!(
@@ -223,7 +274,7 @@ fn start_backend(resource: &Path) -> Result<Runtime, Box<dyn std::error::Error>>
         ("ELECTRON_CACHE", "electron"),
         ("PLAYWRIGHT_BROWSERS_PATH", "playwright"),
     ] {
-        let path = Path::new(VOLUME).join("cache").join(directory);
+        let path = cache_root.join("cache").join(directory);
         fs::create_dir_all(&path)?;
         command.env(name, path);
     }
@@ -309,9 +360,15 @@ fn save_session(app: &tauri::AppHandle) {
     }
 }
 fn request_close(window: &WebviewWindow) {
+    if updates::installing(window.app_handle()) {
+        return;
+    }
     let _=window.eval("if(window.paradiseWorkbench){window.paradiseWorkbench.prepareClose().then(ok=>{window.paradiseNative(ok?'close-approved':'close-cancelled')}).catch(e=>console.error(e))}else{alert('The editor is still starting or unavailable. Your session is preserved; use Force Quit only if it cannot recover.')} ");
 }
 fn open_window(app: &tauri::AppHandle, destination: Option<url::Url>) -> tauri::Result<()> {
+    if !updates::window_change(app) {
+        return Ok(());
+    }
     let state = app.state::<Runtime>();
     let mut url = destination.unwrap_or_else(|| url::Url::parse(&state.origin).unwrap());
     if url.origin().ascii_serialization() != state.origin {
@@ -324,11 +381,9 @@ fn open_window(app: &tauri::AppHandle, destination: Option<url::Url>) -> tauri::
         .take(48)
         .map(char::from)
         .collect();
-    let script = format!(
-        r#"if(window===window.top && location.origin===ORIGIN){{const key={};Object.defineProperty(window,'paradiseNative',{{value:action=>{{location.href='paradise-native://'+action+'?key='+key}}}});window.close=()=>window.paradiseNative('request-close');window.addEventListener('keydown',event=>{{if(event.metaKey&&event.key.toLowerCase()==='q'){{event.preventDefault();event.stopImmediatePropagation();window.paradiseNative('request-quit');}}}},true);}}"#,
-        serde_json::to_string(&nonce).unwrap()
-    );
-    let script = script.replace("ORIGIN", &serde_json::to_string(&state.origin).unwrap());
+    let script = include_str!("desktop.js")
+        .replace("__ORIGIN__", &serde_json::to_string(&state.origin).unwrap())
+        .replace("__NONCE__", &serde_json::to_string(&nonce).unwrap());
     let webview_port = url::Url::parse(&state.webview_origin.replace("{{uuid}}", "asset"))
         .unwrap()
         .port();
@@ -338,8 +393,23 @@ fn open_window(app: &tauri::AppHandle, destination: Option<url::Url>) -> tauri::
     let app_page = app.clone();
     let app_new = app.clone();
     let origin_new = origin.clone();
-    let window = WebviewWindowBuilder::new(app, &label, WebviewUrl::External(url))
+    let mut builder = WebviewWindowBuilder::new(app, &label, WebviewUrl::External(url));
+    if std::env::var_os("PARADISE_PROFILE").is_some() {
+        use std::hash::{Hash, Hasher};
+        let mut hash = std::collections::hash_map::DefaultHasher::new();
+        state.profile.hash(&mut hash);
+        let value = hash.finish().to_le_bytes();
+        let mut id = [0u8; 16];
+        id[..8].copy_from_slice(&value);
+        id[8..].copy_from_slice(&value);
+        builder = builder.data_store_identifier(id);
+    }
+    let window = builder
         .title("Paradise Code")
+        .title_bar_style(tauri::TitleBarStyle::Overlay)
+        .hidden_title(true)
+        .traffic_light_position(tauri::LogicalPosition::new(13., 14.))
+        .background_color(tauri::webview::Color(24, 24, 27, 255))
         .inner_size(1320., 860.)
         .min_inner_size(800., 520.)
         .initialization_script(script)
@@ -355,6 +425,25 @@ fn open_window(app: &tauri::AppHandle, destination: Option<url::Url>) -> tauri::
                     if let Some(window) = app_nav.get_webview_window(&label_nav) {
                         match url.host_str() {
                             Some("request-close") => request_close(&window),
+                            Some("picker") => {
+                                if let Some((_, payload)) =
+                                    url.query_pairs().find(|(k, _)| k == "payload")
+                                {
+                                    picker::show(window.clone(), &payload);
+                                }
+                            }
+                            Some("drag") => {
+                                let _ = window.start_dragging();
+                            }
+                            Some("zoom") => {
+                                let _ = if window.is_maximized().unwrap_or(false) {
+                                    window.unmaximize()
+                                } else {
+                                    window.maximize()
+                                };
+                            }
+                            Some("update-approved") => updates::approved(&app_nav, &label_nav),
+                            Some("update-cancelled") => updates::cancel(&app_nav),
                             Some("request-quit") => {
                                 app_nav
                                     .state::<Runtime>()
@@ -415,6 +504,10 @@ fn open_window(app: &tauri::AppHandle, destination: Option<url::Url>) -> tauri::
     let app_close = app.clone();
     window.on_window_event(move |event| {
         if let tauri::WindowEvent::CloseRequested { api, .. } = event {
+            if !updates::window_change(&app_close) {
+                api.prevent_close();
+                return;
+            }
             if !app_close
                 .state::<Runtime>()
                 .approved
@@ -451,6 +544,8 @@ fn menu(app: &tauri::AppHandle) -> tauri::Result<Menu<tauri::Wry>> {
         true,
         &[
             &PredefinedMenuItem::about(app, None, None)?,
+            &item("updates", "Check for Updates…", None)?,
+            &item("creator", "Made by Paradise Code", None)?,
             &PredefinedMenuItem::separator(app)?,
             &item("settings", "Settings…", Some("Cmd+,"))?,
             &PredefinedMenuItem::hide(app, None)?,
@@ -525,13 +620,15 @@ fn main() {
     let app = tauri::Builder::default()
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_opener::init())
+        .plugin(tauri_plugin_updater::Builder::new().build())
+        .manage(updates::UpdateState::default())
         .setup(|app| {
             let resource = if cfg!(debug_assertions) {
                 PathBuf::from(env!("CARGO_MANIFEST_DIR"))
             } else {
                 app.path().resource_dir()?
             };
-            match start_backend(&resource) {
+            match start_backend(&resource, app.handle()) {
                 Ok(runtime) => app.manage(runtime),
                 Err(error) => {
                     let message = serde_json::to_string(&error.to_string())?;
@@ -606,6 +703,8 @@ fn main() {
                     }
                 });
             }
+            "updates" => updates::check(app),
+            "creator" => { let _ = app.opener().open_url("https://paradisecode.ir", None::<&str>); },
             "settings" => execute(app, "workbench.action.openSettings"),
             "save" => execute(app, "workbench.action.files.save"),
             "save-all" => execute(app, "workbench.action.files.saveAll"),
