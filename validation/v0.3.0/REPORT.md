@@ -27,6 +27,10 @@
 - Native updater prompts now attach to the editor window. Cancelling the initial update prompt preserved the working buffer; editing remained available during the signed download. Normal Quit with an active terminal was also checked and stopped its process tree.
 - The benchmark below remains the measured **0.3.0** series; these reliability fixes are not represented as new performance measurements. Versions before 0.3.1 can require reopening saved files after their own updater restarts, because the older updater did not flush editor state.
 
+- Downloaded the final public 0.3.1 ZIP anonymously, verified its SHA-256, all ZIP entries and ad-hoc app signature, then launched that exact extracted app in a fresh profile. The workbench and welcome page loaded; Check for Updates displayed the native attached “You’re up to date” sheet. Normal Quit stopped the app and backend. That verified bundle was installed on the external SSD, preserving the previous 0.1.0 app as a backup.
+
+- Connected `ide.paradisecode.ir` to the Vercel production project with its recommended Cloudflare DNS-only CNAME. Vercel reports no conflicts or misconfiguration. Verified the public DNS answer, HTTPS certificate, anonymous HTML/release metadata and six assets, plus the rendered page, loaded images and 0.3.1 download link. Canonical and social metadata use the custom domain.
+
 ## Performance: target failed
 
 Three alternating warm runs per application with the same TypeScript fixture and ESLint/Prettier extensions. One TypeScript editor and one idle zsh terminal. Readiness includes language symbols and terminal initialization. The full process coalition includes WebKit subprocesses. No builds or network downloads ran during the measured series. This was a multitasking desktop, not an isolated lab; the existing user editor remained open in the background for both applications. Results should not be used as general battery or large-project claims.
