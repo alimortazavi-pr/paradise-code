@@ -1,0 +1,430 @@
+diff --git a/build/gulpfile.reh.ts b/build/gulpfile.reh.ts
+index c643cf99..e71ba590 100644
+--- a/build/gulpfile.reh.ts
++++ b/build/gulpfile.reh.ts
+@@ -282,7 +282,7 @@ function packageTask(type: string, platform: string, arch: string, sourceFolderN
+ 				}
+ 			}
+ 		};
+-		const localWorkspaceExtensions = glob.sync('extensions/*/package.json')
++		const localWorkspaceExtensions = glob.sync('extensions/*/package.json').filter(extensionPath => extensionPath !== 'extensions/copilot/package.json')
+ 			.filter((extensionPath) => {
+ 				if (type === 'reh-web') {
+ 					return true; // web: ship all extensions for now
+@@ -550,7 +550,7 @@ function prepareCopilotRipgrepShimTaskREH(platform: string, arch: string, destin
+ 				task.task(`node-${platform}-${arch}`) as task.Task,
+ 				util.rimraf(path.join(BUILD_ROOT, destinationFolderName)),
+ 				packageTask(type, platform, arch, sourceFolderName, destinationFolderName),
+-				prepareCopilotRipgrepShimTaskREH(platform, arch, destinationFolderName)
++				// Paradise: no bundled Copilot SDK to patch.
+ 			];
+ 
+ 			if (platform === 'win32') {
+@@ -565,7 +565,7 @@ function prepareCopilotRipgrepShimTaskREH(platform: string, arch: string, destin
+ 				compileApiProposalNamesTask,
+ 				cleanExtensionsBuildTask,
+ 				compileNonNativeExtensionsBuildTask,
+-				compileCopilotExtensionBuildTask,
++				// Paradise: AI extensions are not bundled in the local-web release.
+ 				compileExtensionMediaBuildTask,
+ 				writeISODate('out-build'),
+ 				minified ? esbuildBundleMinTask : esbuildBundleTask,
+diff --git a/product.json b/product.json
+index 64e1c4d2..1a373afc 100644
+--- a/product.json
++++ b/product.json
+@@ -1,8 +1,8 @@
+ {
+-	"nameShort": "Code - OSS",
+-	"nameLong": "Code - OSS",
+-	"applicationName": "code-oss",
+-	"dataFolderName": ".vscode-oss",
++	"nameShort": "Paradise Code",
++	"nameLong": "Paradise Code",
++	"applicationName": "paradise-code",
++	"dataFolderName": ".paradise-code",
+ 	"sharedDataFolderName": ".vscode-oss-shared",
+ 	"win32MutexName": "vscodeoss",
+ 	"licenseName": "MIT",
+@@ -11,8 +11,8 @@
+ 	"serverGreeting": [],
+ 	"serverLicense": [],
+ 	"serverLicensePrompt": "",
+-	"serverApplicationName": "code-server-oss",
+-	"serverDataFolderName": ".vscode-server-oss",
++	"serverApplicationName": "paradise-server",
++	"serverDataFolderName": ".paradise-server",
+ 	"tunnelApplicationName": "code-tunnel-oss",
+ 	"win32DirName": "Microsoft Code OSS",
+ 	"win32NameVersion": "Microsoft Code OSS",
+@@ -25,16 +25,16 @@
+ 	"win32ShellNameShort": "C&ode - OSS",
+ 	"win32TunnelServiceMutex": "vscodeoss-tunnelservice",
+ 	"win32TunnelMutex": "vscodeoss-tunnel",
+-	"darwinBundleIdentifier": "com.visualstudio.code.oss",
++	"darwinBundleIdentifier": "dev.paradise.code",
+ 	"darwinProfileUUID": "47827DD9-4734-49A0-AF80-7E19B11495CC",
+ 	"darwinProfilePayloadUUID": "CF808BE7-53F3-46C6-A7E2-7EDB98A5E959",
+ 	"linuxDesktopName": "com.visualstudio.CodeOSS",
+ 	"linuxIconName": "code-oss",
+ 	"licenseFileName": "LICENSE.txt",
+-	"reportIssueUrl": "https://github.com/microsoft/vscode/issues/new",
++	"reportIssueUrl": "https://github.com/alimortazavi-pr/paradise-code/issues",
+ 	"nodejsArtifactFeed": "",
+ 	"electronArtifactFeed": "",
+-	"urlProtocol": "code-oss",
++	"urlProtocol": "paradise-code",
+ 	"agentsTelemetryAppName": "agents",
+ 	"webviewContentExternalBaseUrlTemplate": "https://{{uuid}}.vscode-cdn.net/insider/ef65ac1ba57f57f2a3961bfe94aa20481caca4c6/out/vs/workbench/contrib/webview/browser/pre/",
+ 	"builtInExtensions": [
+@@ -246,5 +246,153 @@
+ 		"GitHub.copilot-chat"
+ 	],
+ 	"sessionsWindowAllowedExtensions": [],
+-	"voiceWsUrl": "wss://falcon-caas.mai.microsoft.com/voice-code/api/v1/realtime/voice"
++	"voiceWsUrl": "wss://falcon-caas.mai.microsoft.com/voice-code/api/v1/realtime/voice",
++	"enableTelemetry": false,
++	"enableExperiments": false,
++	"extensionsGallery": {
++		"serviceUrl": "https://open-vsx.org/vscode/gallery",
++		"itemUrl": "https://open-vsx.org/vscode/item"
++	},
++	"extensionKind": {
++		"vscode.terminal-suggest": [
++			"workspace",
++			"-web"
++		],
++		"vscode.merge-conflict": [
++			"workspace",
++			"-web"
++		],
++		"vscode.media-preview": [
++			"workspace",
++			"-web"
++		],
++		"vscode.html-language-features": [
++			"workspace",
++			"-web"
++		],
++		"vscode.simple-browser": [
++			"workspace",
++			"-web"
++		],
++		"vscode.json-language-features": [
++			"workspace",
++			"-web"
++		],
++		"vscode.references-view": [
++			"workspace",
++			"-web"
++		],
++		"vscode.gulp": [
++			"workspace",
++			"-web"
++		],
++		"vscode.configuration-editing": [
++			"workspace",
++			"-web"
++		],
++		"vscode.vscode-api-tests": [
++			"workspace",
++			"-web"
++		],
++		"GitHub.copilot-chat": [
++			"workspace",
++			"-web"
++		],
++		"vscode.css-language-features": [
++			"workspace",
++			"-web"
++		],
++		"vscode.typescript-language-features": [
++			"workspace",
++			"-web"
++		],
++		"vscode.grunt": [
++			"workspace",
++			"-web"
++		],
++		"vscode.microsoft-authentication": [
++			"workspace",
++			"-web"
++		],
++		"vscode.jake": [
++			"workspace",
++			"-web"
++		],
++		"vscode.ipynb": [
++			"workspace",
++			"-web"
++		],
++		"vscode.emmet": [
++			"workspace",
++			"-web"
++		],
++		"vscode.vscode-colorize-perf-tests": [
++			"workspace",
++			"-web"
++		],
++		"vscode.debug-auto-launch": [
++			"workspace",
++			"-web"
++		],
++		"vscode.debug-server-ready": [
++			"workspace",
++			"-web"
++		],
++		"vscode.github": [
++			"workspace",
++			"-web"
++		],
++		"vscode.markdown-language-features": [
++			"workspace",
++			"-web"
++		],
++		"vscode.git-base": [
++			"workspace",
++			"-web"
++		],
++		"vscode.vscode-colorize-tests": [
++			"workspace",
++			"-web"
++		],
++		"vscode.markdown-math": [
++			"workspace",
++			"-web"
++		],
++		"vscode.github-authentication": [
++			"workspace",
++			"-web"
++		],
++		"vscode.mermaid-markdown-features": [
++			"workspace",
++			"-web"
++		],
++		"vscode.php-language-features": [
++			"workspace",
++			"-web"
++		],
++		"vscode.tunnel-forwarding": [
++			"workspace",
++			"-web"
++		],
++		"vscode.extension-editing": [
++			"workspace",
++			"-web"
++		],
++		"vscode.npm": [
++			"workspace",
++			"-web"
++		],
++		"vscode.git": [
++			"workspace",
++			"-web"
++		],
++		"vscode.vscode-test-resolver": [
++			"workspace",
++			"-web"
++		],
++		"vscode.search-result": [
++			"workspace",
++			"-web"
++		]
++	}
+ }
+diff --git a/src/vs/code/browser/workbench/workbench.ts b/src/vs/code/browser/workbench/workbench.ts
+index e52f0625..8ce4dceb 100644
+--- a/src/vs/code/browser/workbench/workbench.ts
++++ b/src/vs/code/browser/workbench/workbench.ts
+@@ -21,7 +21,38 @@ import { isFolderToOpen, isWorkspaceToOpen } from '../../../platform/window/comm
+ import type { IWorkbenchConstructionOptions, IWorkspace, IWorkspaceProvider } from '../../../workbench/browser/web.api.js';
+ import { AuthenticationSessionInfo } from '../../../workbench/services/authentication/browser/authenticationService.js';
+ import type { IURLCallbackProvider } from '../../../workbench/services/url/browser/urlService.js';
+-import { create } from '../../../workbench/workbench.web.main.internal.js';
++import { create, commands } from '../../../workbench/workbench.web.main.internal.js';
++import { CommandsRegistry } from '../../../platform/commands/common/commands.js';
++import { IDialogService } from '../../../platform/dialogs/common/dialogs.js';
++import { IWorkingCopyService } from '../../../workbench/services/workingCopy/common/workingCopyService.js';
++import { IEditorService } from '../../../workbench/services/editor/common/editorService.js';
++import { ITerminalService } from '../../../workbench/contrib/terminal/browser/terminal.js';
++import { ILifecycleService } from '../../../workbench/services/lifecycle/common/lifecycle.js';
++import { localize } from '../../../nls.js';
++
++CommandsRegistry.registerCommand('paradise.prepareClose', async accessor => {
++	const workingCopies = accessor.get(IWorkingCopyService);
++	const dialogs = accessor.get(IDialogService);
++	const editors = accessor.get(IEditorService);
++	const terminals = accessor.get(ITerminalService);
++	const lifecycle = accessor.get(ILifecycleService);
++	if (workingCopies.dirtyCount > 0) {
++		const answer = await dialogs.confirm({ message: localize('paradise.unsaved', 'Save your changes before closing?'), primaryButton: localize('paradise.saveClose', 'Save All and Close') });
++		if (!answer.confirmed || !(await editors.saveAll({ includeUntitled: true })).success || workingCopies.dirtyCount > 0) { return false; }
++	}
++	if (terminals.instances.length > 0) {
++		const answer = await dialogs.confirm({ message: localize('paradise.terminals', 'Close this window and stop its terminals?'), primaryButton: localize('paradise.close', 'Close Window') });
++		if (!answer.confirmed) { return false; }
++	}
++	await lifecycle.shutdown();
++	return true;
++});
++
++Object.defineProperty(mainWindow, 'paradiseWorkbench', { value: {
++	executeCommand: commands.executeCommand,
++	prepareClose: () => commands.executeCommand('paradise.prepareClose')
++} });
++
+ 
+ interface ISecretStorageCrypto {
+ 	seal(data: string): Promise<string>;
+diff --git a/src/vs/platform/extensionManagement/common/extensionGalleryService.ts b/src/vs/platform/extensionManagement/common/extensionGalleryService.ts
+index b00f8d12..9954730a 100644
+--- a/src/vs/platform/extensionManagement/common/extensionGalleryService.ts
++++ b/src/vs/platform/extensionManagement/common/extensionGalleryService.ts
+@@ -322,6 +322,11 @@ function getRepositoryAsset(version: IRawGalleryExtensionVersion): IGalleryExten
+ }
+ 
+ function getDownloadAsset(version: IRawGalleryExtensionVersion): IGalleryExtensionAsset {
++	if (version.assetUri.startsWith('https://open-vsx.org/')) {
++		const asset = getVersionAsset(version, AssetType.VSIX);
++		if (asset) { return asset; }
++	}
++
+ 	return {
+ 		// always use fallbackAssetUri for download asset to hit the Marketplace API so that downloads are counted
+ 		uri: `${version.fallbackAssetUri}/${AssetType.VSIX}?redirect=true${version.targetPlatform ? `&targetPlatform=${version.targetPlatform}` : ''}`,
+@@ -331,6 +336,10 @@ function getDownloadAsset(version: IRawGalleryExtensionVersion): IGalleryExtensi
+ 
+ function getVersionAsset(version: IRawGalleryExtensionVersion, type: string): IGalleryExtensionAsset | null {
+ 	const result = version.files.filter(f => f.assetType === type)[0];
++	if (version.assetUri.startsWith('https://open-vsx.org/') && result?.source.startsWith('https://open-vsx.org/api/')) {
++		return { uri: result.source, fallbackUri: result.source };
++	}
++
+ 	return result ? {
+ 		uri: `${version.assetUri}/${type}${version.targetPlatform ? `?targetPlatform=${version.targetPlatform}` : ''}`,
+ 		fallbackUri: `${version.fallbackAssetUri}/${type}${version.targetPlatform ? `?targetPlatform=${version.targetPlatform}` : ''}`
+diff --git a/src/vs/platform/extensionManagement/node/extensionSignatureVerificationService.ts b/src/vs/platform/extensionManagement/node/extensionSignatureVerificationService.ts
+index 98535c5e..8b06e2d7 100644
+--- a/src/vs/platform/extensionManagement/node/extensionSignatureVerificationService.ts
++++ b/src/vs/platform/extensionManagement/node/extensionSignatureVerificationService.ts
+@@ -3,6 +3,10 @@
+  *  Licensed under the MIT License. See License.txt in the project root for license information.
+  *--------------------------------------------------------------------------------------------*/
+ 
++import { createPublicKey, verify as verifySignature } from 'crypto';
++import { readFile } from 'fs/promises';
++import { buffer as readZipEntry } from '../../../base/node/zip.js';
++import { IProductService } from '../../product/common/productService.js';
+ import { getErrorMessage } from '../../../base/common/errors.js';
+ import { isDefined } from '../../../base/common/types.js';
+ import { TargetPlatform } from '../../extensions/common/extensions.js';
+@@ -54,6 +58,7 @@ export class ExtensionSignatureVerificationService implements IExtensionSignatur
+ 	private moduleLoadingPromise: Promise<typeof vsceSign> | undefined;
+ 
+ 	constructor(
++		@IProductService private readonly productService: IProductService,
+ 		@ILogService private readonly logService: ILogService,
+ 		@ITelemetryService private readonly telemetryService: ITelemetryService,
+ 	) { }
+@@ -72,6 +77,27 @@ export class ExtensionSignatureVerificationService implements IExtensionSignatur
+ 	}
+ 
+ 	public async verify(extensionId: string, version: string, vsixFilePath: string, signatureArchiveFilePath: string, clientTargetPlatform?: TargetPlatform): Promise<IExtensionSignatureVerificationResult | undefined> {
++		if (this.productService.extensionsGallery?.serviceUrl === 'https://open-vsx.org/vscode/gallery') {
++			try {
++				const [namespace, name] = extensionId.split('.');
++				if (!namespace || !name) { throw new Error('Invalid extension identifier'); }
++				const target = clientTargetPlatform && clientTargetPlatform !== 'universal' && clientTargetPlatform !== 'undefined' ? `${encodeURIComponent(clientTargetPlatform)}/` : '';
++				const response = await fetch(`https://open-vsx.org/api/${encodeURIComponent(namespace)}/${encodeURIComponent(name)}/${target}${encodeURIComponent(version)}`, { signal: AbortSignal.timeout(15000) });
++				if (!response.ok) { throw new Error(`Open VSX metadata returned ${response.status}`); }
++				const metadata = await response.json() as { files?: { publicKey?: string } };
++				const keyUrl = new URL(metadata.files?.publicKey ?? '');
++				if (keyUrl.origin !== 'https://open-vsx.org' || !keyUrl.pathname.startsWith('/api/-/public-key/')) { throw new Error('Unexpected registry key URL'); }
++				const keyResponse = await fetch(keyUrl, { signal: AbortSignal.timeout(15000), redirect: 'error' });
++				if (!keyResponse.ok) { throw new Error(`Open VSX key returned ${keyResponse.status}`); }
++				const key = createPublicKey(await keyResponse.text());
++				const signature = await readZipEntry(signatureArchiveFilePath, '.signature.sig');
++				const verified = verifySignature(null, await readFile(vsixFilePath), key, signature);
++				return { code: verified ? ExtensionSignatureVerificationCode.Success : ExtensionSignatureVerificationCode.PackageIntegrityCheckFailed };
++			} catch (error) {
++				this.logService.error('Open VSX signature verification failed', getErrorMessage(error));
++				return { code: ExtensionSignatureVerificationCode.UnknownError };
++			}
++		}
+ 		let module: typeof vsceSign;
+ 
+ 		try {
+diff --git a/src/vs/platform/files/node/watcher/nodejs/nodejsWatcherLib.ts b/src/vs/platform/files/node/watcher/nodejs/nodejsWatcherLib.ts
+index 6629ce5f..bd24b8fe 100644
+--- a/src/vs/platform/files/node/watcher/nodejs/nodejsWatcherLib.ts
++++ b/src/vs/platform/files/node/watcher/nodejs/nodejsWatcherLib.ts
+@@ -208,7 +208,7 @@ export class NodeJSFileWatcherLibrary extends Disposable {
+ 		// (https://github.com/microsoft/vscode/issues/106879)
+ 		// TODO@electron this needs a revisit when the crash is
+ 		// fixed or mitigated upstream.
+-		if (isMacintosh && isEqualOrParent(realPath, '/Volumes/', true)) {
++		if (isMacintosh && isEqualOrParent(realPath, '/Volumes/', true) && !(process.env['PARADISE_LOCAL_VOLUME'] && isEqualOrParent(realPath, process.env['PARADISE_LOCAL_VOLUME']!, true))) {
+ 			this.error(`Refusing to watch ${realPath} for changes using fs.watch() for possibly being a network share where watching is unreliable and unstable.`);
+ 
+ 			return;
+diff --git a/src/vs/server/node/remoteExtensionHostAgentServer.ts b/src/vs/server/node/remoteExtensionHostAgentServer.ts
+index 72273fb3..d2b67c63 100644
+--- a/src/vs/server/node/remoteExtensionHostAgentServer.ts
++++ b/src/vs/server/node/remoteExtensionHostAgentServer.ts
+@@ -113,6 +113,12 @@ class RemoteExtensionHostAgentServer extends Disposable implements IServerAPI {
+ 	}
+ 
+ 	public async handleRequest(req: http.IncomingMessage, res: http.ServerResponse): Promise<void> {
++		const paradiseOrigin = process.env['PARADISE_ORIGIN'];
++		if (paradiseOrigin && (req.headers.host !== new URL(paradiseOrigin).host ||
++			(req.headers.origin && req.headers.origin !== paradiseOrigin))) {
++			return serveError(req, res, 403, 'Origin not allowed.');
++		}
++
+ 		// Only serve GET requests
+ 		if (req.method !== 'GET') {
+ 			return serveError(req, res, 405, `Unsupported method ${req.method}`);
+@@ -199,6 +205,12 @@ class RemoteExtensionHostAgentServer extends Disposable implements IServerAPI {
+ 	}
+ 
+ 	public handleUpgrade(req: http.IncomingMessage, socket: net.Socket) {
++		const paradiseOrigin = process.env['PARADISE_ORIGIN'];
++		if (paradiseOrigin && (req.headers.host !== new URL(paradiseOrigin).host || req.headers.origin !== paradiseOrigin)) {
++			socket.end('HTTP/1.1 403 Forbidden\r\nConnection: close\r\n\r\n');
++			return;
++		}
++
+ 		let reconnectionToken = generateUuid();
+ 		let isReconnection = false;
+ 		let skipWebSocketFrames = false;
+diff --git a/src/vs/server/node/webClientServer.ts b/src/vs/server/node/webClientServer.ts
+index ebbfe1c5..9f606f2b 100644
+--- a/src/vs/server/node/webClientServer.ts
++++ b/src/vs/server/node/webClientServer.ts
+@@ -148,7 +148,7 @@ export function createWorkbenchContentSecurityPolicy(scriptNonce: string, nlsBas
+ 		'media-src \'self\';',
+ 		`script-src 'self' 'unsafe-eval' ${nlsBaseUrl ?? ''} blob: 'nonce-${scriptNonce}' '${webWorkerExtensionHostIframeScriptSHA}' 'sha256-/r7rqQ+yrxt57sxLuQ6AMYcy/lUpvAIzHjIJt/OeLWU=' ${useTestResolver ? '' : `http://${remoteAuthority}`};`,  // the sha is the same as in src/vs/workbench/services/extensions/worker/webWorkerExtensionHostIframe.html
+ 		'child-src \'self\';',
+-		`frame-src 'self' https://*.vscode-cdn.net data:;`,
++		`frame-src 'self' https://*.vscode-cdn.net ${process.env['PARADISE_WEBVIEW_ORIGIN']?.replace('{{uuid}}', '*') ?? ''} data:;`,
+ 		'worker-src \'self\' data: blob:;',
+ 		'style-src \'self\' \'unsafe-inline\';',
+ 		'connect-src \'self\' ws: wss: https:;',
+@@ -362,7 +362,7 @@ export class WebClientServer {
+ 			return JSON.stringify(value);
+ 		}
+ 
+-		let _wrapWebWorkerExtHostInIframe: undefined | false = undefined;
++		let _wrapWebWorkerExtHostInIframe: undefined | false = process.env['PARADISE_ORIGIN'] ? false : undefined;
+ 		if (this._environmentService.args['enable-smoke-test-driver']) {
+ 			// integration tests run at a time when the built output is not yet published to the CDN
+ 			// so we must disable the iframe wrapping because the iframe URL will give a 404
+@@ -415,6 +415,8 @@ export class WebClientServer {
+ 
+ 		const workbenchWebConfiguration = {
+ 			remoteAuthority,
++			webviewEndpoint: process.env['PARADISE_WEBVIEW_ORIGIN'] ? `${process.env['PARADISE_WEBVIEW_ORIGIN']}/` : undefined,
++			configurationDefaults: { 'chat.disableAIFeatures': true, 'telemetry.telemetryLevel': 'off', 'workbench.enableExperiments': false, 'window.autoDetectColorScheme': true },
+ 			serverBasePath: basePath,
+ 			_wrapWebWorkerExtHostInIframe,
+ 			developmentOptions: { enableSmokeTestDriver: this._environmentService.args['enable-smoke-test-driver'] ? true : undefined, logLevel: this._logService.getLevel() },

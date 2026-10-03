@@ -1,0 +1,1 @@
+{"name":"paradise-acceptance-fixture","private":true,"type":"module","scripts":{"start":"node main.js","test":"node --test"},"devDependencies":{"eslint":"^10.12.0","prettier":"^3.9.9","typescript":"^7.0.2"}}

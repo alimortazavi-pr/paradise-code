@@ -1,0 +1,8 @@
+{
+  "name":"paradise-code",
+  "version":"0.1.0",
+  "private":true,
+  "type":"module",
+  "scripts":{"tauri":"tauri","check":"cargo check","test":"node --test tests/*.test.mjs","build:backend":"bash scripts/build-backend.sh","build":"bash scripts/package.sh"},
+  "devDependencies":{"@tauri-apps/cli":"^2.11.0"}
+}

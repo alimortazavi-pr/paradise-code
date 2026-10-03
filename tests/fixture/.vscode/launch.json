@@ -1,0 +1,1 @@
+{"version":"0.2.0","configurations":[{"name":"Debug local Node","type":"node","request":"launch","program":"${workspaceFolder}/main.js","stopOnEntry":true}]}

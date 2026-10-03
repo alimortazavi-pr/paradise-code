@@ -1,0 +1,1 @@
+{"name":"paradise-acceptance","publisher":"paradise","version":"0.1.0","engines":{"vscode":"^1.100.0"},"main":"./extension.cjs","activationEvents":["onStartupFinished"],"extensionKind":["workspace"],"contributes":{"commands":[{"command":"paradise.qa.run","title":"Paradise: Run Acceptance Checks"}]}}
