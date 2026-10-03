@@ -120,7 +120,9 @@ edit(name, "\t\tlet module: typeof vsceSign;", """		if (this.productService.exte
 			try {
 				const [namespace, name] = extensionId.split('.');
 				if (!namespace || !name) { throw new Error('Invalid extension identifier'); }
-				const target = clientTargetPlatform && clientTargetPlatform !== 'universal' && clientTargetPlatform !== 'undefined' ? `${encodeURIComponent(clientTargetPlatform)}/` : '';
+				const vsixManifest = (await readZipEntry(vsixFilePath, 'extension.vsixmanifest')).toString('utf8');
+				const packageTarget = /TargetPlatform="([^"]+)"/.exec(vsixManifest)?.[1];
+				const target = packageTarget && packageTarget !== 'universal' ? `${encodeURIComponent(packageTarget)}/` : '';
 				const response = await fetch(`https://open-vsx.org/api/${encodeURIComponent(namespace)}/${encodeURIComponent(name)}/${target}${encodeURIComponent(version)}`, { signal: AbortSignal.timeout(15000) });
 				if (!response.ok) { throw new Error(`Open VSX metadata returned ${response.status}`); }
 				const metadata = await response.json() as { files?: { publicKey?: string } };

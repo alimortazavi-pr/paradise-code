@@ -1,0 +1,20 @@
+npm warn Unknown env config "devdir". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> paradise-code@0.1.0 test
+> node --test tests/*.test.mjs
+
+✔ workbench refuses an unauthenticated request (8.971125ms)
+✔ workbench accepts the connection token (1.856208ms)
+✔ cross-origin requests fail even with a valid token (0.730625ms)
+✔ unexpected Host fails even with a valid token (1.988833ms)
+✔ authenticated HTML uses local webview resources (5.401542ms)
+✔ webview server cannot read parent directories (23.561167ms)
+✔ cross-origin WebSocket upgrade is refused (0.753375ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 90.628709

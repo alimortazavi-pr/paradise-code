@@ -1,0 +1,100 @@
+{
+  "paradise": {
+    "runs": [
+      {
+        "run": 1,
+        "readyMs": 2982,
+        "footprintMiB": 1860.2018981933593,
+        "rssMiB": 2100.29375,
+        "idleCpu": 1.0549046424374018,
+        "activeCpu": 49.90969293400712,
+        "symbolsMs": 2.0257705000003625,
+        "searchMs": 12.086396000000605
+      },
+      {
+        "run": 2,
+        "readyMs": 4625,
+        "footprintMiB": 1749.1791297511052,
+        "rssMiB": 1267.6447368421052,
+        "idleCpu": 8.553100264671937,
+        "activeCpu": 50.257194826572025,
+        "symbolsMs": 2.3031244999983755,
+        "searchMs": 12.535416499998973
+      },
+      {
+        "run": 3,
+        "readyMs": 2967,
+        "footprintMiB": 1762.215840389854,
+        "rssMiB": 2353.6776315789475,
+        "idleCpu": 3.77860061035547,
+        "activeCpu": 50.74756219472262,
+        "symbolsMs": 2.0169165000006615,
+        "searchMs": 12.189833500000532
+      }
+    ],
+    "median": {
+      "readyMs": 2982,
+      "footprintMiB": 1762.215840389854,
+      "rssMiB": 2100.29375,
+      "idleCpu": 3.77860061035547,
+      "activeCpu": 50.257194826572025,
+      "symbolsMs": 2.0257705000003625,
+      "searchMs": 12.189833500000532
+    }
+  },
+  "vscode": {
+    "runs": [
+      {
+        "run": 1,
+        "readyMs": 2626,
+        "footprintMiB": 957.7078459890265,
+        "rssMiB": 1491.875822368421,
+        "idleCpu": 9.24974458746959,
+        "activeCpu": 90.39247792318687,
+        "symbolsMs": 0.5709585000004154,
+        "searchMs": 7.848249999999098
+      },
+      {
+        "run": 2,
+        "readyMs": 2353,
+        "footprintMiB": 985.5775242855674,
+        "rssMiB": 2135.095394736842,
+        "idleCpu": 6.77728631425578,
+        "activeCpu": 51.873803006007655,
+        "symbolsMs": 0.2536255000013625,
+        "searchMs": 6.032729000000472
+      },
+      {
+        "run": 3,
+        "readyMs": 2362,
+        "footprintMiB": 975.4253861276727,
+        "rssMiB": 2143.5444078947367,
+        "idleCpu": 7.415421871121991,
+        "activeCpu": 49.30121323463171,
+        "symbolsMs": 0.18731250000018917,
+        "searchMs": 5.6010000000005675
+      }
+    ],
+    "median": {
+      "readyMs": 2362,
+      "footprintMiB": 975.4253861276727,
+      "rssMiB": 2135.095394736842,
+      "idleCpu": 7.415421871121991,
+      "activeCpu": 51.873803006007655,
+      "symbolsMs": 0.2536255000013625,
+      "searchMs": 6.032729000000472
+    }
+  },
+  "changePercent": {
+    "readyMs": 26.24894157493649,
+    "footprintMiB": 80.6612648647222,
+    "rssMiB": -1.629980787866936,
+    "idleCpu": -49.044023711307084,
+    "activeCpu": -3.116425027192249,
+    "symbolsMs": 698.7250887586144,
+    "searchMs": 102.06167888528688
+  },
+  "memoryTargetPassed": false,
+  "latencyTargetPassed": false,
+  "performanceTargetPassed": false
+}

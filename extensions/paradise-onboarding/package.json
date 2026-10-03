@@ -1,0 +1,15 @@
+{
+  "name":"paradise-onboarding","publisher":"paradise","version":"0.1.0",
+  "displayName":"Paradise Code Welcome","description":"Local development with Paradise Code.",
+  "license":"MIT","engines":{"vscode":"^1.140.0"},"main":"./extension.cjs",
+  "extensionKind":["workspace"],"activationEvents":["onStartupFinished"],
+  "contributes":{
+    "commands":[{"command":"paradise.welcome","title":"Paradise Code: Welcome"}],
+    "walkthroughs":[{"id":"start","title":"Welcome to Paradise Code","description":"Your local workspace, with familiar tools.","icon":"media/welcome.svg","steps":[
+      {"id":"open","title":"Open your project","description":"Choose File → Open Folder (⌥⌘O). Your files stay on your Mac.\n[Show Explorer](command:workbench.view.explorer)","media":{"image":"media/welcome.svg","altText":"Paradise Code — local development"}},
+      {"id":"extensions","title":"Make it yours","description":"Install ESLint, Prettier, themes, and other compatible extensions from Open VSX. You can also install a VSIX file.\n[Browse extensions](command:workbench.view.extensions)","media":{"image":"media/welcome.svg","altText":"Paradise Code"}},
+      {"id":"tools","title":"Build, run, and debug","description":"Node and npm are included. Use the integrated terminal, Tasks, Git, and the Node debugger.\n[Open a terminal](command:workbench.action.terminal.new)","media":{"image":"media/welcome.svg","altText":"Paradise Code"}},
+      {"id":"storage","title":"Keep your SSD connected","description":"Paradise keeps its profile and caches on the ParadiseCodeBuild volume. Mount it before launching. Updates are installed manually.\n[Open settings](command:workbench.action.openSettings)","media":{"image":"media/welcome.svg","altText":"Paradise Code"}}
+    ]}]
+  }
+}

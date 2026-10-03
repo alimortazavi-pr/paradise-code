@@ -1,0 +1,16 @@
+{
+  "testedAt":"2026-10-03",
+  "machine":"Apple M4",
+  "memoryBytes":17179869184,
+  "os":"macOS 27.0.1",
+  "architecture":"arm64",
+  "codeOss":"1.140.0",
+  "upstreamCommit":"07f806f999227108933c2e30515b26eecc1fda74",
+  "buildNode":"24.18.0",
+  "runtimeNode":"24.21.0",
+  "prettierExtension":"12.4.0",
+  "eslintExtension":"3.0.34",
+  "baselineVersion":"1.140.0",
+  "baselineDownload":"https://update.code.visualstudio.com/1.140.0/darwin-arm64/stable",
+  "baselineSHA256":"86a64f1cc9f4e0b5fc44969530994742f4bd61e7b98d9637238c5e24b26593b0"
+}

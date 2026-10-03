@@ -325,7 +325,7 @@ fn open_window(app: &tauri::AppHandle, destination: Option<url::Url>) -> tauri::
         .map(char::from)
         .collect();
     let script = format!(
-        r#"if(window===window.top && location.origin===ORIGIN){{const key={};Object.defineProperty(window,'paradiseNative',{{value:action=>{{location.href='paradise-native://'+action+'?key='+key}}}});window.close=()=>window.paradiseNative('request-close');}}"#,
+        r#"if(window===window.top && location.origin===ORIGIN){{const key={};Object.defineProperty(window,'paradiseNative',{{value:action=>{{location.href='paradise-native://'+action+'?key='+key}}}});window.close=()=>window.paradiseNative('request-close');window.addEventListener('keydown',event=>{{if(event.metaKey&&event.key.toLowerCase()==='q'){{event.preventDefault();event.stopImmediatePropagation();window.paradiseNative('request-quit');}}}},true);}}"#,
         serde_json::to_string(&nonce).unwrap()
     );
     let script = script.replace("ORIGIN", &serde_json::to_string(&state.origin).unwrap());
@@ -355,6 +355,16 @@ fn open_window(app: &tauri::AppHandle, destination: Option<url::Url>) -> tauri::
                     if let Some(window) = app_nav.get_webview_window(&label_nav) {
                         match url.host_str() {
                             Some("request-close") => request_close(&window),
+                            Some("request-quit") => {
+                                app_nav
+                                    .state::<Runtime>()
+                                    .quitting
+                                    .store(true, Ordering::SeqCst);
+                                save_session(&app_nav);
+                                for window in app_nav.webview_windows().values() {
+                                    request_close(window);
+                                }
+                            }
                             Some("close-approved") => {
                                 if !app_nav.state::<Runtime>().quitting.load(Ordering::SeqCst) {
                                     save_session(&app_nav);

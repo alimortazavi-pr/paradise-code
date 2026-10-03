@@ -1,0 +1,1242 @@
+{
+  "coalition": 10267,
+  "pid": 5489,
+  "cpu_counter_ns_per_tick": 41.666666666666664,
+  "cpu_percent_one_core": 90.39247792318687,
+  "footprint_mean_bytes": 1182805306.909091,
+  "rss_mean_bytes": 2213581172.3636365,
+  "samples": [
+    {
+      "time": 0.057199541,
+      "processes": [
+        {
+          "pid": 5489,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/MacOS/Code --user-data-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --extensions-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions --disable-updates --skip-welcome --skip-release-notes --disable-workspace-trust /Volumes/ParadiseCodeBuild/qa/workspace \u0641\u0627\u0631\u0633\u06cc",
+          "cpu_ns": 1493955750.0,
+          "footprint": 102696904,
+          "resident": 262340608
+        },
+        {
+          "pid": 5490,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=gpu-process --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --gpu-preferences=UAAAAAAAAAAgAQAEAAAAAAAAAAAAAGAAOAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAABgAAAAAAAAAGAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708988185955192 --seatbelt-client=29",
+          "cpu_ns": 416230333.3333333,
+          "footprint": 169444696,
+          "resident": 118210560
+        },
+        {
+          "pid": 5491,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=network --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708989122997041 --seatbelt-client=29",
+          "cpu_ns": 70658208.33333333,
+          "footprint": 8373256,
+          "resident": 54378496
+        },
+        {
+          "pid": 5492,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 25255000.0,
+          "footprint": 2441624,
+          "resident": 10043392
+        },
+        {
+          "pid": 5493,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Renderer).app/Contents/MacOS/Code Helper (Renderer) --type=renderer --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-path=/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --lang=en-US --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1790991303529970 --launch-time-ticks=35925353519 --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990060038890 --vscode-window-config=vscode:eaa7a6cd-7958-41cb-a017-311cff0f04e3 --seatbelt-client=44",
+          "cpu_ns": 3745766166.6666665,
+          "footprint": 317426040,
+          "resident": 552796160
+        },
+        {
+          "pid": 5496,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990997080739",
+          "cpu_ns": 223455666.66666666,
+          "footprint": 39486880,
+          "resident": 104726528
+        },
+        {
+          "pid": 5497,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708991934122588",
+          "cpu_ns": 793234541.6666666,
+          "footprint": 83314248,
+          "resident": 192659456
+        },
+        {
+          "pid": 5498,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708992871164437",
+          "cpu_ns": 147921500.0,
+          "footprint": 32163304,
+          "resident": 95010816
+        },
+        {
+          "pid": 5499,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708993808206286",
+          "cpu_ns": 1029087291.6666666,
+          "footprint": 119162464,
+          "resident": 204996608
+        },
+        {
+          "pid": 5511,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-3ef974d57a3bd16a3bff.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 745247625.0,
+          "footprint": 96257392,
+          "resident": 171687936
+        },
+        {
+          "pid": 5512,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-6f83534b6f45f224061d.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 694249125.0,
+          "footprint": 85214600,
+          "resident": 161579008
+        },
+        {
+          "pid": 5575,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Users/alimor/Library/Caches/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 131436583.33333333,
+          "footprint": 35996896,
+          "resident": 95043584
+        },
+        {
+          "pid": 5576,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=5499",
+          "cpu_ns": 171289916.66666666,
+          "footprint": 27149584,
+          "resident": 89325568
+        },
+        {
+          "pid": 5679,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=5499",
+          "cpu_ns": 72488625.0,
+          "footprint": 19547408,
+          "resident": 78610432
+        },
+        {
+          "pid": 5608,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 11225833.333333332,
+          "footprint": 2261424,
+          "resident": 3538944
+        }
+      ],
+      "footprint": 1140936720,
+      "resident": 2194948096
+    },
+    {
+      "time": 0.605587583,
+      "processes": [
+        {
+          "pid": 5489,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/MacOS/Code --user-data-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --extensions-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions --disable-updates --skip-welcome --skip-release-notes --disable-workspace-trust /Volumes/ParadiseCodeBuild/qa/workspace \u0641\u0627\u0631\u0633\u06cc",
+          "cpu_ns": 1509372333.3333333,
+          "footprint": 102877128,
+          "resident": 262406144
+        },
+        {
+          "pid": 5490,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=gpu-process --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --gpu-preferences=UAAAAAAAAAAgAQAEAAAAAAAAAAAAAGAAOAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAABgAAAAAAAAAGAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708988185955192 --seatbelt-client=29",
+          "cpu_ns": 416230333.3333333,
+          "footprint": 169444696,
+          "resident": 118210560
+        },
+        {
+          "pid": 5491,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=network --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708989122997041 --seatbelt-client=29",
+          "cpu_ns": 70658208.33333333,
+          "footprint": 8373256,
+          "resident": 54378496
+        },
+        {
+          "pid": 5492,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 25255000.0,
+          "footprint": 2441624,
+          "resident": 10043392
+        },
+        {
+          "pid": 5493,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Renderer).app/Contents/MacOS/Code Helper (Renderer) --type=renderer --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-path=/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --lang=en-US --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1790991303529970 --launch-time-ticks=35925353519 --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990060038890 --vscode-window-config=vscode:eaa7a6cd-7958-41cb-a017-311cff0f04e3 --seatbelt-client=44",
+          "cpu_ns": 4191059500.0,
+          "footprint": 355993976,
+          "resident": 554172416
+        },
+        {
+          "pid": 5496,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990997080739",
+          "cpu_ns": 223836041.66666666,
+          "footprint": 39486880,
+          "resident": 104726528
+        },
+        {
+          "pid": 5497,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708991934122588",
+          "cpu_ns": 793234541.6666666,
+          "footprint": 83314248,
+          "resident": 192659456
+        },
+        {
+          "pid": 5498,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708992871164437",
+          "cpu_ns": 147921500.0,
+          "footprint": 32163304,
+          "resident": 95010816
+        },
+        {
+          "pid": 5499,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708993808206286",
+          "cpu_ns": 1120559250.0,
+          "footprint": 119703136,
+          "resident": 207781888
+        },
+        {
+          "pid": 5511,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-3ef974d57a3bd16a3bff.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 745247625.0,
+          "footprint": 96257392,
+          "resident": 171687936
+        },
+        {
+          "pid": 5512,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-6f83534b6f45f224061d.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 694249125.0,
+          "footprint": 85214600,
+          "resident": 161579008
+        },
+        {
+          "pid": 5575,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Users/alimor/Library/Caches/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 131436583.33333333,
+          "footprint": 35996896,
+          "resident": 95043584
+        },
+        {
+          "pid": 5576,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=5499",
+          "cpu_ns": 171289916.66666666,
+          "footprint": 27149584,
+          "resident": 89325568
+        },
+        {
+          "pid": 5679,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=5499",
+          "cpu_ns": 72488625.0,
+          "footprint": 19547408,
+          "resident": 78610432
+        },
+        {
+          "pid": 5608,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 11225833.333333332,
+          "footprint": 2261424,
+          "resident": 3538944
+        }
+      ],
+      "footprint": 1180225552,
+      "resident": 2199175168
+    },
+    {
+      "time": 1.140453041,
+      "processes": [
+        {
+          "pid": 5489,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/MacOS/Code --user-data-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --extensions-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions --disable-updates --skip-welcome --skip-release-notes --disable-workspace-trust /Volumes/ParadiseCodeBuild/qa/workspace \u0641\u0627\u0631\u0633\u06cc",
+          "cpu_ns": 1526078750.0,
+          "footprint": 102909896,
+          "resident": 262438912
+        },
+        {
+          "pid": 5490,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=gpu-process --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --gpu-preferences=UAAAAAAAAAAgAQAEAAAAAAAAAAAAAGAAOAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAABgAAAAAAAAAGAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708988185955192 --seatbelt-client=29",
+          "cpu_ns": 416230333.3333333,
+          "footprint": 169444696,
+          "resident": 118210560
+        },
+        {
+          "pid": 5491,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=network --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708989122997041 --seatbelt-client=29",
+          "cpu_ns": 70658208.33333333,
+          "footprint": 8373256,
+          "resident": 54378496
+        },
+        {
+          "pid": 5492,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 25255000.0,
+          "footprint": 2441624,
+          "resident": 10043392
+        },
+        {
+          "pid": 5493,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Renderer).app/Contents/MacOS/Code Helper (Renderer) --type=renderer --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-path=/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --lang=en-US --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1790991303529970 --launch-time-ticks=35925353519 --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990060038890 --vscode-window-config=vscode:eaa7a6cd-7958-41cb-a017-311cff0f04e3 --seatbelt-client=44",
+          "cpu_ns": 4607037958.333333,
+          "footprint": 310708600,
+          "resident": 553975808
+        },
+        {
+          "pid": 5496,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990997080739",
+          "cpu_ns": 224073416.66666666,
+          "footprint": 39486880,
+          "resident": 104726528
+        },
+        {
+          "pid": 5497,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708991934122588",
+          "cpu_ns": 793234541.6666666,
+          "footprint": 83314248,
+          "resident": 192659456
+        },
+        {
+          "pid": 5498,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708992871164437",
+          "cpu_ns": 147921500.0,
+          "footprint": 32163304,
+          "resident": 95010816
+        },
+        {
+          "pid": 5499,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708993808206286",
+          "cpu_ns": 1223143125.0,
+          "footprint": 125519480,
+          "resident": 214482944
+        },
+        {
+          "pid": 5511,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-3ef974d57a3bd16a3bff.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 745247625.0,
+          "footprint": 96257392,
+          "resident": 171687936
+        },
+        {
+          "pid": 5512,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-6f83534b6f45f224061d.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 694249125.0,
+          "footprint": 85214600,
+          "resident": 161579008
+        },
+        {
+          "pid": 5575,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Users/alimor/Library/Caches/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 131436583.33333333,
+          "footprint": 35996896,
+          "resident": 95043584
+        },
+        {
+          "pid": 5576,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=5499",
+          "cpu_ns": 171289916.66666666,
+          "footprint": 27149584,
+          "resident": 89325568
+        },
+        {
+          "pid": 5679,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=5499",
+          "cpu_ns": 72488625.0,
+          "footprint": 19547408,
+          "resident": 78610432
+        },
+        {
+          "pid": 5608,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 11225833.333333332,
+          "footprint": 2261424,
+          "resident": 3538944
+        }
+      ],
+      "footprint": 1140789288,
+      "resident": 2205712384
+    },
+    {
+      "time": 1.686470333,
+      "processes": [
+        {
+          "pid": 5489,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/MacOS/Code --user-data-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --extensions-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions --disable-updates --skip-welcome --skip-release-notes --disable-workspace-trust /Volumes/ParadiseCodeBuild/qa/workspace \u0641\u0627\u0631\u0633\u06cc",
+          "cpu_ns": 1538188333.3333333,
+          "footprint": 102942664,
+          "resident": 262471680
+        },
+        {
+          "pid": 5490,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=gpu-process --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --gpu-preferences=UAAAAAAAAAAgAQAEAAAAAAAAAAAAAGAAOAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAABgAAAAAAAAAGAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708988185955192 --seatbelt-client=29",
+          "cpu_ns": 416230333.3333333,
+          "footprint": 169444696,
+          "resident": 118210560
+        },
+        {
+          "pid": 5491,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=network --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708989122997041 --seatbelt-client=29",
+          "cpu_ns": 70658208.33333333,
+          "footprint": 8373256,
+          "resident": 54378496
+        },
+        {
+          "pid": 5492,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 25255000.0,
+          "footprint": 2441624,
+          "resident": 10043392
+        },
+        {
+          "pid": 5493,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Renderer).app/Contents/MacOS/Code Helper (Renderer) --type=renderer --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-path=/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --lang=en-US --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1790991303529970 --launch-time-ticks=35925353519 --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990060038890 --vscode-window-config=vscode:eaa7a6cd-7958-41cb-a017-311cff0f04e3 --seatbelt-client=44",
+          "cpu_ns": 4973185625.0,
+          "footprint": 324110712,
+          "resident": 554172416
+        },
+        {
+          "pid": 5496,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990997080739",
+          "cpu_ns": 224576333.3333333,
+          "footprint": 39486880,
+          "resident": 104726528
+        },
+        {
+          "pid": 5497,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708991934122588",
+          "cpu_ns": 793234541.6666666,
+          "footprint": 83314248,
+          "resident": 192659456
+        },
+        {
+          "pid": 5498,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708992871164437",
+          "cpu_ns": 147921500.0,
+          "footprint": 32163304,
+          "resident": 95010816
+        },
+        {
+          "pid": 5499,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708993808206286",
+          "cpu_ns": 1356356708.3333333,
+          "footprint": 133940856,
+          "resident": 222822400
+        },
+        {
+          "pid": 5511,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-3ef974d57a3bd16a3bff.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 745247625.0,
+          "footprint": 96257392,
+          "resident": 171687936
+        },
+        {
+          "pid": 5512,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-6f83534b6f45f224061d.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 694249125.0,
+          "footprint": 85214600,
+          "resident": 161579008
+        },
+        {
+          "pid": 5575,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Users/alimor/Library/Caches/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 131436583.33333333,
+          "footprint": 35996896,
+          "resident": 95043584
+        },
+        {
+          "pid": 5576,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=5499",
+          "cpu_ns": 171289916.66666666,
+          "footprint": 27149584,
+          "resident": 89325568
+        },
+        {
+          "pid": 5679,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=5499",
+          "cpu_ns": 72488625.0,
+          "footprint": 19547408,
+          "resident": 78610432
+        },
+        {
+          "pid": 5608,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 11225833.333333332,
+          "footprint": 2261424,
+          "resident": 3538944
+        }
+      ],
+      "footprint": 1162645544,
+      "resident": 2214281216
+    },
+    {
+      "time": 2.227984166,
+      "processes": [
+        {
+          "pid": 5489,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/MacOS/Code --user-data-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --extensions-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions --disable-updates --skip-welcome --skip-release-notes --disable-workspace-trust /Volumes/ParadiseCodeBuild/qa/workspace \u0641\u0627\u0631\u0633\u06cc",
+          "cpu_ns": 1552737875.0,
+          "footprint": 102959048,
+          "resident": 262504448
+        },
+        {
+          "pid": 5490,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=gpu-process --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --gpu-preferences=UAAAAAAAAAAgAQAEAAAAAAAAAAAAAGAAOAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAABgAAAAAAAAAGAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708988185955192 --seatbelt-client=29",
+          "cpu_ns": 416286041.6666666,
+          "footprint": 169444696,
+          "resident": 118226944
+        },
+        {
+          "pid": 5491,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=network --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708989122997041 --seatbelt-client=29",
+          "cpu_ns": 70658208.33333333,
+          "footprint": 8373256,
+          "resident": 54378496
+        },
+        {
+          "pid": 5492,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 25255000.0,
+          "footprint": 2441624,
+          "resident": 10043392
+        },
+        {
+          "pid": 5493,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Renderer).app/Contents/MacOS/Code Helper (Renderer) --type=renderer --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-path=/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --lang=en-US --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1790991303529970 --launch-time-ticks=35925353519 --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990060038890 --vscode-window-config=vscode:eaa7a6cd-7958-41cb-a017-311cff0f04e3 --seatbelt-client=44",
+          "cpu_ns": 5313700583.333333,
+          "footprint": 329550200,
+          "resident": 554106880
+        },
+        {
+          "pid": 5496,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990997080739",
+          "cpu_ns": 225010500.0,
+          "footprint": 39486880,
+          "resident": 104726528
+        },
+        {
+          "pid": 5497,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708991934122588",
+          "cpu_ns": 793234541.6666666,
+          "footprint": 83314248,
+          "resident": 192659456
+        },
+        {
+          "pid": 5498,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708992871164437",
+          "cpu_ns": 147921500.0,
+          "footprint": 32163304,
+          "resident": 95010816
+        },
+        {
+          "pid": 5499,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708993808206286",
+          "cpu_ns": 1435890500.0,
+          "footprint": 134022776,
+          "resident": 222904320
+        },
+        {
+          "pid": 5511,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-3ef974d57a3bd16a3bff.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 745247625.0,
+          "footprint": 96257392,
+          "resident": 171687936
+        },
+        {
+          "pid": 5512,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-6f83534b6f45f224061d.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 694249125.0,
+          "footprint": 85214600,
+          "resident": 161579008
+        },
+        {
+          "pid": 5575,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Users/alimor/Library/Caches/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 131436583.33333333,
+          "footprint": 35996896,
+          "resident": 95043584
+        },
+        {
+          "pid": 5576,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=5499",
+          "cpu_ns": 171289916.66666666,
+          "footprint": 27149584,
+          "resident": 89325568
+        },
+        {
+          "pid": 5679,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=5499",
+          "cpu_ns": 72602166.66666666,
+          "footprint": 19547408,
+          "resident": 78610432
+        },
+        {
+          "pid": 5608,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 11225833.333333332,
+          "footprint": 2261424,
+          "resident": 3538944
+        }
+      ],
+      "footprint": 1168183336,
+      "resident": 2214346752
+    },
+    {
+      "time": 2.780358833,
+      "processes": [
+        {
+          "pid": 5489,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/MacOS/Code --user-data-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --extensions-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions --disable-updates --skip-welcome --skip-release-notes --disable-workspace-trust /Volumes/ParadiseCodeBuild/qa/workspace \u0641\u0627\u0631\u0633\u06cc",
+          "cpu_ns": 1564747250.0,
+          "footprint": 103057352,
+          "resident": 262651904
+        },
+        {
+          "pid": 5490,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=gpu-process --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --gpu-preferences=UAAAAAAAAAAgAQAEAAAAAAAAAAAAAGAAOAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAABgAAAAAAAAAGAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708988185955192 --seatbelt-client=29",
+          "cpu_ns": 416309250.0,
+          "footprint": 169444696,
+          "resident": 118226944
+        },
+        {
+          "pid": 5491,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=network --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708989122997041 --seatbelt-client=29",
+          "cpu_ns": 70658208.33333333,
+          "footprint": 8373256,
+          "resident": 54378496
+        },
+        {
+          "pid": 5492,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 25255000.0,
+          "footprint": 2441624,
+          "resident": 10043392
+        },
+        {
+          "pid": 5493,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Renderer).app/Contents/MacOS/Code Helper (Renderer) --type=renderer --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-path=/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --lang=en-US --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1790991303529970 --launch-time-ticks=35925353519 --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990060038890 --vscode-window-config=vscode:eaa7a6cd-7958-41cb-a017-311cff0f04e3 --seatbelt-client=44",
+          "cpu_ns": 5682638291.666666,
+          "footprint": 345131384,
+          "resident": 554647552
+        },
+        {
+          "pid": 5496,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990997080739",
+          "cpu_ns": 225530583.3333333,
+          "footprint": 39486880,
+          "resident": 104726528
+        },
+        {
+          "pid": 5497,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708991934122588",
+          "cpu_ns": 793234541.6666666,
+          "footprint": 83314248,
+          "resident": 192659456
+        },
+        {
+          "pid": 5498,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708992871164437",
+          "cpu_ns": 147995000.0,
+          "footprint": 32163304,
+          "resident": 95010816
+        },
+        {
+          "pid": 5499,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708993808206286",
+          "cpu_ns": 1509172916.6666665,
+          "footprint": 134088312,
+          "resident": 223019008
+        },
+        {
+          "pid": 5511,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-3ef974d57a3bd16a3bff.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 745247625.0,
+          "footprint": 96257392,
+          "resident": 171687936
+        },
+        {
+          "pid": 5512,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-6f83534b6f45f224061d.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 694249125.0,
+          "footprint": 85214600,
+          "resident": 161579008
+        },
+        {
+          "pid": 5575,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Users/alimor/Library/Caches/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 131436583.33333333,
+          "footprint": 35996896,
+          "resident": 95043584
+        },
+        {
+          "pid": 5576,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=5499",
+          "cpu_ns": 171363791.66666666,
+          "footprint": 27149584,
+          "resident": 89325568
+        },
+        {
+          "pid": 5679,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=5499",
+          "cpu_ns": 72602166.66666666,
+          "footprint": 19547408,
+          "resident": 78610432
+        },
+        {
+          "pid": 5608,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 11225833.333333332,
+          "footprint": 2261424,
+          "resident": 3538944
+        }
+      ],
+      "footprint": 1183928360,
+      "resident": 2215149568
+    },
+    {
+      "time": 3.326772666,
+      "processes": [
+        {
+          "pid": 5489,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/MacOS/Code --user-data-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --extensions-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions --disable-updates --skip-welcome --skip-release-notes --disable-workspace-trust /Volumes/ParadiseCodeBuild/qa/workspace \u0641\u0627\u0631\u0633\u06cc",
+          "cpu_ns": 1577679791.6666665,
+          "footprint": 103073736,
+          "resident": 262799360
+        },
+        {
+          "pid": 5490,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=gpu-process --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --gpu-preferences=UAAAAAAAAAAgAQAEAAAAAAAAAAAAAGAAOAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAABgAAAAAAAAAGAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708988185955192 --seatbelt-client=29",
+          "cpu_ns": 416309250.0,
+          "footprint": 169444696,
+          "resident": 118226944
+        },
+        {
+          "pid": 5491,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=network --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708989122997041 --seatbelt-client=29",
+          "cpu_ns": 70658208.33333333,
+          "footprint": 8373256,
+          "resident": 54378496
+        },
+        {
+          "pid": 5492,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 25255000.0,
+          "footprint": 2441624,
+          "resident": 10043392
+        },
+        {
+          "pid": 5493,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Renderer).app/Contents/MacOS/Code Helper (Renderer) --type=renderer --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-path=/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --lang=en-US --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1790991303529970 --launch-time-ticks=35925353519 --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990060038890 --vscode-window-config=vscode:eaa7a6cd-7958-41cb-a017-311cff0f04e3 --seatbelt-client=44",
+          "cpu_ns": 6053771791.666666,
+          "footprint": 345344376,
+          "resident": 556417024
+        },
+        {
+          "pid": 5496,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990997080739",
+          "cpu_ns": 226026125.0,
+          "footprint": 39486880,
+          "resident": 104726528
+        },
+        {
+          "pid": 5497,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708991934122588",
+          "cpu_ns": 793234541.6666666,
+          "footprint": 83314248,
+          "resident": 192659456
+        },
+        {
+          "pid": 5498,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708992871164437",
+          "cpu_ns": 148403166.66666666,
+          "footprint": 32163304,
+          "resident": 95010816
+        },
+        {
+          "pid": 5499,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708993808206286",
+          "cpu_ns": 1583560666.6666665,
+          "footprint": 134383224,
+          "resident": 223248384
+        },
+        {
+          "pid": 5511,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-3ef974d57a3bd16a3bff.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 745247625.0,
+          "footprint": 96257392,
+          "resident": 171687936
+        },
+        {
+          "pid": 5512,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-6f83534b6f45f224061d.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 694249125.0,
+          "footprint": 85214600,
+          "resident": 161579008
+        },
+        {
+          "pid": 5575,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Users/alimor/Library/Caches/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 131436583.33333333,
+          "footprint": 35996896,
+          "resident": 95043584
+        },
+        {
+          "pid": 5576,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=5499",
+          "cpu_ns": 171363791.66666666,
+          "footprint": 27149584,
+          "resident": 89325568
+        },
+        {
+          "pid": 5679,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=5499",
+          "cpu_ns": 72602166.66666666,
+          "footprint": 19547408,
+          "resident": 78610432
+        },
+        {
+          "pid": 5608,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 11225833.333333332,
+          "footprint": 2261424,
+          "resident": 3538944
+        }
+      ],
+      "footprint": 1184452648,
+      "resident": 2217295872
+    },
+    {
+      "time": 3.87813575,
+      "processes": [
+        {
+          "pid": 5489,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/MacOS/Code --user-data-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --extensions-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions --disable-updates --skip-welcome --skip-release-notes --disable-workspace-trust /Volumes/ParadiseCodeBuild/qa/workspace \u0641\u0627\u0631\u0633\u06cc",
+          "cpu_ns": 1590560041.6666665,
+          "footprint": 103106504,
+          "resident": 263258112
+        },
+        {
+          "pid": 5490,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=gpu-process --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --gpu-preferences=UAAAAAAAAAAgAQAEAAAAAAAAAAAAAGAAOAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAABgAAAAAAAAAGAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708988185955192 --seatbelt-client=29",
+          "cpu_ns": 416309250.0,
+          "footprint": 169444696,
+          "resident": 118226944
+        },
+        {
+          "pid": 5491,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=network --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708989122997041 --seatbelt-client=29",
+          "cpu_ns": 70658208.33333333,
+          "footprint": 8373256,
+          "resident": 54378496
+        },
+        {
+          "pid": 5492,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 25255000.0,
+          "footprint": 2441624,
+          "resident": 10043392
+        },
+        {
+          "pid": 5493,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Renderer).app/Contents/MacOS/Code Helper (Renderer) --type=renderer --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-path=/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --lang=en-US --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1790991303529970 --launch-time-ticks=35925353519 --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990060038890 --vscode-window-config=vscode:eaa7a6cd-7958-41cb-a017-311cff0f04e3 --seatbelt-client=44",
+          "cpu_ns": 6446287916.666666,
+          "footprint": 353372536,
+          "resident": 556744704
+        },
+        {
+          "pid": 5496,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990997080739",
+          "cpu_ns": 226588833.3333333,
+          "footprint": 39486880,
+          "resident": 104726528
+        },
+        {
+          "pid": 5497,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708991934122588",
+          "cpu_ns": 793234541.6666666,
+          "footprint": 83314248,
+          "resident": 192659456
+        },
+        {
+          "pid": 5498,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708992871164437",
+          "cpu_ns": 148403166.66666666,
+          "footprint": 32163304,
+          "resident": 95010816
+        },
+        {
+          "pid": 5499,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708993808206286",
+          "cpu_ns": 1670181541.6666665,
+          "footprint": 135038584,
+          "resident": 224690176
+        },
+        {
+          "pid": 5511,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-3ef974d57a3bd16a3bff.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 745247625.0,
+          "footprint": 96257392,
+          "resident": 171687936
+        },
+        {
+          "pid": 5512,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-6f83534b6f45f224061d.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 694249125.0,
+          "footprint": 85214600,
+          "resident": 161579008
+        },
+        {
+          "pid": 5575,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Users/alimor/Library/Caches/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 131436583.33333333,
+          "footprint": 35996896,
+          "resident": 95043584
+        },
+        {
+          "pid": 5576,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=5499",
+          "cpu_ns": 171363791.66666666,
+          "footprint": 27149584,
+          "resident": 89325568
+        },
+        {
+          "pid": 5679,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=5499",
+          "cpu_ns": 72602166.66666666,
+          "footprint": 19547408,
+          "resident": 78610432
+        },
+        {
+          "pid": 5608,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 11225833.333333332,
+          "footprint": 2261424,
+          "resident": 3538944
+        }
+      ],
+      "footprint": 1193168936,
+      "resident": 2219524096
+    },
+    {
+      "time": 4.423217541,
+      "processes": [
+        {
+          "pid": 5489,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/MacOS/Code --user-data-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --extensions-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions --disable-updates --skip-welcome --skip-release-notes --disable-workspace-trust /Volumes/ParadiseCodeBuild/qa/workspace \u0641\u0627\u0631\u0633\u06cc",
+          "cpu_ns": 1606377416.6666665,
+          "footprint": 102909896,
+          "resident": 263684096
+        },
+        {
+          "pid": 5490,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=gpu-process --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --gpu-preferences=UAAAAAAAAAAgAQAEAAAAAAAAAAAAAGAAOAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAABgAAAAAAAAAGAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708988185955192 --seatbelt-client=29",
+          "cpu_ns": 416309250.0,
+          "footprint": 169444696,
+          "resident": 118226944
+        },
+        {
+          "pid": 5491,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=network --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708989122997041 --seatbelt-client=29",
+          "cpu_ns": 70658208.33333333,
+          "footprint": 8373256,
+          "resident": 54378496
+        },
+        {
+          "pid": 5492,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 25255000.0,
+          "footprint": 2441624,
+          "resident": 10043392
+        },
+        {
+          "pid": 5493,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Renderer).app/Contents/MacOS/Code Helper (Renderer) --type=renderer --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-path=/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --lang=en-US --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1790991303529970 --launch-time-ticks=35925353519 --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990060038890 --vscode-window-config=vscode:eaa7a6cd-7958-41cb-a017-311cff0f04e3 --seatbelt-client=44",
+          "cpu_ns": 6852967458.333333,
+          "footprint": 366086520,
+          "resident": 557088768
+        },
+        {
+          "pid": 5496,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990997080739",
+          "cpu_ns": 227174208.3333333,
+          "footprint": 39486880,
+          "resident": 104726528
+        },
+        {
+          "pid": 5497,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708991934122588",
+          "cpu_ns": 793234541.6666666,
+          "footprint": 83314248,
+          "resident": 192659456
+        },
+        {
+          "pid": 5498,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708992871164437",
+          "cpu_ns": 148403166.66666666,
+          "footprint": 32163304,
+          "resident": 95010816
+        },
+        {
+          "pid": 5499,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708993808206286",
+          "cpu_ns": 1743533083.3333333,
+          "footprint": 135071352,
+          "resident": 224722944
+        },
+        {
+          "pid": 5511,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-3ef974d57a3bd16a3bff.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 745247625.0,
+          "footprint": 96257392,
+          "resident": 171687936
+        },
+        {
+          "pid": 5512,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-6f83534b6f45f224061d.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 694249125.0,
+          "footprint": 85214600,
+          "resident": 161579008
+        },
+        {
+          "pid": 5575,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Users/alimor/Library/Caches/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 131436583.33333333,
+          "footprint": 35996896,
+          "resident": 95043584
+        },
+        {
+          "pid": 5576,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=5499",
+          "cpu_ns": 171363791.66666666,
+          "footprint": 27149584,
+          "resident": 89325568
+        },
+        {
+          "pid": 5679,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=5499",
+          "cpu_ns": 72602166.66666666,
+          "footprint": 19547408,
+          "resident": 78610432
+        },
+        {
+          "pid": 5608,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 11225833.333333332,
+          "footprint": 2261424,
+          "resident": 3538944
+        }
+      ],
+      "footprint": 1205719080,
+      "resident": 2220326912
+    },
+    {
+      "time": 4.975557708,
+      "processes": [
+        {
+          "pid": 5489,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/MacOS/Code --user-data-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --extensions-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions --disable-updates --skip-welcome --skip-release-notes --disable-workspace-trust /Volumes/ParadiseCodeBuild/qa/workspace \u0641\u0627\u0631\u0633\u06cc",
+          "cpu_ns": 1619920875.0,
+          "footprint": 102909896,
+          "resident": 263684096
+        },
+        {
+          "pid": 5490,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=gpu-process --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --gpu-preferences=UAAAAAAAAAAgAQAEAAAAAAAAAAAAAGAAOAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAABgAAAAAAAAAGAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708988185955192 --seatbelt-client=29",
+          "cpu_ns": 416309250.0,
+          "footprint": 169444696,
+          "resident": 118226944
+        },
+        {
+          "pid": 5491,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=network --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708989122997041 --seatbelt-client=29",
+          "cpu_ns": 70658208.33333333,
+          "footprint": 8373256,
+          "resident": 54378496
+        },
+        {
+          "pid": 5492,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 25255000.0,
+          "footprint": 2441624,
+          "resident": 10043392
+        },
+        {
+          "pid": 5493,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Renderer).app/Contents/MacOS/Code Helper (Renderer) --type=renderer --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-path=/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --lang=en-US --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1790991303529970 --launch-time-ticks=35925353519 --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990060038890 --vscode-window-config=vscode:eaa7a6cd-7958-41cb-a017-311cff0f04e3 --seatbelt-client=44",
+          "cpu_ns": 7261654666.666666,
+          "footprint": 375916920,
+          "resident": 557678592
+        },
+        {
+          "pid": 5496,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990997080739",
+          "cpu_ns": 227485500.0,
+          "footprint": 39486880,
+          "resident": 104726528
+        },
+        {
+          "pid": 5497,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708991934122588",
+          "cpu_ns": 793234541.6666666,
+          "footprint": 83314248,
+          "resident": 192659456
+        },
+        {
+          "pid": 5498,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708992871164437",
+          "cpu_ns": 148403166.66666666,
+          "footprint": 32163304,
+          "resident": 95010816
+        },
+        {
+          "pid": 5499,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708993808206286",
+          "cpu_ns": 1817969041.6666665,
+          "footprint": 136676984,
+          "resident": 226328576
+        },
+        {
+          "pid": 5511,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-3ef974d57a3bd16a3bff.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 745247625.0,
+          "footprint": 96257392,
+          "resident": 171687936
+        },
+        {
+          "pid": 5512,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-6f83534b6f45f224061d.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 694249125.0,
+          "footprint": 85214600,
+          "resident": 161579008
+        },
+        {
+          "pid": 5575,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Users/alimor/Library/Caches/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 131436583.33333333,
+          "footprint": 35996896,
+          "resident": 95043584
+        },
+        {
+          "pid": 5576,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=5499",
+          "cpu_ns": 171363791.66666666,
+          "footprint": 27149584,
+          "resident": 89325568
+        },
+        {
+          "pid": 5679,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=5499",
+          "cpu_ns": 72701958.33333333,
+          "footprint": 19547408,
+          "resident": 78610432
+        },
+        {
+          "pid": 5608,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 11225833.333333332,
+          "footprint": 2261424,
+          "resident": 3538944
+        }
+      ],
+      "footprint": 1217155112,
+      "resident": 2222522368
+    },
+    {
+      "time": 5.524536708,
+      "processes": [
+        {
+          "pid": 5489,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/MacOS/Code --user-data-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --extensions-dir /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions --disable-updates --skip-welcome --skip-release-notes --disable-workspace-trust /Volumes/ParadiseCodeBuild/qa/workspace \u0641\u0627\u0631\u0633\u06cc",
+          "cpu_ns": 1633117375.0,
+          "footprint": 102909896,
+          "resident": 263684096
+        },
+        {
+          "pid": 5490,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=gpu-process --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --gpu-preferences=UAAAAAAAAAAgAQAEAAAAAAAAAAAAAGAAOAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAABgAAAAAAAAAGAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708988185955192 --seatbelt-client=29",
+          "cpu_ns": 416332500.0,
+          "footprint": 169444696,
+          "resident": 118226944
+        },
+        {
+          "pid": 5491,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=network --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708989122997041 --seatbelt-client=29",
+          "cpu_ns": 70658208.33333333,
+          "footprint": 8373256,
+          "resident": 54378496
+        },
+        {
+          "pid": 5492,
+          "command": "/System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService",
+          "cpu_ns": 25255000.0,
+          "footprint": 2441624,
+          "resident": 10043392
+        },
+        {
+          "pid": 5493,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Renderer).app/Contents/MacOS/Code Helper (Renderer) --type=renderer --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-path=/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --lang=en-US --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1790991303529970 --launch-time-ticks=35925353519 --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990060038890 --vscode-window-config=vscode:eaa7a6cd-7958-41cb-a017-311cff0f04e3 --seatbelt-client=44",
+          "cpu_ns": 7673281375.0,
+          "footprint": 389237112,
+          "resident": 558153728
+        },
+        {
+          "pid": 5496,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708990997080739",
+          "cpu_ns": 228007791.66666666,
+          "footprint": 39486880,
+          "resident": 104726528
+        },
+        {
+          "pid": 5497,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708991934122588",
+          "cpu_ns": 793234541.6666666,
+          "footprint": 83314248,
+          "resident": 192659456
+        },
+        {
+          "pid": 5498,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708992871164437",
+          "cpu_ns": 148403166.66666666,
+          "footprint": 32163304,
+          "resident": 95010816
+        },
+        {
+          "pid": 5499,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --user-data-dir=/Volumes/ParadiseCodeBuild/profiles/vscode-benchmark --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files --field-trial-handle=1718379636,r,17164773177527971076,18260758631691398342,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync,PdfUseShowSaveFilePicker,ScreenCaptureKitPickerScreen,ScreenCaptureKitStreamPickerSonoma --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,HideCursorWhileTyping,LocalNetworkAccessChecks,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TimeoutHangingVideoCaptureStarts,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1935764596,r,5618698515048110544,17076931227625632094,4 --trace-process-track-uuid=3190708993808206286",
+          "cpu_ns": 1899048833.3333333,
+          "footprint": 139855480,
+          "resident": 229441536
+        },
+        {
+          "pid": 5511,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic --useInferredProjectPerProjectRoot --disableAutomaticTypingAcquisition --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-3ef974d57a3bd16a3bff.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 745247625.0,
+          "footprint": 96257392,
+          "resident": 171687936
+        },
+        {
+          "pid": 5512,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) --max-old-space-size=3072 /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/tsserver.js --useInferredProjectPerProjectRoot --enableTelemetry --cancellationPipeName /var/folders/m9/pgv0z51s6r15nzvpt8083s9m0000gn/T/vscode-typescript501/0dd3726e9e3292809013/tscancellation-6f83534b6f45f224061d.tmp* --locale en --noGetErrOnBackgroundUpdate --canUseWatchEvents --validateDefaultNpmLocation --useNodeIpc",
+          "cpu_ns": 694249125.0,
+          "footprint": 85214600,
+          "resident": 161579008
+        },
+        {
+          "pid": 5575,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typingsInstaller.js --globalTypingsCacheLocation /Users/alimor/Library/Caches/typescript/6.0 --enableTelemetry --typesMapLocation /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/node_modules/typescript/lib/typesMap.json --validateDefaultNpmLocation",
+          "cpu_ns": 131436583.33333333,
+          "footprint": 35996896,
+          "resident": 95043584
+        },
+        {
+          "pid": 5576,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/profiles/vscode-benchmark/extensions/dbaeumer.vscode-eslint-3.0.34/server/out/eslintServer.js --node-ipc --clientProcessId=5499",
+          "cpu_ns": 171363791.66666666,
+          "footprint": 27149584,
+          "resident": 89325568
+        },
+        {
+          "pid": 5679,
+          "command": "/Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin) /Volumes/ParadiseCodeBuild/qa/baseline/Visual Studio Code.app/Contents/Resources/app/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=5499",
+          "cpu_ns": 72701958.33333333,
+          "footprint": 19547408,
+          "resident": 78610432
+        },
+        {
+          "pid": 5608,
+          "command": "/bin/zsh -i",
+          "cpu_ns": 11225833.333333332,
+          "footprint": 2261424,
+          "resident": 3538944
+        }
+      ],
+      "footprint": 1233653800,
+      "resident": 2226110464
+    }
+  ]
+}

@@ -6,6 +6,10 @@ exports.activate=async context=>{
     const output=process.env.PARADISE_BENCHMARK_FILE;
     (async()=>{
       const root=vscode.workspace.workspaceFolders[0].uri;
+      await vscode.commands.executeCommand('workbench.action.closeAllEditors');
+      await vscode.commands.executeCommand('workbench.action.joinAllGroups');
+      await vscode.commands.executeCommand('workbench.action.closeAuxiliaryBar');
+      for(const t of vscode.window.terminals)t.dispose();
       await vscode.extensions.getExtension('vscode.typescript-language-features').activate();
       await vscode.extensions.getExtension('esbenp.prettier-vscode')?.activate();
       await vscode.extensions.getExtension('dbaeumer.vscode-eslint')?.activate();
@@ -13,16 +17,19 @@ exports.activate=async context=>{
       await vscode.window.showTextDocument(doc);
       let symbols=[];for(let i=0;i<100&&!symbols.length;i++){symbols=await vscode.commands.executeCommand('vscode.executeDocumentSymbolProvider',doc.uri)||[];if(!symbols.length)await new Promise(r=>setTimeout(r,100));}
       if(!symbols.length)throw Error('Language service unavailable');
-      const terminal=vscode.window.createTerminal({name:'Benchmark idle terminal',cwd:root.fsPath});terminal.show();
+      const terminal=vscode.window.createTerminal({name:'Benchmark idle terminal',cwd:root.fsPath,shellPath:'/bin/zsh'});terminal.show();
       await terminal.processId;
       const readyMs=Date.now()-Number(process.env.PARADISE_BENCHMARK_START);
       const result={readyMs,node:process.versions.node,symbols:symbols.length,operations:[]};
       await fs.writeFile(output,JSON.stringify({...result,phase:'ready'},null,2));
       await new Promise(r=>setTimeout(r,20000));
-      for(let i=0;i<20;i++){
+      await fs.writeFile(output,JSON.stringify({...result,phase:'active'},null,2));
+      await new Promise(r=>setTimeout(r,1000));
+      const activeStart=performance.now();
+      for(let i=0;performance.now()-activeStart<8000;i++){
         const start=performance.now();await vscode.commands.executeCommand('vscode.executeDocumentSymbolProvider',doc.uri);
         const symbolsMs=performance.now()-start;const searchStart=performance.now();await vscode.workspace.findFiles('**/*.ts','**/node_modules/**');
-        result.operations.push({symbolsMs,searchMs:performance.now()-searchStart});
+        if(i<20)result.operations.push({symbolsMs,searchMs:performance.now()-searchStart});
       }
       await fs.writeFile(output,JSON.stringify({...result,phase:'complete'},null,2));
     })().catch(error=>fs.writeFile(output,JSON.stringify({error:String(error)})));
@@ -89,6 +96,9 @@ exports.activate=async context=>{
         panel.webview.onDidReceiveMessage(message=>{clearTimeout(timeout);if(!message.worker||message.bridge||!message.parentBlocked)reject(Error(JSON.stringify(message)));else resolve(message);});
         panel.webview.html=`<!doctype html><html><body>Testing isolated extension webview<script>const api=acquireVsCodeApi();let parentBlocked=false;try{void top.paradiseNative}catch{parentBlocked=true}const worker=new Worker(URL.createObjectURL(new Blob(['postMessage("worker-ok")'],{type:'text/javascript'})));worker.onmessage=e=>{api.postMessage({worker:e.data==='worker-ok',bridge:typeof window.paradiseNative!=='undefined'||typeof window.__TAURI_INTERNALS__!=='undefined',parentBlocked});worker.terminate()};</script></body></html>`;
       });}finally{panel.dispose();}
+    });
+    if(process.env.PARADISE_OFFLINE_TEST==='1')await check('outbound-network-blocked',async()=>{
+      let denied=false;try{await fetch('https://open-vsx.org/api/esbenp/prettier-vscode/latest',{signal:AbortSignal.timeout(3000)});}catch{denied=true;}if(!denied)throw Error('External network was reachable');return 'Local suite ran with external network denied by macOS sandbox';
     });
     const result=path.join(root.fsPath,'qa-results.json');await fs.writeFile(result,JSON.stringify(results,null,2));
     vscode.window.showInformationMessage(`Paradise acceptance: ${results.filter(r=>r.passed).length}/${results.length} passed`);

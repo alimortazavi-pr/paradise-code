@@ -4,7 +4,7 @@ An experimental macOS Apple Silicon editor: Tauri 2 / WKWebView, the full Code -
 
 ## Storage and build
 
-All build data is kept in an APFS sparsebundle on the external SSD. The app intentionally requires `/Volumes/ParadiseCodeBuild` and never substitutes an internal-disk profile. Run `Mount Paradise Code.command` in the original SSD folder before using the app.
+All build data is kept in an APFS sparsebundle on the external SSD. The app intentionally requires `/Volumes/ParadiseCodeBuild` and never substitutes an internal-disk profile. Run `Open Paradise Code.command` in the original SSD folder to mount the image and launch the installed app. `Mount Paradise Code.command` opens the source folder instead.
 
 For a new machine, install Xcode Command Line Tools and Rust, then create the image without repartitioning the SSD:
 
@@ -45,6 +45,6 @@ npm test
 
 `tests/qa-extension` is a development-only VS Code extension; copy it into the test profile's `extensions/paradise-acceptance`, open a copy of `tests/fixture`, run `npm ci`, trust that fixture, and run **Paradise: Run Acceptance Checks**. It creates and edits fixture files, commits in the fixture Git repository, executes tasks/terminals, and exercises debugger breakpoints. It is never bundled with the application. Results go to the fixture's `qa-results.json`.
 
-`measure-processes.py` groups macOS processes by resource coalition, including launchd-owned WKWebView helpers. See the release validation results for measured outcomes and remaining compatibility limits. A successful build is not a claim of complete VS Code parity or lower resource use.
+`measure-processes.py` groups macOS processes by resource coalition, including launchd-owned WKWebView helpers. See [the validation report](validation/REPORT.md) for measured outcomes and remaining compatibility limits. The current performance target failed; this is an experimental build, not a lower-RAM replacement claim. A successful build is not a claim of complete VS Code parity or lower resource use.
 
 Code - OSS and bundled components retain their upstream license files. The shell and integration are MIT licensed.

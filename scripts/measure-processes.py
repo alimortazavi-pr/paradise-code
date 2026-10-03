@@ -12,6 +12,11 @@ def coalition(pid):
     result=(ctypes.c_uint64*5)()
     if lib.proc_pidinfo(pid,20,0,ctypes.byref(result),ctypes.sizeof(result))!=40:return None
     return result[0]
+# proc_pid_rusage reports CPU time in Mach absolute ticks, not nanoseconds.
+class Timebase(ctypes.Structure):
+    _fields_=[('numer',ctypes.c_uint32),('denom',ctypes.c_uint32)]
+base=Timebase();ctypes.CDLL('/usr/lib/libSystem.B.dylib').mach_timebase_info(ctypes.byref(base))
+ns_per_tick=base.numer/base.denom
 root=coalition(args.pid)
 if not root:raise SystemExit('Cannot determine app resource coalition')
 def snapshot():
@@ -21,12 +26,12 @@ def snapshot():
         if coalition(pid)!=root:continue
         u=Usage()
         if lib.proc_pid_rusage(pid,0,ctypes.byref(u))!=0:continue
-        rows.append(dict(pid=pid,command=command,cpu_ns=u.user+u.system,footprint=u.footprint,resident=u.resident))
+        rows.append(dict(pid=pid,command=command,cpu_ns=(u.user+u.system)*ns_per_tick,footprint=u.footprint,resident=u.resident))
     return dict(time=time.monotonic(),processes=rows,footprint=sum(r['footprint'] for r in rows),resident=sum(r['resident'] for r in rows))
 samples=[snapshot()];end=time.monotonic()+args.seconds
 while time.monotonic()<end:
     time.sleep(.5);samples.append(snapshot())
 first={p['pid']:p['cpu_ns'] for p in samples[0]['processes']};last=samples[-1]
 cpu=sum(max(0,p['cpu_ns']-first.get(p['pid'],p['cpu_ns'])) for p in last['processes'])/(last['time']-samples[0]['time'])/1e9*100
-result=dict(coalition=root,pid=args.pid,cpu_percent_one_core=cpu,footprint_mean_bytes=sum(s['footprint'] for s in samples)/len(samples),rss_mean_bytes=sum(s['resident'] for s in samples)/len(samples),samples=samples)
+result=dict(coalition=root,pid=args.pid,cpu_counter_ns_per_tick=ns_per_tick,cpu_percent_one_core=cpu,footprint_mean_bytes=sum(s['footprint'] for s in samples)/len(samples),rss_mean_bytes=sum(s['resident'] for s in samples)/len(samples),samples=samples)
 Path(args.output).write_text(json.dumps(result,indent=2));print(json.dumps({k:v for k,v in result.items() if k!='samples'}))
