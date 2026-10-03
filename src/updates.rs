@@ -103,8 +103,10 @@ async fn download(
     {
         return Err("The update URL is outside the Paradise Code release repository".into());
     }
+    let parent =
+        super::focused(app).ok_or("No editor window is available for the update dialog")?;
     let proceed = app.dialog().message(format!("Paradise Code {} is available. Download the signed update? You can keep working during the download.", update.version))
-        .title("Update available").buttons(MessageDialogButtons::OkCancelCustom("Download".into(), "Later".into())).blocking_show();
+        .title("Update available").parent(&parent).buttons(MessageDialogButtons::OkCancelCustom("Download".into(), "Later".into())).blocking_show();
     if !proceed {
         return Ok(None);
     }
@@ -135,8 +137,9 @@ async fn download(
     for window in app.webview_windows().values() {
         let _ = window.eval("window.paradiseUpdateStatus?.(null)");
     }
+    let parent = super::focused(app).ok_or("No editor window is available to finish the update")?;
     let install = app.dialog().message("Update signature verified. Save your work and restart to install? Active terminals will be stopped after you confirm in each window.")
-        .title("Ready to update").buttons(MessageDialogButtons::OkCancelCustom("Save and Restart".into(), "Later".into())).blocking_show();
+        .title("Ready to update").parent(&parent).buttons(MessageDialogButtons::OkCancelCustom("Save and Restart".into(), "Later".into())).blocking_show();
     Ok(install.then_some((update, bytes)))
 }
 

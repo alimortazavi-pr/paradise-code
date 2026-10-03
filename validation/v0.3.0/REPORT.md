@@ -12,6 +12,12 @@
 - The app title bar is overlaid into the workbench instead of a white title strip. The geometric Paradise P is shared by the icon, onboarding and website.
 - Runtime packaging validates native Node dependencies before producing the app. Production backend, Rust, code signature, and ZIP integrity checks passed.
 
+## Published delivery
+
+- Public GitHub release `v0.3.0` includes a standard ZIP, SHA-256, signed updater archive and version-bound feed.
+- Downloaded the ZIP anonymously from the public release, verified its SHA-256 and every ZIP entry, extracted it, verified its ad-hoc signature, and launched that extracted app with a fresh isolated profile. The Paradise welcome walkthrough and workbench loaded.
+- Vercel production responds anonymously with HTTP 200. Direct versioned download/checksum links, loaded assets, keyboard tabs and FAQ disclosures were checked in the deployed site. Desktop and 390px mobile layouts have no horizontal overflow or browser console errors in the tested flows.
+
 ## Performance: target failed
 
 Three alternating warm runs per application with the same TypeScript fixture and ESLint/Prettier extensions. One TypeScript editor and one idle zsh terminal. Readiness includes language symbols and terminal initialization. The full process coalition includes WebKit subprocesses. No builds or network downloads ran during the measured series. This was a multitasking desktop, not an isolated lab; the existing user editor remained open in the background for both applications. Results should not be used as general battery or large-project claims.

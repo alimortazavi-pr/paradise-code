@@ -99,10 +99,11 @@ fn stop_group(child: &mut Child) {
     let _ = child.wait();
 }
 fn failure(app: &tauri::AppHandle, message: impl Into<String>) {
-    app.dialog()
-        .message(message.into())
-        .title("Paradise Code")
-        .show(|_| {});
+    let mut dialog = app.dialog().message(message.into()).title("Paradise Code");
+    if let Some(window) = focused(app) {
+        dialog = dialog.parent(&window);
+    }
+    dialog.show(|_| {});
 }
 fn write_private(path: &Path, data: &[u8]) -> std::io::Result<()> {
     let mut file = OpenOptions::new()
