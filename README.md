@@ -21,7 +21,7 @@ bash scripts/bootstrap.sh
 
 `upstream.json` pins Code - OSS 1.140.0 and its commit. The build uses upstream's Node 24.18.0; the packaged server runtime is the version selected by upstream's remote build. npm/npx are included. `scripts/prepare-upstream.py` produces `patches/paradise.patch` deterministically. The source, patches, caches, profiles, temporary files, and artifacts live on the APFS volume. Existing system Rust/Xcode installations are reused. OS-managed swap and caches are outside the app's control.
 
-Release output: `/Volumes/ParadiseCodeBuild/artifacts/Paradise-Code-0.1.0-macos-arm64.zip` and its `.sha256`. The app uses ad-hoc signing, not Apple notarization. Updates are manual. No GitHub credentials are embedded.
+Release output: `/Volumes/ParadiseCodeBuild/artifacts/Paradise-Code-0.1.0-macos-arm64.zip` and its `.sha256`. Extract the ZIP into `/Volumes/ParadiseCodeBuild/Applications` before using `scripts/launch.command`. The app uses ad-hoc signing, not Apple notarization. Updates are manual. No GitHub credentials are embedded.
 
 ## Architecture and boundaries
 

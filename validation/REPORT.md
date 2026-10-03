@@ -36,6 +36,8 @@ Method: `scripts/benchmark-run.py`, `scripts/measure-processes.py`, and the acce
 - Persian text search returned four matching files; scoped Replace changed only the chosen Persian text fixture and persisted it to disk. Light Modern and the default dark workbench were visually inspected.
 - Finder-style file opening handled a path containing spaces and Persian; a second native window opened the requested file.
 - Missing backend produced a visible startup error rather than creating a fallback profile.
+- The ZIP was downloaded from the private GitHub release, reassembled from verified HTTP byte ranges, checked against SHA-256, checked with `unzip -t`, extracted into the external Applications folder, and verified with `codesign --verify --deep --strict`. That downloaded app launched its own bundled backend and rendered the Paradise welcome screen with a clean personal profile. Bundled Node and npm ran without using the system Node.
+- Native zoom resized the workbench successfully.
 - `cargo check`, upstream client TypeScript typecheck, production server-web build, Release Tauri build, ad-hoc code signature verification, and ZIP integrity checks passed.
 
 ## Remaining limits

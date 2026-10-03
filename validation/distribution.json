@@ -1,0 +1,14 @@
+{
+  "verifiedAt": "2026-10-03",
+  "release": "v0.1.0-preview.1",
+  "sha256": "b5780762aeafbc9266a3895148cbd458ab77916eb7543d39de37f6826d650efa",
+  "downloadedFromPrivateGitHubRelease": true,
+  "sha256Match": true,
+  "zipIntegrity": true,
+  "adHocSignatureVerified": true,
+  "extractedApplication": "/Volumes/ParadiseCodeBuild/Applications/Paradise Code.app",
+  "startedBundledBackend": true,
+  "renderedParadiseWelcome": true,
+  "cleanPersonalProfile": true,
+  "appleNotarized": false
+}
