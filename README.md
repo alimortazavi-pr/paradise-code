@@ -2,7 +2,7 @@
 
 A local, open-source editor for Apple Silicon Macs. The real Code – OSS workbench, a Tauri 2 / Rust shell, and a bundled Node.js extension host. Built by [Paradise Code](https://paradisecode.ir).
 
-[Website](https://ide.paradisecode.ir) · [Download for Apple Silicon](https://github.com/alimortazavi-pr/paradise-code/releases/latest/download/Paradise-Code-macos-arm64.zip) · [Releases](https://github.com/alimortazavi-pr/paradise-code/releases) · [Measured results](validation/REPORT.md)
+[Website](https://paradise-code-ide.vercel.app) · [Download for Apple Silicon](https://github.com/alimortazavi-pr/paradise-code/releases/latest/download/Paradise-Code-macos-arm64.zip) · [Releases](https://github.com/alimortazavi-pr/paradise-code/releases) · [Measured results](validation/REPORT.md)
 
 ![Paradise Code](website/assets/workbench.jpg)
 

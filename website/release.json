@@ -1,1 +1,7 @@
-{"published":false,"version":"0.3.0"}
+{
+  "published": true,
+  "version": "0.3.0",
+  "download": "https://github.com/alimortazavi-pr/paradise-code/releases/download/v0.3.0/Paradise-Code-macos-arm64.zip",
+  "checksum": "https://github.com/alimortazavi-pr/paradise-code/releases/download/v0.3.0/Paradise-Code-macos-arm64.zip.sha256",
+  "notes": "https://github.com/alimortazavi-pr/paradise-code/releases/tag/v0.3.0"
+}

@@ -8,6 +8,7 @@
 - Seven live token/Host/Origin/WebSocket/webview security checks passed. Five focused bridge checks passed, including an Option-key character mapping regression.
 - Workbench **File: Open Folder…** displayed the native macOS panel; selecting the folder `workspace فارسی` returned to that workspace. Cancellation returned to the editor. Native menu selection also displayed the Mac panel.
 - Native Save As wrote a Persian-named TypeScript file whose bytes match the original. The physical Option–Command–O shortcut opened the native folder panel. Switching editor tabs rendered normally when the app was brought to the foreground; background automation captures can precede WebKit animation-frame painting.
+- Dark and Light Modern themes were visually checked in the native app; the title area follows the selected theme.
 - The app title bar is overlaid into the workbench instead of a white title strip. The geometric Paradise P is shared by the icon, onboarding and website.
 - Runtime packaging validates native Node dependencies before producing the app. Production backend, Rust, code signature, and ZIP integrity checks passed.
 
