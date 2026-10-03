@@ -61,6 +61,7 @@ import { IWorkingCopyService } from '../../../workbench/services/workingCopy/com
 import { IEditorService } from '../../../workbench/services/editor/common/editorService.js';
 import { ITerminalService } from '../../../workbench/contrib/terminal/browser/terminal.js';
 import { ILifecycleService } from '../../../workbench/services/lifecycle/common/lifecycle.js';
+import { IStorageService, WillSaveStateReason } from '../../../platform/storage/common/storage.js';
 import { localize } from '../../../nls.js';
 
 CommandsRegistry.registerCommand('paradise.prepareClose', async (accessor, updating = false) => {
@@ -70,14 +71,20 @@ CommandsRegistry.registerCommand('paradise.prepareClose', async (accessor, updat
 	const terminals = accessor.get(ITerminalService);
 	const lifecycle = accessor.get(ILifecycleService);
 	if (workingCopies.dirtyCount > 0) {
-		const answer = await dialogs.confirm({ message: localize('paradise.unsaved', 'Save your changes before closing?'), primaryButton: localize('paradise.saveClose', 'Save All and Close') });
+		const answer = await dialogs.confirm({ message: updating ? localize('paradise.unsavedUpdate', 'Save your changes before updating?') : localize('paradise.unsaved', 'Save your changes before closing?'), primaryButton: updating ? localize('paradise.saveUpdate', 'Save All and Update') : localize('paradise.saveClose', 'Save All and Close') });
 		if (!answer.confirmed || !(await editors.saveAll({ includeUntitled: true })).success || workingCopies.dirtyCount > 0) { return false; }
 	}
 	if (terminals.instances.length > 0) {
-		const answer = await dialogs.confirm({ message: localize('paradise.terminals', 'Close this window and stop its terminals?'), primaryButton: localize('paradise.close', 'Close Window') });
+		const answer = await dialogs.confirm({ message: updating ? localize('paradise.updateTerminals', 'Stop this window’s terminals and restart to update?') : localize('paradise.terminals', 'Close this window and stop its terminals?'), primaryButton: updating ? localize('paradise.restartUpdate', 'Restart and Update') : localize('paradise.close', 'Close Window') });
 		if (!answer.confirmed) { return false; }
 	}
-	if (!updating) { await lifecycle.shutdown(); }
+	if (updating) {
+		// Persist the new editor identity after Save As before native installation restarts WebKit.
+		// Keep the workbench alive so a cancelled or failed installation remains usable.
+		await accessor.get(IStorageService).flush(WillSaveStateReason.SHUTDOWN);
+	} else {
+		await lifecycle.shutdown();
+	}
 	return true;
 });
 

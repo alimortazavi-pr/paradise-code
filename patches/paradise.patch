@@ -233,10 +233,10 @@ index 64e1c4d2..1a373afc 100644
 +	}
  }
 diff --git a/src/vs/code/browser/workbench/workbench.ts b/src/vs/code/browser/workbench/workbench.ts
-index e52f0625..5688cc9e 100644
+index e52f0625..560daf9a 100644
 --- a/src/vs/code/browser/workbench/workbench.ts
 +++ b/src/vs/code/browser/workbench/workbench.ts
-@@ -21,7 +21,39 @@ import { isFolderToOpen, isWorkspaceToOpen } from '../../../platform/window/comm
+@@ -21,7 +21,46 @@ import { isFolderToOpen, isWorkspaceToOpen } from '../../../platform/window/comm
  import type { IWorkbenchConstructionOptions, IWorkspace, IWorkspaceProvider } from '../../../workbench/browser/web.api.js';
  import { AuthenticationSessionInfo } from '../../../workbench/services/authentication/browser/authenticationService.js';
  import type { IURLCallbackProvider } from '../../../workbench/services/url/browser/urlService.js';
@@ -248,6 +248,7 @@ index e52f0625..5688cc9e 100644
 +import { IEditorService } from '../../../workbench/services/editor/common/editorService.js';
 +import { ITerminalService } from '../../../workbench/contrib/terminal/browser/terminal.js';
 +import { ILifecycleService } from '../../../workbench/services/lifecycle/common/lifecycle.js';
++import { IStorageService, WillSaveStateReason } from '../../../platform/storage/common/storage.js';
 +import { localize } from '../../../nls.js';
 +
 +CommandsRegistry.registerCommand('paradise.prepareClose', async (accessor, updating = false) => {
@@ -257,14 +258,20 @@ index e52f0625..5688cc9e 100644
 +	const terminals = accessor.get(ITerminalService);
 +	const lifecycle = accessor.get(ILifecycleService);
 +	if (workingCopies.dirtyCount > 0) {
-+		const answer = await dialogs.confirm({ message: localize('paradise.unsaved', 'Save your changes before closing?'), primaryButton: localize('paradise.saveClose', 'Save All and Close') });
++		const answer = await dialogs.confirm({ message: updating ? localize('paradise.unsavedUpdate', 'Save your changes before updating?') : localize('paradise.unsaved', 'Save your changes before closing?'), primaryButton: updating ? localize('paradise.saveUpdate', 'Save All and Update') : localize('paradise.saveClose', 'Save All and Close') });
 +		if (!answer.confirmed || !(await editors.saveAll({ includeUntitled: true })).success || workingCopies.dirtyCount > 0) { return false; }
 +	}
 +	if (terminals.instances.length > 0) {
-+		const answer = await dialogs.confirm({ message: localize('paradise.terminals', 'Close this window and stop its terminals?'), primaryButton: localize('paradise.close', 'Close Window') });
++		const answer = await dialogs.confirm({ message: updating ? localize('paradise.updateTerminals', 'Stop this window’s terminals and restart to update?') : localize('paradise.terminals', 'Close this window and stop its terminals?'), primaryButton: updating ? localize('paradise.restartUpdate', 'Restart and Update') : localize('paradise.close', 'Close Window') });
 +		if (!answer.confirmed) { return false; }
 +	}
-+	if (!updating) { await lifecycle.shutdown(); }
++	if (updating) {
++		// Persist the new editor identity after Save As before native installation restarts WebKit.
++		// Keep the workbench alive so a cancelled or failed installation remains usable.
++		await accessor.get(IStorageService).flush(WillSaveStateReason.SHUTDOWN);
++	} else {
++		await lifecycle.shutdown();
++	}
 +	return true;
 +});
 +
