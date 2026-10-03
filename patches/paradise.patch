@@ -465,7 +465,7 @@ index 72273fb3..d2b67c63 100644
  		let isReconnection = false;
  		let skipWebSocketFrames = false;
 diff --git a/src/vs/server/node/webClientServer.ts b/src/vs/server/node/webClientServer.ts
-index ebbfe1c5..9f606f2b 100644
+index ebbfe1c5..82edb4b6 100644
 --- a/src/vs/server/node/webClientServer.ts
 +++ b/src/vs/server/node/webClientServer.ts
 @@ -148,7 +148,7 @@ export function createWorkbenchContentSecurityPolicy(scriptNonce: string, nlsBas
@@ -486,7 +486,15 @@ index ebbfe1c5..9f606f2b 100644
  		if (this._environmentService.args['enable-smoke-test-driver']) {
  			// integration tests run at a time when the built output is not yet published to the CDN
  			// so we must disable the iframe wrapping because the iframe URL will give a 404
-@@ -415,6 +415,8 @@ export class WebClientServer {
+@@ -394,6 +394,7 @@ export class WebClientServer {
+ 		} : undefined;
+ 
+ 		const productConfiguration: Partial<Mutable<IProductConfiguration>> = {
++			commit: this._productService.commit,
+ 			embedderIdentifier: 'server-distro',
+ 			voiceWsUrl: this._productService.voiceWsUrl,
+ 			extensionsGallery: this._webExtensionResourceUrlTemplate && this._productService.extensionsGallery ? {
+@@ -415,6 +416,8 @@ export class WebClientServer {
  
  		const workbenchWebConfiguration = {
  			remoteAuthority,

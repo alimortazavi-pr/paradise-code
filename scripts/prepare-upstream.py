@@ -96,6 +96,7 @@ Object.defineProperty(mainWindow, 'paradiseWorkbench', { value: {
 } });
 """)
 name='src/vs/server/node/webClientServer.ts'
+edit(name, "\t\tconst productConfiguration: Partial<Mutable<IProductConfiguration>> = {", "\t\tconst productConfiguration: Partial<Mutable<IProductConfiguration>> = {\n\t\t\tcommit: this._productService.commit,")
 edit(name, "\t\t\tserverBasePath: basePath,", "\t\t\tconfigurationDefaults: { 'chat.disableAIFeatures': true, 'telemetry.telemetryLevel': 'off', 'workbench.enableExperiments': false, 'window.autoDetectColorScheme': true },\n\t\t\tserverBasePath: basePath,")
 name='src/vs/platform/files/node/watcher/nodejs/nodejsWatcherLib.ts'
 edit(name, "if (isMacintosh && isEqualOrParent(realPath, '/Volumes/', true)) {", "if (isMacintosh && isEqualOrParent(realPath, '/Volumes/', true) && !(process.env['PARADISE_LOCAL_VOLUME'] && isEqualOrParent(realPath, process.env['PARADISE_LOCAL_VOLUME']!, true))) {")
