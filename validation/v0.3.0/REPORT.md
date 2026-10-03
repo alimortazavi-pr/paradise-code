@@ -18,6 +18,15 @@
 - Downloaded the ZIP anonymously from the public release, verified its SHA-256 and every ZIP entry, extracted it, verified its ad-hoc signature, and launched that extracted app with a fresh isolated profile. The Paradise welcome walkthrough and workbench loaded.
 - Vercel production responds anonymously with HTTP 200. Direct versioned download/checksum links, loaded assets, keyboard tabs and FAQ disclosures were checked in the deployed site. Desktop and 390px mobile layouts have no horizontal overflow or browser console errors in the tested flows.
 
+## 0.3.1 reliability follow-up
+
+- Repeated all 13 functional checks against the final 0.3.1 package, including TypeScript, ESLint, Prettier, PTY, Git stage/commit, Tasks, Node breakpoint and extension webview isolation. All passed; results are in `../v0.3.1/functional-results.json`.
+- All 13 security/bridge/cache checks passed against the final package. The added cache regression checks the client/server revision and the immutable NLS resource URL.
+- Exercised a real signed upgrade using the corrected updater/save code in a test-only `0.2.99` build against the public `0.3.0` archive. The test version is never published. The update prompted to save an untitled Persian buffer and stop an active fish terminal. The saved bytes were verified immediately after the upgrade, the same profile was retained, and every recorded old app/backend/PTY/shell process exited.
+- The upgrade exposed stale tab state and mixed cached JavaScript/NLS labels. Fixed explicit state persistence and a content-derived asset/protocol revision. The final 0.3.1 package was then started with the same affected profile and cache intact: both saved file tabs and normal UI labels loaded correctly. The native saved-file path also accepted a custom `.paradise-custom` extension and Persian text.
+- Native updater prompts now attach to the editor window. Cancelling the initial update prompt preserved the working buffer; editing remained available during the signed download. Normal Quit with an active terminal was also checked and stopped its process tree.
+- The benchmark below remains the measured **0.3.0** series; these reliability fixes are not represented as new performance measurements. Versions before 0.3.1 can require reopening saved files after their own updater restarts, because the older updater did not flush editor state.
+
 ## Performance: target failed
 
 Three alternating warm runs per application with the same TypeScript fixture and ESLint/Prettier extensions. One TypeScript editor and one idle zsh terminal. Readiness includes language symbols and terminal initialization. The full process coalition includes WebKit subprocesses. No builds or network downloads ran during the measured series. This was a multitasking desktop, not an isolated lab; the existing user editor remained open in the background for both applications. Results should not be used as general battery or large-project claims.

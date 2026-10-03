@@ -1,4 +1,4 @@
-**Current:** [0.3.0 validation and benchmarks](v0.3.0/REPORT.md). The report below is preserved as historical 0.1.0 evidence.
+**Current:** [0.3.0 benchmarks and 0.3.1 reliability checks](v0.3.0/REPORT.md). The report below is preserved as historical 0.1.0 evidence.
 
 # Paradise Code 0.1.0 validation
 

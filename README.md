@@ -39,6 +39,8 @@ bash scripts/bootstrap.sh
 
 `upstream.json` pins Code – OSS 1.140.0 and its source commit. Build Node follows upstream’s `.nvmrc`; the packaged runtime follows the upstream remote build. `scripts/prepare-upstream.py` generates the tracked integration patch. Packaging requires a private Tauri updater signing key at `$PARADISE_VOLUME/secrets/updater.key` or `TAURI_SIGNING_PRIVATE_KEY`; use your own key and public-key configuration for a fork. Private keys are never committed.
 
+The packaged product's `commit` field is a content-derived asset/protocol revision so patched builds cannot reuse incompatible web caches. The original source commit remains in `upstream.json` and the packaged `paradiseUpstreamCommit` field.
+
 `scripts/prepare-release.py` prepares the ZIP, checksum, updater archive, signature and versioned `latest.json` after packaging. The static `website/` directory deploys to Vercel. Release metadata is updated only after assets are published.
 
 ## Security and verification
