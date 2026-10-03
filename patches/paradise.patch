@@ -233,10 +233,10 @@ index 64e1c4d2..1a373afc 100644
 +	}
  }
 diff --git a/src/vs/code/browser/workbench/workbench.ts b/src/vs/code/browser/workbench/workbench.ts
-index e52f0625..560daf9a 100644
+index e52f0625..cbf278eb 100644
 --- a/src/vs/code/browser/workbench/workbench.ts
 +++ b/src/vs/code/browser/workbench/workbench.ts
-@@ -21,7 +21,46 @@ import { isFolderToOpen, isWorkspaceToOpen } from '../../../platform/window/comm
+@@ -21,7 +21,47 @@ import { isFolderToOpen, isWorkspaceToOpen } from '../../../platform/window/comm
  import type { IWorkbenchConstructionOptions, IWorkspace, IWorkspaceProvider } from '../../../workbench/browser/web.api.js';
  import { AuthenticationSessionInfo } from '../../../workbench/services/authentication/browser/authenticationService.js';
  import type { IURLCallbackProvider } from '../../../workbench/services/url/browser/urlService.js';
@@ -257,6 +257,7 @@ index e52f0625..560daf9a 100644
 +	const editors = accessor.get(IEditorService);
 +	const terminals = accessor.get(ITerminalService);
 +	const lifecycle = accessor.get(ILifecycleService);
++	const storage = accessor.get(IStorageService);
 +	if (workingCopies.dirtyCount > 0) {
 +		const answer = await dialogs.confirm({ message: updating ? localize('paradise.unsavedUpdate', 'Save your changes before updating?') : localize('paradise.unsaved', 'Save your changes before closing?'), primaryButton: updating ? localize('paradise.saveUpdate', 'Save All and Update') : localize('paradise.saveClose', 'Save All and Close') });
 +		if (!answer.confirmed || !(await editors.saveAll({ includeUntitled: true })).success || workingCopies.dirtyCount > 0) { return false; }
@@ -268,7 +269,7 @@ index e52f0625..560daf9a 100644
 +	if (updating) {
 +		// Persist the new editor identity after Save As before native installation restarts WebKit.
 +		// Keep the workbench alive so a cancelled or failed installation remains usable.
-+		await accessor.get(IStorageService).flush(WillSaveStateReason.SHUTDOWN);
++		await storage.flush(WillSaveStateReason.SHUTDOWN);
 +	} else {
 +		await lifecycle.shutdown();
 +	}

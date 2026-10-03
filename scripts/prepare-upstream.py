@@ -70,6 +70,7 @@ CommandsRegistry.registerCommand('paradise.prepareClose', async (accessor, updat
 	const editors = accessor.get(IEditorService);
 	const terminals = accessor.get(ITerminalService);
 	const lifecycle = accessor.get(ILifecycleService);
+	const storage = accessor.get(IStorageService);
 	if (workingCopies.dirtyCount > 0) {
 		const answer = await dialogs.confirm({ message: updating ? localize('paradise.unsavedUpdate', 'Save your changes before updating?') : localize('paradise.unsaved', 'Save your changes before closing?'), primaryButton: updating ? localize('paradise.saveUpdate', 'Save All and Update') : localize('paradise.saveClose', 'Save All and Close') });
 		if (!answer.confirmed || !(await editors.saveAll({ includeUntitled: true })).success || workingCopies.dirtyCount > 0) { return false; }
@@ -81,7 +82,7 @@ CommandsRegistry.registerCommand('paradise.prepareClose', async (accessor, updat
 	if (updating) {
 		// Persist the new editor identity after Save As before native installation restarts WebKit.
 		// Keep the workbench alive so a cancelled or failed installation remains usable.
-		await accessor.get(IStorageService).flush(WillSaveStateReason.SHUTDOWN);
+		await storage.flush(WillSaveStateReason.SHUTDOWN);
 	} else {
 		await lifecycle.shutdown();
 	}

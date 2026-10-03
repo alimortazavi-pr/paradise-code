@@ -56,7 +56,17 @@ pub fn show(window: WebviewWindow, payload: &str) {
                 }
             }
         }
-        for filter in request.filters.into_iter().take(20) {
+        // An editor's "All Files" option must allow dotfiles and new extensions too.
+        // macOS combines filters into one allowlist, so omitting '*' alone narrows it.
+        let all_files = request
+            .filters
+            .iter()
+            .any(|filter| filter.extensions.iter().any(|extension| extension == "*"));
+        for filter in request
+            .filters
+            .into_iter()
+            .take(if all_files { 0 } else { 20 })
+        {
             let extensions: Vec<&str> = filter
                 .extensions
                 .iter()
