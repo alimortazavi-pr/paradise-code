@@ -9,8 +9,8 @@
       "platforms": [
         "darwin"
       ],
-      "download": "https://github.com/alimortazavi-pr/paradise-code/releases/download/v0.4.1/paradise.network-0.1.0.vsix",
-      "sha256": "4dfe9bc1ec2bd9fd084da9819ef417f223773be4fd5f550faca74cee2d822bb3"
+      "download": "https://github.com/alimortazavi-pr/paradise-code/releases/download/v0.4.2/paradise.network-0.1.0.vsix",
+      "sha256": "9dcdd3e66f1a85acdfbab01c4880e403cfe3ac81f7e5653d582385f389f22885"
     }
   ]
 }

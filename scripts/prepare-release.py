@@ -37,6 +37,6 @@ network = root / 'build/extensions/paradise.network-0.1.0.vsix'
 shutil.copy2(network, output / network.name)
 (output / (network.name + '.sha256')).write_text(hashlib.sha256(network.read_bytes()).hexdigest() + '  ' + network.name + '\n')
 base = f'https://github.com/alimortazavi-pr/paradise-code/releases/download/v{version}'
-feed = {'version': version, 'notes': 'Native folder opening, aligned macOS window controls, Paradise Extensions with an extension starter and VSIX packaging, and optional background network usage history.', 'pub_date': datetime.now(timezone.utc).isoformat(), 'platforms': {'darwin-aarch64': {'signature': signature, 'url': base + '/Paradise-Code.app.tar.gz'}}}
+feed = {'version': version, 'notes': 'Native macOS clipboard for files, folders and text, including copy/cut across windows and Finder file copy. Project and active-file window titles, plus the standard Window menu.', 'pub_date': datetime.now(timezone.utc).isoformat(), 'platforms': {'darwin-aarch64': {'signature': signature, 'url': base + '/Paradise-Code.app.tar.gz'}}}
 (output / 'latest.json').write_text(json.dumps(feed, indent=2) + '\n')
 print(output)

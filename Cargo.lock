@@ -2530,9 +2530,12 @@ dependencies = [
 
 [[package]]
 name = "paradise-code"
-version = "0.4.1"
+version = "0.4.2"
 dependencies = [
  "libc",
+ "objc2",
+ "objc2-app-kit",
+ "objc2-foundation",
  "rand",
  "serde",
  "serde_json",

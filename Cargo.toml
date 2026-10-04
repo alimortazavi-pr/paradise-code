@@ -1,6 +1,6 @@
 [package]
 name = "paradise-code"
-version = "0.4.1"
+version = "0.4.2"
 edition = "2021"
 license = "MIT"
 
@@ -17,6 +17,11 @@ rand = "0.8"
 libc = "0.2"
 url = "2"
 tauri-plugin-updater = "2"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+objc2 = "0.6"
+objc2-app-kit = { version = "0.3", default-features = false, features = ["std", "NSApplication", "NSResponder", "NSPasteboard", "NSPasteboardItem", "NSWindow"] }
+objc2-foundation = { version = "0.3", default-features = false, features = ["std", "NSArray", "NSString", "NSURL"] }
 
 [profile.release]
 lto = "thin"

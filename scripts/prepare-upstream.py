@@ -186,7 +186,78 @@ edit(name, "\tprivate saveRemoteResource(options: ISaveDialogOptions): Promise<U
 \t\tif (native) { return native.then(paths => paths?.[0]); }
 """)
 
+# WKWebView cannot share browser-only resource clipboards between native windows.
+# Use the macOS pasteboard for local file URLs and text, including Finder copies.
+name='src/vs/platform/clipboard/browser/clipboardService.ts'
+edit(name, "const vscodeResourcesMime = 'application/vnd.code.resources';", """const vscodeResourcesMime = 'application/vnd.code.resources';
+
+interface ParadiseClipboard {
+	readText(): Promise<string>;
+	writeText(text: string): Promise<void>;
+	readResources(): Promise<string[]>;
+	writeResources(paths: string[]): Promise<void>;
+}
+
+function paradiseClipboard(): ParadiseClipboard | undefined {
+	return (getActiveWindow() as Window & { paradiseDesktop?: { clipboard?: ParadiseClipboard } }).paradiseDesktop?.clipboard;
+}
+""")
+edit(name, "if (isSafari || isWebkitWebView) {", "if (!paradiseClipboard() && (isSafari || isWebkitWebView)) {")
+edit(name, "\t\tif (this.webKitPendingClipboardWritePromise) {", """		const native = paradiseClipboard();
+		if (native) { return native.writeText(text); }
+
+		if (this.webKitPendingClipboardWritePromise) {""")
+edit(name, "\t\t\tconst readText = await getActiveWindow().navigator.clipboard.readText();", """			const native = paradiseClipboard();
+			const readText = await (native ? native.readText() : getActiveWindow().navigator.clipboard.readText());""")
+edit(name, "\tasync writeResources(resources: URI[]): Promise<void> {", """	async writeResources(resources: URI[]): Promise<void> {
+		const native = paradiseClipboard();
+		if (native) {
+			if (resources.some(resource => resource.scheme !== 'file' && resource.scheme !== 'vscode-remote')) {
+				throw new Error('Only local files can be copied to the native clipboard.');
+			}
+			await native.writeResources(resources.map(resource => resource.path));
+			this.clearResourcesState();
+			return;
+		}
+""")
+edit(name, "\tasync readResources(): Promise<URI[]> {", """	async readResources(): Promise<URI[]> {
+		const native = paradiseClipboard();
+		if (native) {
+			return (await native.readResources()).map(path => URI.from({ scheme: 'vscode-remote', authority: getActiveWindow().location.host, path: URI.file(path).path }));
+		}
+""")
+edit(name, "\tasync hasResources(): Promise<boolean> {", """	async hasResources(): Promise<boolean> {
+		const native = paradiseClipboard();
+		if (native) { return (await native.readResources()).length > 0; }
+""")
+
+# The Workbench subclass overrides readText; keep it on the native path too.
+name='src/vs/workbench/services/clipboard/browser/clipboardService.ts'
+edit(name, "\t\tif (type) {", "\t\tif (type || (getActiveWindow() as Window & { paradiseDesktop?: { clipboard?: unknown } }).paradiseDesktop?.clipboard) {")
+
+# WKWebView can omit copy/cut DOM events from programmatic native menu actions.
+# Reuse Monaco's selection/multicursor metadata and cut handler, then await the
+# native clipboard write before deleting text. Paste uses the existing web fallback.
+name='src/vs/editor/contrib/clipboard/browser/clipboard.ts'
+edit(name, "\t\t\t// TODO this is very ugly. The entire copy/paste/cut system needs a complete refactoring.", """			if ((getActiveWindow() as Window & { paradiseDesktop?: { clipboard?: unknown } }).paradiseDesktop?.clipboard) {
+				const { dataToCopy } = generateDataToCopyAndStoreInMemory(focusedEditor._getViewModel(), undefined, browser.isFirefox);
+				return clipboardService.writeText(dataToCopy.text).then(() => {
+					if (browserCommand === 'cut') { focusedEditor.trigger(undefined, Handler.Cut, undefined); }
+				});
+			}
+			// TODO this is very ugly. The entire copy/paste/cut system needs a complete refactoring.""")
+
+# Keep cut/copy semantics on the pasteboard, rather than in one window's globals.
+name='src/vs/workbench/contrib/files/browser/explorerService.ts'
+edit(name, "\t\tawait this.clipboardService.writeResources(items.map(s => s.resource));", """		const native = (window as Window & { paradiseDesktop?: { clipboard?: { writeResources(paths: string[], moveFiles: boolean): Promise<void> } } }).paradiseDesktop?.clipboard;
+		if (native) { await native.writeResources(items.map(item => item.resource.path), cut); }
+		else { await this.clipboardService.writeResources(items.map(s => s.resource)); }""")
+name='src/vs/workbench/contrib/files/browser/fileActions.ts'
+edit(name, "\tconst toPaste = await getFilesToPaste(fileList, clipboardService, hostService);", """	const toPaste = await getFilesToPaste(fileList, clipboardService, hostService);
+	const native = (window as Window & { paradiseDesktop?: { clipboard?: { shouldMoveResources(): boolean } } }).paradiseDesktop?.clipboard;
+	if (native) { pasteShouldMove = toPaste.type === 'paths' && !hasNativeFilesToPaste && native.shouldMoveResources(); }""")
+
 for name, content in changes.items():
     (up/name).write_text(content)
 
-(root/'patches/paradise.patch').write_bytes(subprocess.check_output(['git','diff','--','product.json','src/vs/workbench/services/dialogs/browser/abstractFileDialogService.ts','src/vs/platform/remote/browser/browserSocketFactory.ts','src/vs/server/node/webClientServer.ts','src/vs/server/node/remoteExtensionHostAgentServer.ts','src/vs/code/browser/workbench/workbench.ts','build/gulpfile.reh.ts','src/vs/platform/extensionManagement/node/extensionSignatureVerificationService.ts','src/vs/platform/extensionManagement/common/extensionGalleryService.ts','src/vs/platform/files/node/watcher/nodejs/nodejsWatcherLib.ts'],cwd=up))
+(root/'patches/paradise.patch').write_bytes(subprocess.check_output(['git','diff','--','product.json','src/vs/editor/contrib/clipboard/browser/clipboard.ts','src/vs/workbench/services/clipboard/browser/clipboardService.ts','src/vs/workbench/contrib/files/browser/explorerService.ts','src/vs/workbench/contrib/files/browser/fileActions.ts','src/vs/platform/clipboard/browser/clipboardService.ts','src/vs/workbench/services/dialogs/browser/abstractFileDialogService.ts','src/vs/platform/remote/browser/browserSocketFactory.ts','src/vs/server/node/webClientServer.ts','src/vs/server/node/remoteExtensionHostAgentServer.ts','src/vs/code/browser/workbench/workbench.ts','build/gulpfile.reh.ts','src/vs/platform/extensionManagement/node/extensionSignatureVerificationService.ts','src/vs/platform/extensionManagement/common/extensionGalleryService.ts','src/vs/platform/files/node/watcher/nodejs/nodejsWatcherLib.ts'],cwd=up))

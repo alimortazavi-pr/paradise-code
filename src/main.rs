@@ -26,6 +26,7 @@ use tauri::{
 };
 use tauri_plugin_dialog::DialogExt;
 use tauri_plugin_opener::OpenerExt;
+mod clipboard;
 mod picker;
 mod startup;
 mod storage;
@@ -36,6 +37,12 @@ const VOLUME: &str = "/Volumes/ParadiseCodeBuild";
 struct Session {
     port: u16,
     urls: Vec<String>,
+}
+#[derive(Deserialize)]
+#[serde(deny_unknown_fields)]
+struct WindowTitle {
+    id: String,
+    title: String,
 }
 struct Runtime {
     child: Mutex<Option<Child>>,
@@ -466,6 +473,63 @@ fn open_window(app: &tauri::AppHandle, destination: Option<url::Url>) -> tauri::
                                     picker::show(window.clone(), &payload);
                                 }
                             }
+                            Some("clipboard") => {
+                                if let Some((_, payload)) =
+                                    url.query_pairs().find(|(key, _)| key == "payload")
+                                {
+                                    clipboard::handle(&window, &payload);
+                                }
+                            }
+                            Some("edit-native") => {
+                                if let Some((_, payload)) =
+                                    url.query_pairs().find(|(key, _)| key == "payload")
+                                {
+                                    if let Ok(action) = serde_json::from_str::<String>(&payload) {
+                                        #[cfg(target_os = "macos")]
+                                        clipboard::edit(&action);
+                                    }
+                                }
+                            }
+                            Some("title") => {
+                                if let Some((_, payload)) =
+                                    url.query_pairs().find(|(key, _)| key == "payload")
+                                {
+                                    if payload.len() <= 8192 {
+                                        if let Ok(request) =
+                                            serde_json::from_str::<WindowTitle>(&payload)
+                                        {
+                                            if request.id.is_empty()
+                                                || request.id.len() > 20
+                                                || !request
+                                                    .id
+                                                    .bytes()
+                                                    .all(|byte| byte.is_ascii_digit())
+                                            {
+                                                return false;
+                                            }
+                                            let title: String = request
+                                                .title
+                                                .chars()
+                                                .filter(|ch| !ch.is_control())
+                                                .take(1024)
+                                                .collect();
+                                            let error = window
+                                                .set_title(if title.trim().is_empty() {
+                                                    "Paradise Code"
+                                                } else {
+                                                    title.trim()
+                                                })
+                                                .err()
+                                                .map(|error| error.to_string());
+                                            let _ = window.eval(format!(
+                                                "window.paradiseResolve({}, null, {})",
+                                                serde_json::to_string(&request.id).unwrap(),
+                                                serde_json::to_string(&error).unwrap()
+                                            ));
+                                        }
+                                    }
+                                }
+                            }
                             Some("drag") => {
                                 let _ = window.start_dragging();
                             }
@@ -605,6 +669,18 @@ fn menu(app: &tauri::AppHandle) -> tauri::Result<Menu<tauri::Wry>> {
             &item("close", "Close Window", Some("CmdOrCtrl+Shift+W"))?,
         ],
     )?;
+    #[cfg(target_os = "macos")]
+    let cut = item("cut", "Cut", Some("CmdOrCtrl+X"))?;
+    #[cfg(target_os = "macos")]
+    let copy = item("copy", "Copy", Some("CmdOrCtrl+C"))?;
+    #[cfg(target_os = "macos")]
+    let paste = item("paste", "Paste", Some("CmdOrCtrl+V"))?;
+    #[cfg(not(target_os = "macos"))]
+    let cut = PredefinedMenuItem::cut(app, None)?;
+    #[cfg(not(target_os = "macos"))]
+    let copy = PredefinedMenuItem::copy(app, None)?;
+    #[cfg(not(target_os = "macos"))]
+    let paste = PredefinedMenuItem::paste(app, None)?;
     let edit = Submenu::with_items(
         app,
         "Edit",
@@ -613,9 +689,9 @@ fn menu(app: &tauri::AppHandle) -> tauri::Result<Menu<tauri::Wry>> {
             &PredefinedMenuItem::undo(app, None)?,
             &PredefinedMenuItem::redo(app, None)?,
             &PredefinedMenuItem::separator(app)?,
-            &PredefinedMenuItem::cut(app, None)?,
-            &PredefinedMenuItem::copy(app, None)?,
-            &PredefinedMenuItem::paste(app, None)?,
+            &cut,
+            &copy,
+            &paste,
             &PredefinedMenuItem::select_all(app, None)?,
         ],
     )?;
@@ -631,6 +707,24 @@ fn menu(app: &tauri::AppHandle) -> tauri::Result<Menu<tauri::Wry>> {
     )?;
     #[cfg(debug_assertions)]
     view.append(&item("devtools", "Web Inspector", None)?)?;
+    #[cfg(target_os = "macos")]
+    {
+        let windows = Submenu::with_items(
+            app,
+            "Window",
+            true,
+            &[
+                &PredefinedMenuItem::minimize(app, None)?,
+                &PredefinedMenuItem::maximize(app, None)?,
+                &item("next-window", "Next Window", Some("Cmd+`"))?,
+                &PredefinedMenuItem::separator(app)?,
+                &PredefinedMenuItem::bring_all_to_front(app, None)?,
+            ],
+        )?;
+        windows.set_as_windows_menu_for_nsapp()?;
+        return Menu::with_items(app, &[&main, &file, &edit, &view, &windows]);
+    }
+    #[cfg(not(target_os = "macos"))]
     Menu::with_items(app, &[&main, &file, &edit, &view])
 }
 fn destination_url(origin: &str, path: &Path) -> url::Url {
@@ -722,6 +816,18 @@ fn main() {
             "new" => {
                 let _ = open_window(app, None);
             }
+            #[cfg(target_os = "macos")]
+            "next-window" => {
+                let mut windows: Vec<_> = app.webview_windows().into_values().collect();
+                windows.sort_by(|left, right| left.label().cmp(right.label()));
+                if !windows.is_empty() {
+                    let current = windows
+                        .iter()
+                        .position(|window| window.is_focused().unwrap_or(false))
+                        .unwrap_or(0);
+                    let _ = windows[(current + 1) % windows.len()].set_focus();
+                }
+            }
             "quit" => {
                 app.state::<Runtime>()
                     .quitting
@@ -767,6 +873,8 @@ fn main() {
                     .open_url("https://paradisecode.ir", None::<&str>);
             }
             "settings" => execute(app, "workbench.action.openSettings"),
+            #[cfg(target_os = "macos")]
+            "copy" | "cut" | "paste" => clipboard::menu(app, event.id().as_ref()),
             "save" => execute(app, "workbench.action.files.save"),
             "save-all" => execute(app, "workbench.action.files.saveAll"),
             "palette" => execute(app, "workbench.action.showCommands"),

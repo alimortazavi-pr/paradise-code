@@ -35,7 +35,8 @@ cleanup_dmg_check() {
   rmdir "$VERIFY_MOUNT" 2>/dev/null || true
 }
 trap cleanup_dmg_check EXIT
-if diskutil image attach --help >/dev/null 2>&1; then
+DISKUTIL_USAGE=$(diskutil 2>&1 || true)
+if grep -Eq '^[[:space:]]+image[[:space:]]+<verb>' <<< "$DISKUTIL_USAGE"; then
   # DiskImages2 rejects the build TMPDIR. Only this OS mount helper uses its default;
   # the image, mount point and all application/build payloads remain on the SSD.
   env -u TMPDIR diskutil image attach --readOnly --nobrowse --mountPoint "$VERIFY_MOUNT" "$DMG_OUTPUT" >/dev/null

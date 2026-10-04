@@ -285,6 +285,114 @@ index e52f0625..cbf278eb 100644
  
  interface ISecretStorageCrypto {
  	seal(data: string): Promise<string>;
+diff --git a/src/vs/editor/contrib/clipboard/browser/clipboard.ts b/src/vs/editor/contrib/clipboard/browser/clipboard.ts
+index 1f845df1..649deeaa 100644
+--- a/src/vs/editor/contrib/clipboard/browser/clipboard.ts
++++ b/src/vs/editor/contrib/clipboard/browser/clipboard.ts
+@@ -227,6 +227,12 @@ function registerExecCommandImpl(target: MultiCommand | undefined, browserComman
+ 			if (selection && selection.isEmpty() && !emptySelectionClipboard) {
+ 				return true;
+ 			}
++			if ((getActiveWindow() as Window & { paradiseDesktop?: { clipboard?: unknown } }).paradiseDesktop?.clipboard) {
++				const { dataToCopy } = generateDataToCopyAndStoreInMemory(focusedEditor._getViewModel(), undefined, browser.isFirefox);
++				return clipboardService.writeText(dataToCopy.text).then(() => {
++					if (browserCommand === 'cut') { focusedEditor.trigger(undefined, Handler.Cut, undefined); }
++				});
++			}
+ 			// TODO this is very ugly. The entire copy/paste/cut system needs a complete refactoring.
+ 			if (focusedEditor.getOption(EditorOption.effectiveEditContext) && browserCommand === 'cut') {
+ 				logCopyCommand(focusedEditor);
+diff --git a/src/vs/platform/clipboard/browser/clipboardService.ts b/src/vs/platform/clipboard/browser/clipboardService.ts
+index ee048c9f..a14cbd53 100644
+--- a/src/vs/platform/clipboard/browser/clipboardService.ts
++++ b/src/vs/platform/clipboard/browser/clipboardService.ts
+@@ -22,6 +22,18 @@ import { ILogService } from '../../log/common/log.js';
+  */
+ const vscodeResourcesMime = 'application/vnd.code.resources';
+ 
++interface ParadiseClipboard {
++	readText(): Promise<string>;
++	writeText(text: string): Promise<void>;
++	readResources(): Promise<string[]>;
++	writeResources(paths: string[]): Promise<void>;
++}
++
++function paradiseClipboard(): ParadiseClipboard | undefined {
++	return (getActiveWindow() as Window & { paradiseDesktop?: { clipboard?: ParadiseClipboard } }).paradiseDesktop?.clipboard;
++}
++
++
+ export class BrowserClipboardService extends Disposable implements IClipboardService {
+ 
+ 	declare readonly _serviceBrand: undefined;
+@@ -32,7 +44,7 @@ export class BrowserClipboardService extends Disposable implements IClipboardSer
+ 	) {
+ 		super();
+ 
+-		if (isSafari || isWebkitWebView) {
++		if (!paradiseClipboard() && (isSafari || isWebkitWebView)) {
+ 			this.installWebKitWriteTextWorkaround();
+ 		}
+ 
+@@ -139,6 +151,9 @@ export class BrowserClipboardService extends Disposable implements IClipboardSer
+ 			return;
+ 		}
+ 
++		const native = paradiseClipboard();
++		if (native) { return native.writeText(text); }
++
+ 		if (this.webKitPendingClipboardWritePromise) {
+ 			// For Safari, we complete this Promise which allows the call to `navigator.clipboard.write()`
+ 			// above to resolve and successfully copy to the clipboard. If we let this continue, Safari
+@@ -196,7 +211,8 @@ export class BrowserClipboardService extends Disposable implements IClipboardSer
+ 		// as we have seen DOMExceptions in certain browsers
+ 		// due to security policies.
+ 		try {
+-			const readText = await getActiveWindow().navigator.clipboard.readText();
++			const native = paradiseClipboard();
++			const readText = await (native ? native.readText() : getActiveWindow().navigator.clipboard.readText());
+ 			this.logService.trace('BrowserClipboardService#readText text.length:', readText.length);
+ 			return readText;
+ 		} catch (error) {
+@@ -222,6 +238,16 @@ export class BrowserClipboardService extends Disposable implements IClipboardSer
+ 	private static readonly MAX_RESOURCE_STATE_SOURCE_LENGTH = 1000;
+ 
+ 	async writeResources(resources: URI[]): Promise<void> {
++		const native = paradiseClipboard();
++		if (native) {
++			if (resources.some(resource => resource.scheme !== 'file' && resource.scheme !== 'vscode-remote')) {
++				throw new Error('Only local files can be copied to the native clipboard.');
++			}
++			await native.writeResources(resources.map(resource => resource.path));
++			this.clearResourcesState();
++			return;
++		}
++
+ 		// Guard access to navigator.clipboard with try/catch
+ 		// as we have seen DOMExceptions in certain browsers
+ 		// due to security policies.
+@@ -251,6 +277,11 @@ export class BrowserClipboardService extends Disposable implements IClipboardSer
+ 	}
+ 
+ 	async readResources(): Promise<URI[]> {
++		const native = paradiseClipboard();
++		if (native) {
++			return (await native.readResources()).map(path => URI.from({ scheme: 'vscode-remote', authority: getActiveWindow().location.host, path: URI.file(path).path }));
++		}
++
+ 		// Guard access to navigator.clipboard with try/catch
+ 		// as we have seen DOMExceptions in certain browsers
+ 		// due to security policies.
+@@ -290,6 +321,9 @@ export class BrowserClipboardService extends Disposable implements IClipboardSer
+ 	}
+ 
+ 	async hasResources(): Promise<boolean> {
++		const native = paradiseClipboard();
++		if (native) { return (await native.readResources()).length > 0; }
++
+ 		// Guard access to navigator.clipboard with try/catch
+ 		// as we have seen DOMExceptions in certain browsers
+ 		// due to security policies.
 diff --git a/src/vs/platform/extensionManagement/common/extensionGalleryService.ts b/src/vs/platform/extensionManagement/common/extensionGalleryService.ts
 index b00f8d12..9954730a 100644
 --- a/src/vs/platform/extensionManagement/common/extensionGalleryService.ts
@@ -503,8 +611,49 @@ index ebbfe1c5..82edb4b6 100644
  			serverBasePath: basePath,
  			_wrapWebWorkerExtHostInIframe,
  			developmentOptions: { enableSmokeTestDriver: this._environmentService.args['enable-smoke-test-driver'] ? true : undefined, logLevel: this._logService.getLevel() },
+diff --git a/src/vs/workbench/contrib/files/browser/explorerService.ts b/src/vs/workbench/contrib/files/browser/explorerService.ts
+index ae94666c..879862db 100644
+--- a/src/vs/workbench/contrib/files/browser/explorerService.ts
++++ b/src/vs/workbench/contrib/files/browser/explorerService.ts
+@@ -285,7 +285,9 @@ export class ExplorerService implements IExplorerService {
+ 	async setToCopy(items: ExplorerItem[], cut: boolean): Promise<void> {
+ 		const previouslyCutItems = this.cutItems;
+ 		this.cutItems = cut ? items : undefined;
+-		await this.clipboardService.writeResources(items.map(s => s.resource));
++		const native = (window as Window & { paradiseDesktop?: { clipboard?: { writeResources(paths: string[], moveFiles: boolean): Promise<void> } } }).paradiseDesktop?.clipboard;
++		if (native) { await native.writeResources(items.map(item => item.resource.path), cut); }
++		else { await this.clipboardService.writeResources(items.map(s => s.resource)); }
+ 
+ 		this.view?.itemsCopied(items, cut, previouslyCutItems);
+ 	}
+diff --git a/src/vs/workbench/contrib/files/browser/fileActions.ts b/src/vs/workbench/contrib/files/browser/fileActions.ts
+index a840cd7b..dac104cb 100644
+--- a/src/vs/workbench/contrib/files/browser/fileActions.ts
++++ b/src/vs/workbench/contrib/files/browser/fileActions.ts
+@@ -1135,6 +1135,8 @@ export const pasteFileHandler = async (accessor: ServicesAccessor, fileList?: Fi
+ 	const confirmPasteNative = hasNativeFilesToPaste && configurationService.getValue<boolean>('explorer.confirmPasteNative');
+ 
+ 	const toPaste = await getFilesToPaste(fileList, clipboardService, hostService);
++	const native = (window as Window & { paradiseDesktop?: { clipboard?: { shouldMoveResources(): boolean } } }).paradiseDesktop?.clipboard;
++	if (native) { pasteShouldMove = toPaste.type === 'paths' && !hasNativeFilesToPaste && native.shouldMoveResources(); }
+ 
+ 	if (confirmPasteNative && toPaste.files.length >= 1) {
+ 		const message = toPaste.files.length > 1 ?
+diff --git a/src/vs/workbench/services/clipboard/browser/clipboardService.ts b/src/vs/workbench/services/clipboard/browser/clipboardService.ts
+index b34de0a2..fcabf4da 100644
+--- a/src/vs/workbench/services/clipboard/browser/clipboardService.ts
++++ b/src/vs/workbench/services/clipboard/browser/clipboardService.ts
+@@ -43,7 +43,7 @@ export class BrowserClipboardService extends BaseBrowserClipboardService {
+ 			type = 'vscode-tests'; // force in-memory clipboard for tests to avoid permission issues
+ 		}
+ 
+-		if (type) {
++		if (type || (getActiveWindow() as Window & { paradiseDesktop?: { clipboard?: unknown } }).paradiseDesktop?.clipboard) {
+ 			this.logService.trace('BrowserClipboardService#super.readText');
+ 			return super.readText(type);
+ 		}
 diff --git a/src/vs/workbench/services/dialogs/browser/abstractFileDialogService.ts b/src/vs/workbench/services/dialogs/browser/abstractFileDialogService.ts
-index dbab19f2..083e21f5 100644
+index dbab19f2..33a3c5a4 100644
 --- a/src/vs/workbench/services/dialogs/browser/abstractFileDialogService.ts
 +++ b/src/vs/workbench/services/dialogs/browser/abstractFileDialogService.ts
 @@ -327,11 +327,26 @@ export abstract class AbstractFileDialogService implements IFileDialogService {
@@ -517,7 +666,7 @@ index dbab19f2..083e21f5 100644
 +		const open = options as IOpenDialogOptions;
 +		return host.paradiseDesktop.pick({ save, folders: !!open.canSelectFolders && !open.canSelectFiles, multiple: !!open.canSelectMany,
 +			title: options.title, defaultPath: options.defaultUri?.path, filters: options.filters ?? []
-+		}).then(paths => paths?.map(path => URI.from({ scheme: Schemas.vscodeRemote, authority: this.environmentService.remoteAuthority, path })));
++		}).then(paths => paths?.map(path => URI.from({ scheme: Schemas.vscodeRemote, authority: this.environmentService.remoteAuthority, path: URI.file(path).path })));
 +	}
 +
  	private pickResource(options: IOpenDialogOptions): Promise<URI[] | undefined> {
