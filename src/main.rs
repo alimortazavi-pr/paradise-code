@@ -654,8 +654,12 @@ fn destination_url(origin: &str, path: &Path) -> url::Url {
     url
 }
 
+#[derive(Default)]
+struct PendingFiles(Mutex<Vec<PathBuf>>);
+
 fn main() {
     let app = tauri::Builder::default()
+        .manage(PendingFiles::default())
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_opener::init())
         .plugin(tauri_plugin_updater::Builder::new().build())
@@ -679,12 +683,20 @@ fn main() {
                 .ok()
                 .and_then(|b| serde_json::from_slice(&b).ok())
                 .unwrap_or_default();
-            let paths: Vec<PathBuf> = std::env::args_os()
+            let mut paths: Vec<PathBuf> = std::env::args_os()
                 .skip(1)
                 .map(PathBuf::from)
                 .filter(|p| p.exists())
                 .filter_map(|p| p.canonicalize().ok())
                 .collect();
+            // macOS may deliver Finder/Dock documents before Tauri's Ready event.
+            // Keep them until setup has initialized the local backend.
+            let pending = app.state::<PendingFiles>();
+            for path in pending.0.lock().unwrap().drain(..) {
+                if !paths.contains(&path) {
+                    paths.push(path);
+                }
+            }
             if !paths.is_empty() {
                 for path in paths {
                     open_window(app.handle(), Some(destination_url(&state.origin, &path)))?;
@@ -798,12 +810,12 @@ fn main() {
         }
         #[cfg(any(target_os = "macos", target_os = "ios"))]
         tauri::RunEvent::Opened { urls } => {
-            if handle.try_state::<Runtime>().is_none() {
-                return;
-            }
             for file in urls {
                 if let Ok(path) = file.to_file_path() {
-                    let state = handle.state::<Runtime>();
+                    let Some(state) = handle.try_state::<Runtime>() else {
+                        handle.state::<PendingFiles>().0.lock().unwrap().push(path);
+                        continue;
+                    };
                     let url = destination_url(&state.origin, &path);
                     let _ = open_window(handle, Some(url));
                 }

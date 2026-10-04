@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
+const releaseVersion = JSON.parse(fs.readFileSync("package.json", "utf8")).version;
 const root = process.cwd(),
   output = path.join(root, "build/extensions");
 fs.mkdirSync(output, { recursive: true });
@@ -45,7 +46,7 @@ const catalog = {
       description: manifest.description,
       version: manifest.version,
       platforms: ["darwin"],
-      download: `https://github.com/alimortazavi-pr/paradise-code/releases/download/v0.4.0/${name}`,
+      download: `https://github.com/alimortazavi-pr/paradise-code/releases/download/v${releaseVersion}/${name}`,
       sha256: createHash("sha256").update(fs.readFileSync(file)).digest("hex"),
     },
   ],
