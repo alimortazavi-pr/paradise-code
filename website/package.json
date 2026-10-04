@@ -1,0 +1,12 @@
+{
+  "name": "paradise-code-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test build.test.mjs"
+  },
+  "devDependencies": {
+    "prettier": "3.9.9"
+  }
+}
