@@ -16,7 +16,7 @@ test('native bundled backend boots, enforces token, and serves the full workbenc
   let ready=false;for(let i=0;i<240;i++){try{if((await fetch(`${origin}/version`)).ok){ready=true;break}}catch{}if(child.exitCode!==null)throw new Error(log);await new Promise(r=>setTimeout(r,250))}
   assert.ok(ready,log);
   assert.ok(!(await fetch(origin)).ok,'unauthenticated workbench rejected');
-  const page=await fetch(`${origin}/?tkn=${token}`);assert.equal(page.status,200);assert.match(await page.text(),/workbench/);
+  const auth=await fetch(`${origin}/?tkn=${token}`,{redirect:'manual'});assert.equal(auth.status,302);const page=await fetch(origin,{headers:{Cookie:`vscode-tkn=${token}`}});assert.equal(page.status,200);assert.match(await page.text(),/workbench/);
   fs.writeFileSync('platform-smoke.json',JSON.stringify({platform:process.platform,node:process.version,backendReady:true,tokenEnforced:true,workbenchServed:true,guiTested:false},null,2));
  } finally {child.stdin.end();await new Promise(resolve=>{child.once('exit',resolve);setTimeout(()=>{child.kill();resolve()},5000)});fs.rmSync(profile,{recursive:true,force:true})}
 });

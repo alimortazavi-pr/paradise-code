@@ -26,8 +26,6 @@ use tauri::{
 };
 use tauri_plugin_dialog::DialogExt;
 use tauri_plugin_opener::OpenerExt;
-#[cfg(target_os = "macos")]
-mod chrome;
 mod picker;
 mod startup;
 mod storage;
@@ -165,6 +163,11 @@ fn storage(_app: &tauri::AppHandle) -> Result<(PathBuf, PathBuf), Box<dyn std::e
     fs::create_dir_all(cache_root.join("tmp"))?;
     // Also covers update extraction; never use the system temporary directory for app payloads.
     std::env::set_var("TMPDIR", cache_root.join("tmp"));
+    #[cfg(windows)]
+    {
+        std::env::set_var("TEMP", cache_root.join("tmp"));
+        std::env::set_var("TMP", cache_root.join("tmp"));
+    }
     Ok((profile, cache_root))
 }
 fn start_backend(
@@ -432,7 +435,7 @@ fn open_window(app: &tauri::AppHandle, destination: Option<url::Url>) -> tauri::
         builder = builder
             .title_bar_style(tauri::TitleBarStyle::Overlay)
             .hidden_title(true)
-            .traffic_light_position(tauri::LogicalPosition::new(13., 17.5));
+            .traffic_light_position(tauri::LogicalPosition::new(13., 19.5));
     }
     #[cfg(not(target_os = "macos"))]
     {
@@ -461,29 +464,6 @@ fn open_window(app: &tauri::AppHandle, destination: Option<url::Url>) -> tauri::
                                     url.query_pairs().find(|(k, _)| k == "payload")
                                 {
                                     picker::show(window.clone(), &payload);
-                                }
-                            }
-                            Some("window-title") => {
-                                if let Some((_, title)) =
-                                    url.query_pairs().find(|(k, _)| k == "payload")
-                                {
-                                    if let Ok(title) = serde_json::from_str::<String>(&title) {
-                                        if title.len() <= 512 {
-                                            let _ = window.set_title(&title);
-                                        }
-                                    }
-                                }
-                            }
-                            #[cfg(target_os = "macos")]
-                            Some("titlebar-height") => {
-                                if let Some((_, height)) =
-                                    url.query_pairs().find(|(k, _)| k == "payload")
-                                {
-                                    if let Ok(height) = height.parse::<f64>() {
-                                        if (28.0..=80.0).contains(&height) {
-                                            chrome::align(&window, height);
-                                        }
-                                    }
                                 }
                             }
                             Some("drag") => {
@@ -664,7 +644,8 @@ fn destination_url(origin: &str, path: &Path) -> url::Url {
     } else {
         let authority = url::Url::parse(origin).unwrap().authority().to_string();
         let mut file = url::Url::parse(&format!("vscode-remote://{authority}/")).unwrap();
-        file.set_path(&path.to_string_lossy());
+        let file_path = path.to_string_lossy().replace('\\', "/");
+        file.set_path(&file_path);
         url.query_pairs_mut().append_pair(
             "payload",
             &serde_json::to_string(&vec![("openFile", file.as_str())]).unwrap(),
@@ -698,6 +679,18 @@ fn main() {
                 .ok()
                 .and_then(|b| serde_json::from_slice(&b).ok())
                 .unwrap_or_default();
+            let paths: Vec<PathBuf> = std::env::args_os()
+                .skip(1)
+                .map(PathBuf::from)
+                .filter(|p| p.exists())
+                .filter_map(|p| p.canonicalize().ok())
+                .collect();
+            if !paths.is_empty() {
+                for path in paths {
+                    open_window(app.handle(), Some(destination_url(&state.origin, &path)))?;
+                }
+                return Ok(());
+            }
             let urls = session
                 .urls
                 .into_iter()

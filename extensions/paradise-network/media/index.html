@@ -1,1 +1,104 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src __CSP__; script-src 'nonce-__NONCE__';"><link rel="stylesheet" href="__MEDIA__/style.css"></head><body><main><header><div><p class="eyebrow">PARADISE NETWORK</p><h1>Your connection, over time.</h1><p class="muted">Physical network traffic on this Mac. Recorded locally.</p></div><span id="status" role="status">Loading…</span></header><div id="error" role="alert" hidden></div><section aria-label="Recording controls" class="controls"><button id="record" disabled>Start recording</button><span id="record-note">Recording continues while the editor is closed. You can stop it anytime.</span></section><section aria-label="Current transfer rate" class="live"><div><p>RECEIVING</p><strong id="rx">—</strong><span>/ second</span></div><div><p>SENDING</p><strong id="tx">—</strong><span>/ second</span></div><div class="chart"><svg id="chart" viewBox="0 0 600 120" role="img" aria-label="Recent received and sent transfer rates"><path id="rx-line"/><path id="tx-line"/></svg><p><span class="rx-key">Received</span><span class="tx-key">Sent</span><span id="scale">Waiting for samples</span></p></div></section><section class="history"><div class="history-head"><h2>Recorded history</h2><form id="range"><label>From<input id="from" type="date" required></label><label>To<input id="to" type="date" required></label><button>Apply</button></form></div><div class="totals"><div><span>Received</span><strong id="total-rx">—</strong></div><div><span>Sent</span><strong id="total-tx">—</strong></div><div><span>Observed time</span><strong id="observed">—</strong></div></div><p id="empty" class="empty">Start recording to build your history. Past traffic cannot be reconstructed.</p><table id="days" hidden><thead><tr><th>Date</th><th>Received</th><th>Sent</th><th>Usage</th></tr></thead><tbody></tbody></table><div class="history-actions"><button id="export" disabled>Export CSV</button><button id="folder">Open data folder</button></div></section><footer><p id="coverage"></p><p>Counts Wi-Fi and Ethernet interface bytes, including local network traffic and VPN transport. Virtual interfaces are excluded to avoid counting the same bytes twice. This is not a per-app breakdown or an ISP bill. History begins when recording starts; sleep, unavailable storage, and stopped recording leave gaps.</p><p id="first"></p></footer></main><script nonce="__NONCE__" src="__MEDIA__/view.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; style-src __CSP__; script-src 'nonce-__NONCE__';"
+    />
+    <link rel="stylesheet" href="__MEDIA__/style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <h1>Network usage</h1>
+          <p class="muted">
+            Physical network traffic on this Mac. Recorded locally.
+          </p>
+        </div>
+        <span id="status" role="status">Loading…</span>
+      </header>
+      <div id="error" role="alert" hidden></div>
+      <section aria-label="Recording controls" class="controls">
+        <button id="record" disabled>Start recording</button
+        ><span id="record-note"
+          >Recording continues while the editor is closed. You can stop it
+          anytime.</span
+        >
+      </section>
+      <section aria-label="Current transfer rate" class="live">
+        <div>
+          <p>RECEIVING</p>
+          <strong id="rx">—</strong><span>/ second</span>
+        </div>
+        <div>
+          <p>SENDING</p>
+          <strong id="tx">—</strong><span>/ second</span>
+        </div>
+        <div class="chart">
+          <svg
+            id="chart"
+            viewBox="0 0 600 120"
+            role="img"
+            aria-label="Recent received and sent transfer rates"
+          >
+            <path id="rx-line" />
+            <path id="tx-line" />
+          </svg>
+          <p>
+            <span class="rx-key">Received</span><span class="tx-key">Sent</span
+            ><span id="scale">Waiting for samples</span>
+          </p>
+        </div>
+      </section>
+      <section class="history">
+        <div class="history-head">
+          <h2>Recorded history</h2>
+          <form id="range">
+            <label>From<input id="from" type="date" required /></label
+            ><label>To<input id="to" type="date" required /></label
+            ><button>Apply</button>
+          </form>
+        </div>
+        <div class="totals">
+          <div><span>Received</span><strong id="total-rx">—</strong></div>
+          <div><span>Sent</span><strong id="total-tx">—</strong></div>
+          <div><span>Observed time</span><strong id="observed">—</strong></div>
+        </div>
+        <p id="empty" class="empty">
+          Start recording to build your history. Past traffic cannot be
+          reconstructed.
+        </p>
+        <table id="days" hidden>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Received</th>
+              <th>Sent</th>
+              <th>Usage</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div class="history-actions">
+          <button id="export" disabled>Export CSV</button
+          ><button id="folder">Open data folder</button>
+        </div>
+      </section>
+      <footer>
+        <p id="coverage"></p>
+        <p>
+          Counts Wi-Fi and Ethernet interface bytes, including local network
+          traffic and VPN transport. Virtual interfaces are excluded to avoid
+          counting the same bytes twice. This is not a per-app breakdown or an
+          ISP bill. History begins when recording starts; sleep, unavailable
+          storage, and stopped recording leave gaps.
+        </p>
+        <p id="first"></p>
+      </footer>
+    </main>
+    <script nonce="__NONCE__" src="__MEDIA__/view.js"></script>
+  </body>
+</html>

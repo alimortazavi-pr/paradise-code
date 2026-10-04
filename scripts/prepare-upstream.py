@@ -174,7 +174,7 @@ edit(name, "\tprivate pickResource(options: IOpenDialogOptions): Promise<URI[] |
 \t\tconst open = options as IOpenDialogOptions;
 \t\treturn host.paradiseDesktop.pick({ save, folders: !!open.canSelectFolders && !open.canSelectFiles, multiple: !!open.canSelectMany,
 \t\t\ttitle: options.title, defaultPath: options.defaultUri?.path, filters: options.filters ?? []
-\t\t}).then(paths => paths?.map(path => URI.from({ scheme: Schemas.vscodeRemote, authority: this.environmentService.remoteAuthority, path })));
+\t\t}).then(paths => paths?.map(path => URI.from({ scheme: Schemas.vscodeRemote, authority: this.environmentService.remoteAuthority, path: URI.file(path).path })));
 \t}
 
 \tprivate pickResource(options: IOpenDialogOptions): Promise<URI[] | undefined> {

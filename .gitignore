@@ -20,3 +20,4 @@ extensions/paradise-hub/packages/
 extensions/paradise-hub/sdk/
 platform-build.json
 platform-smoke.json
+extensions/paradise-hub/network-service.cjs

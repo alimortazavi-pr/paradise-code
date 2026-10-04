@@ -1,7 +1,7 @@
 {
   "published": true,
-  "version": "0.3.2",
-  "download": "https://github.com/alimortazavi-pr/paradise-code/releases/download/v0.3.2/Paradise-Code-macos-arm64.dmg",
-  "checksum": "https://github.com/alimortazavi-pr/paradise-code/releases/download/v0.3.2/Paradise-Code-macos-arm64.dmg.sha256",
-  "notes": "https://github.com/alimortazavi-pr/paradise-code/releases/tag/v0.3.2"
+  "version": "0.4.0",
+  "download": "https://github.com/alimortazavi-pr/paradise-code/releases/download/v0.4.0/Paradise-Code-macos-arm64.dmg",
+  "checksum": "https://github.com/alimortazavi-pr/paradise-code/releases/download/v0.4.0/Paradise-Code-macos-arm64.dmg.sha256",
+  "notes": "https://github.com/alimortazavi-pr/paradise-code/releases/tag/v0.4.0"
 }

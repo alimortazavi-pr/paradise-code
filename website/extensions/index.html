@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Paradise Extensions — Build your next tool</title>
+    <meta
+      name="description"
+      content="Paradise Code's curated extension catalog, small SDK, and local network monitoring extension for macOS."
+    />
+    <link rel="icon" href="/assets/mark.svg" />
+    <link rel="stylesheet" href="/style.css?v=0.4.0" />
+  </head>
+  <body>
+    <main class="extensions-page">
+      <a href="/">← Paradise Code</a>
+      <h1>A tool for your way<br />of working.</h1>
+      <p class="lede">
+        Our own catalog. Familiar extension APIs. Create a working template,
+        write the capability you need, then package and install it from inside
+        the editor.
+      </p>
+      <article class="catalog-entry">
+        <p class="eyebrow">MACOS · 0.1.0</p>
+        <h2>Paradise Network</h2>
+        <p>
+          See live received and sent rates across your Mac’s physical network
+          interfaces. Compare recorded usage across dates and export minute
+          samples to CSV. A local background service can keep recording while
+          the editor is closed.
+        </p>
+        <p>
+          Included in the Paradise catalog. In Paradise Code 0.4.0, run
+          <strong>Paradise: Extension Hub</strong>, install Paradise Network,
+          then choose <strong>Start recording</strong>.
+        </p>
+        <div class="release-links">
+          <a
+            href="https://github.com/alimortazavi-pr/paradise-code/releases/download/v0.4.0/paradise.network-0.1.0.vsix"
+            >Download VSIX</a
+          ><a
+            href="https://github.com/alimortazavi-pr/paradise-code/tree/main/extensions/paradise-network"
+            >View source</a
+          ><a href="/extensions/catalog.json">Catalog API</a>
+        </div>
+      </article>
+      <section class="extension-steps">
+        <h2>Make your own in three steps.</h2>
+        <ol>
+          <li>
+            Run <code>Paradise: Create Extension</code>. Choose a name and a
+            folder.
+          </li>
+          <li>
+            Edit <code>extension.cjs</code>. The small SDK provides commands,
+            status items, notifications and stored state. Use the full Code –
+            OSS extension API for deeper tools.
+          </li>
+          <li>
+            Run <code>Paradise: Package and Install Extension</code>. Paradise
+            uses its bundled Node and npm to produce a standard VSIX and install
+            it. First use downloads the official packaging tool; it is cached
+            for later use.
+          </li>
+        </ol>
+        <a
+          href="https://github.com/alimortazavi-pr/paradise-code/tree/main/packages/paradise-sdk"
+          >Explore the SDK →</a
+        >
+        <p>
+          Share a tool through a pull request to the Paradise repository. The
+          catalog is curated: submitted packages are reviewed before inclusion.
+          Open VSX and imported VSIX extensions remain supported.
+        </p>
+      </section>
+      <p class="notice">
+        Network history begins when you start recording. It includes local
+        network traffic and VPN transport, excludes virtual interfaces to avoid
+        duplicate counts, and does not provide per-app internet billing. Sleep,
+        unavailable storage and stopped recording create gaps. Usage data stays
+        on your Mac. Extensions run local code with your user’s permissions;
+        install from authors you trust.
+      </p>
+      <a href="https://paradisecode.ir">Made by Paradise Code</a>
+    </main>
+  </body>
+</html>

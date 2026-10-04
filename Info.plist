@@ -7,7 +7,7 @@
 <key>LSHandlerRank</key><string>Alternate</string>
 <key>LSItemContentTypes</key><array><string>public.folder</string><string>public.directory</string></array>
 <key>CFBundleTypeExtensions</key><array><string>folder</string></array>
-</dict></array>
+</dict><dict><key>CFBundleTypeName</key><string>Source Code</string><key>CFBundleTypeRole</key><string>Editor</string><key>LSHandlerRank</key><string>Alternate</string><key>CFBundleTypeExtensions</key><array><string>txt</string><string>md</string><string>js</string><string>ts</string><string>tsx</string><string>jsx</string><string>json</string><string>html</string><string>css</string><string>code-workspace</string></array></dict></array>
 <key>NSAppTransportSecurity</key><dict>
 <key>NSAllowsLocalNetworking</key><true/>
 <key>NSExceptionDomains</key><dict><key>localhost</key><dict>
