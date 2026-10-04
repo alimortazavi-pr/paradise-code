@@ -1,32 +1,57 @@
+#[cfg(target_os = "macos")]
+use std::os::unix::fs::symlink;
 use std::{
     fs,
-    os::unix::{
-        fs::{symlink, OpenOptionsExt},
-        io::AsRawFd,
-    },
     path::{Path, PathBuf},
 };
 
+#[cfg(target_os = "macos")]
 const PARENTS: [&str; 3] = [
     "Library/WebKit",
     "Library/Caches",
     "Library/Application Support",
 ];
 
+pub fn home() -> Result<PathBuf, Box<dyn std::error::Error>> {
+    Ok(PathBuf::from(
+        std::env::var_os(if cfg!(windows) { "USERPROFILE" } else { "HOME" })
+            .ok_or("Home directory is unavailable")?,
+    ))
+}
 pub fn pointer(home: &Path) -> PathBuf {
-    home.join("Library/Preferences/dev.paradise.code.storage.json")
+    if cfg!(target_os = "macos") {
+        home.join("Library/Preferences/dev.paradise.code.storage.json")
+    } else {
+        default_profile(home).join("storage.json")
+    }
 }
 pub fn default_profile(home: &Path) -> PathBuf {
-    home.join("Library/Application Support/ParadiseCodeData")
+    if cfg!(target_os = "macos") {
+        home.join("Library/Application Support/ParadiseCodeData")
+    } else if cfg!(windows) {
+        std::env::var_os("LOCALAPPDATA")
+            .map(PathBuf::from)
+            .unwrap_or_else(|| home.join("AppData/Local"))
+            .join("ParadiseCodeData")
+    } else {
+        std::env::var_os("XDG_DATA_HOME")
+            .map(PathBuf::from)
+            .filter(|p| p.is_absolute())
+            .unwrap_or_else(|| home.join(".local/share"))
+            .join("ParadiseCodeData")
+    }
 }
 pub fn saved_profile(home: &Path) -> Result<Option<PathBuf>, Box<dyn std::error::Error>> {
     let pointer = pointer(home);
     if pointer.exists() {
         Ok(Some(serde_json::from_slice(&fs::read(pointer)?)?))
     } else {
-        Ok(fs::read_link(home.join("Library/WebKit/dev.paradise.code"))
+        #[cfg(target_os = "macos")]
+        return Ok(fs::read_link(home.join("Library/WebKit/dev.paradise.code"))
             .ok()
-            .and_then(|p| p.parent().map(Path::to_path_buf)))
+            .and_then(|p| p.parent().map(Path::to_path_buf)));
+        #[cfg(not(target_os = "macos"))]
+        Ok(None)
     }
 }
 
@@ -46,19 +71,19 @@ pub fn select_profile(home: &Path, profile: &Path) -> Result<(), Box<dyn std::er
     }
     let mut locks = Vec::new();
     for root in roots {
-        let lock = fs::OpenOptions::new()
+        let lock = crate::private_options()
             .read(true)
             .write(true)
             .create(true)
             .truncate(false)
-            .mode(0o600)
             .open(root.join("app.lock"))?;
-        if unsafe { libc::flock(lock.as_raw_fd(), libc::LOCK_EX | libc::LOCK_NB) } != 0 {
+        if lock.try_lock().is_err() {
             return Err("Close other Paradise Code windows using this storage before selecting a different folder.".into());
         }
         locks.push(lock);
     }
-    let mut changes = Vec::new();
+    let mut changes: Vec<(PathBuf, PathBuf)> = Vec::new();
+    #[cfg(target_os = "macos")]
     for parent in PARENTS {
         let link = home.join(parent).join("dev.paradise.code");
         let suffix = parent.replace('/', "-");
@@ -81,7 +106,7 @@ pub fn select_profile(home: &Path, profile: &Path) -> Result<(), Box<dyn std::er
     }
     // Validate write access before touching the old profile selection.
     let probe = profile.join(format!(".paradise-write-check-{}", std::process::id()));
-    let _probe = fs::OpenOptions::new()
+    let _probe = super::private_options()
         .write(true)
         .create_new(true)
         .open(&probe)?;
@@ -95,6 +120,7 @@ pub fn select_profile(home: &Path, profile: &Path) -> Result<(), Box<dyn std::er
     super::write_private(&temporary_pointer, &serde_json::to_vec(profile)?)?;
     let mut replaced: Vec<(PathBuf, Option<PathBuf>)> = Vec::new();
     let result = (|| -> std::io::Result<()> {
+        #[cfg(target_os = "macos")]
         for (link, target) in &changes {
             let old = fs::read_link(link).ok();
             let temporary = link.with_extension(format!("switch-{}", rand::random::<u64>()));
@@ -109,6 +135,7 @@ pub fn select_profile(home: &Path, profile: &Path) -> Result<(), Box<dyn std::er
     })();
     if let Err(error) = result {
         let mut rollback_failed = false;
+        #[cfg(target_os = "macos")]
         for (link, old) in replaced.iter().rev() {
             let restored = if let Some(old) = old {
                 let temporary = link.with_extension(format!("restore-{}", rand::random::<u64>()));
@@ -127,7 +154,7 @@ pub fn select_profile(home: &Path, profile: &Path) -> Result<(), Box<dyn std::er
     Ok(())
 }
 
-#[cfg(test)]
+#[cfg(all(test, target_os = "macos"))]
 mod tests {
     use super::*;
     fn fixture() -> PathBuf {
@@ -206,16 +233,13 @@ mod tests {
         fs::create_dir_all(&new).unwrap();
         fs::create_dir_all(pointer(&home).parent().unwrap()).unwrap();
         fs::write(pointer(&home), serde_json::to_vec(&old).unwrap()).unwrap();
-        let lock = fs::OpenOptions::new()
+        let lock = crate::private_options()
             .write(true)
             .create(true)
             .truncate(false)
             .open(old.join("app.lock"))
             .unwrap();
-        assert_eq!(
-            unsafe { libc::flock(lock.as_raw_fd(), libc::LOCK_EX | libc::LOCK_NB) },
-            0
-        );
+        assert_eq!(lock.try_lock().map(|_| 0).unwrap_or(-1), 0);
         assert!(select_profile(&home, &new).is_err());
         assert_eq!(saved_profile(&home).unwrap(), Some(old));
         drop(lock);

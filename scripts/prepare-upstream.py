@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Apply the small, version-checked Paradise integration to the pinned upstream."""
-import json, pathlib, subprocess
+import json, os, pathlib, subprocess
 root = pathlib.Path(__file__).resolve().parent.parent
-up = root.parent / 'upstream/vscode'
+up = pathlib.Path(os.environ.get('PARADISE_UPSTREAM_DIR', root.parent / 'upstream/vscode'))
 lock = json.loads((root/'upstream.json').read_text())
 assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=up,text=True).strip() == lock['commit']
 

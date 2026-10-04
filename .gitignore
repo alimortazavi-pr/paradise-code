@@ -15,3 +15,8 @@ gen/
 website/node_modules/
 website/dist/
 .impeccable/
+
+extensions/paradise-hub/packages/
+extensions/paradise-hub/sdk/
+platform-build.json
+platform-smoke.json

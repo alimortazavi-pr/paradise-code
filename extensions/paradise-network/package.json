@@ -1,0 +1,4 @@
+{
+ "name":"network","publisher":"paradise","version":"0.1.0","displayName":"Paradise Network","description":"Live Mac network rates and local date-based history, including while the editor is closed.","license":"MIT","engines":{"vscode":"^1.140.0"},"main":"./extension.cjs","extensionKind":["workspace"],"activationEvents":["onStartupFinished"],"categories":["Other"],"icon":"media/icon.png","repository":{"type":"git","url":"https://github.com/alimortazavi-pr/paradise-code"},"homepage":"https://ide.paradisecode.ir/extensions/",
+ "contributes":{"commands":[{"command":"paradise.network.open","title":"Paradise: Network Usage"},{"command":"paradise.network.stop","title":"Paradise: Stop Network Recording"}],"configuration":{"title":"Paradise Network","properties":{"paradise.network.sampleSeconds":{"type":"number","default":2,"minimum":1,"maximum":10,"description":"Local physical-interface sampling interval, in seconds."}}}}
+}

@@ -1,10 +1,7 @@
 use rand::{distributions::Alphanumeric, Rng};
-use std::{
-    path::PathBuf,
-    sync::{
-        atomic::{AtomicBool, Ordering},
-        Arc,
-    },
+use std::sync::{
+    atomic::{AtomicBool, Ordering},
+    Arc,
 };
 use tauri::{Manager, WebviewUrl, WebviewWindowBuilder};
 use tauri_plugin_dialog::{DialogExt, MessageDialogButtons};
@@ -40,7 +37,7 @@ pub fn show(app: &tauri::AppHandle, message: &str) -> tauri::Result<()> {
                     busy.store(false, Ordering::SeqCst); return;
                 }
                 let result = (|| -> Result<bool, Box<dyn std::error::Error>> {
-                    let home = PathBuf::from(std::env::var_os("HOME").ok_or("Home directory is unavailable")?);
+                    let home = super::storage::home()?;
                     let profile = if action == "default" {
                         let confirm = app.dialog().message("Use a separate profile in this Mac’s Application Support folder? Your previous files, settings and unsaved work stay in the old storage folder. They will not be moved or deleted.")
                             .title("Use local storage?").parent(&window)

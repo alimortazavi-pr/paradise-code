@@ -49,8 +49,27 @@ if (window === window.top && location.origin === __ORIGIN__) {
   } });
   document.addEventListener('DOMContentLoaded', () => {
     const style = document.createElement('style');
-    style.textContent = `.monaco-workbench .part.titlebar > .titlebar-container { padding-left: 80px !important; box-sizing: border-box; } .monaco-workbench .part.titlebar .window-controls-container { display: none !important; } .monaco-workbench .editor-group-watermark .letterpress { background-image: none !important; background-color: var(--vscode-editor-foreground); opacity: .06; mask: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 256 256%27%3E%3Cpath fill-rule=%27evenodd%27 d=%27M56%2058%20150%2034%20208%2070v68l-98%2028v60l-54-31V58Zm54%2040v31l60-17V81Z%27/%3E%3C/svg%3E") center / contain no-repeat; }`;
+    const mac = /Mac/.test(navigator.platform);
+    style.textContent = `${mac ? ".monaco-workbench .part.titlebar > .titlebar-container { padding-left: 80px !important; box-sizing: border-box; } .monaco-workbench .part.titlebar .window-controls-container { display: none !important; }" : ""} .monaco-workbench .editor-group-watermark .letterpress { background-image: none !important; background-color: var(--vscode-editor-foreground); opacity: .06; mask: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 256 256%27%3E%3Cpath fill-rule=%27evenodd%27 d=%27M56%2058%20150%2034%20208%2070v68l-98%2028v60l-54-31V58Zm54%2040v31l60-17V81Z%27/%3E%3C/svg%3E") center / contain no-repeat; }`;
     document.head.append(style);
+    let previousHeight = 0;
+    let observed = false;
+    const observeChrome = () => {
+      const titlebar = document.querySelector('.part.titlebar');
+      if (mac && titlebar && !observed) {
+        observed = true;
+        new ResizeObserver(entries => {
+          const height = entries[0].contentRect.height;
+          if (height >= 28 && height <= 80 && height !== previousHeight) {
+            previousHeight = height; send('titlebar-height', height);
+          }
+        }).observe(titlebar);
+      }
+    };
+    new MutationObserver(observeChrome).observe(document.body, { childList: true, subtree: true });
+    observeChrome();
+    const title = document.querySelector('title');
+    if (title) new MutationObserver(() => send('window-title', document.title.slice(0, 512))).observe(title, { childList: true });
   });
   document.addEventListener('mousedown', event => {
     if (event.button !== 0 || !(event.target instanceof Element)) return;

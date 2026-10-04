@@ -1,0 +1,1 @@
+{"name":"@paradise-code/sdk","version":"0.1.0","description":"Small helpers for Paradise Code extensions using the standard Code - OSS API.","main":"index.cjs","types":"index.d.ts","license":"MIT","files":["index.cjs","index.d.ts"],"peerDependencies":{"vscode":"*"},"peerDependenciesMeta":{"vscode":{"optional":true}}}

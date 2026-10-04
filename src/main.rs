@@ -1,16 +1,15 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 use rand::{distributions::Alphanumeric, Rng};
 use serde::{Deserialize, Serialize};
+#[cfg(target_os = "macos")]
+use std::os::unix::fs::symlink;
+#[cfg(unix)]
+use std::os::unix::{fs::OpenOptionsExt, process::CommandExt};
 use std::{
     collections::HashSet,
     fs::{self, File, OpenOptions},
     io::{Read, Write},
     net::{TcpListener, TcpStream},
-    os::unix::{
-        fs::{symlink, OpenOptionsExt},
-        io::AsRawFd,
-        process::CommandExt,
-    },
     path::{Path, PathBuf},
     process::{Child, Command, Stdio},
     sync::{
@@ -27,6 +26,8 @@ use tauri::{
 };
 use tauri_plugin_dialog::DialogExt;
 use tauri_plugin_opener::OpenerExt;
+#[cfg(target_os = "macos")]
+mod chrome;
 mod picker;
 mod startup;
 mod storage;
@@ -59,6 +60,7 @@ impl Drop for Runtime {
         let _ = fs::remove_file(self.profile.join("connection-token"));
     }
 }
+#[cfg(unix)]
 fn stop_group(child: &mut Child) {
     // PTYs create their own sessions, so killing only the launcher group misses them.
     let mut descendants = vec![child.id() as i32];
@@ -100,6 +102,23 @@ fn stop_group(child: &mut Child) {
     }
     let _ = child.wait();
 }
+#[cfg(windows)]
+fn stop_group(child: &mut Child) {
+    use std::os::windows::process::CommandExt;
+    // Includes terminal descendants, which can outlive the server itself.
+    let _ = Command::new("taskkill")
+        .args(["/PID", &child.id().to_string(), "/T", "/F"])
+        .creation_flags(0x08000000)
+        .status();
+    let _ = child.kill();
+    let _ = child.wait();
+}
+fn private_options() -> OpenOptions {
+    let mut options = OpenOptions::new();
+    #[cfg(unix)]
+    options.mode(0o600);
+    options
+}
 fn failure(app: &tauri::AppHandle, message: impl Into<String>) {
     let mut dialog = app.dialog().message(message.into()).title("Paradise Code");
     if let Some(window) = focused(app) {
@@ -108,16 +127,15 @@ fn failure(app: &tauri::AppHandle, message: impl Into<String>) {
     dialog.show(|_| {});
 }
 fn write_private(path: &Path, data: &[u8]) -> std::io::Result<()> {
-    let mut file = OpenOptions::new()
+    let mut file = private_options()
         .write(true)
         .create(true)
         .truncate(true)
-        .mode(0o600)
         .open(path)?;
     file.write_all(data)
 }
 fn storage(_app: &tauri::AppHandle) -> Result<(PathBuf, PathBuf), Box<dyn std::error::Error>> {
-    let home = PathBuf::from(std::env::var_os("HOME").ok_or("Home directory is unavailable")?);
+    let home = storage::home()?;
     let pointer = storage::pointer(&home);
     let saved = storage::saved_profile(&home)?;
     let profile = if let Some(path) = std::env::var_os("PARADISE_PROFILE") {
@@ -155,17 +173,17 @@ fn start_backend(
 ) -> Result<Runtime, Box<dyn std::error::Error>> {
     let (profile, cache_root) = storage(app)?;
     fs::create_dir_all(&profile)?;
-    let lock = OpenOptions::new()
+    let lock = private_options()
         .read(true)
         .write(true)
         .create(true)
         .truncate(false)
-        .mode(0o600)
         .open(profile.join("app.lock"))?;
-    if unsafe { libc::flock(lock.as_raw_fd(), libc::LOCK_EX | libc::LOCK_NB) } != 0 {
+    if lock.try_lock().is_err() {
         return Err("Paradise Code is already using this profile.".into());
     }
     // WKWebView does not support Tauri's data_directory on macOS. Redirect only our own directories.
+    #[cfg(target_os = "macos")]
     if let Some(home) = std::env::var_os("HOME") {
         for parent in [
             "Library/WebKit",
@@ -220,20 +238,23 @@ fn start_backend(
         .map(PathBuf::from)
         .unwrap_or_else(|| resource.join("resources/backend"));
     let launcher = resource.join("resources/backend-launcher.mjs");
-    if !backend.join("node").is_file() || !backend.join("out/server-main.js").is_file() {
+    if !backend
+        .join(if cfg!(windows) { "node.exe" } else { "node" })
+        .is_file()
+        || !backend.join("out/server-main.js").is_file()
+    {
         return Err(format!(
             "The bundled Code - OSS backend is missing at {}.",
             backend.display()
         )
         .into());
     }
-    let log = OpenOptions::new()
+    let log = private_options()
         .create(true)
         .append(true)
-        .mode(0o600)
         .open(profile.join("backend.log"))?;
     drop(listener);
-    let mut command = Command::new(backend.join("node"));
+    let mut command = Command::new(backend.join(if cfg!(windows) { "node.exe" } else { "node" }));
     command
         .arg(launcher)
         .arg(&backend)
@@ -249,14 +270,13 @@ fn start_backend(
                 "/"
             },
         )
-        .env(
-            "PATH",
-            format!(
-                "{}/bin:{}:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
-                backend.display(),
-                backend.display()
-            ),
-        )
+        .env("PATH", {
+            let mut entries = vec![backend.join("bin"), backend.clone()];
+            entries.extend(std::env::split_paths(
+                &std::env::var_os("PATH").unwrap_or_default(),
+            ));
+            std::env::join_paths(entries)?
+        })
         .stdin(Stdio::piped())
         .stdout(Stdio::from(log.try_clone()?))
         .stderr(Stdio::from(log));
@@ -274,7 +294,13 @@ fn start_backend(
         fs::create_dir_all(&path)?;
         command.env(name, path);
     }
+    #[cfg(unix)]
     command.process_group(0);
+    #[cfg(windows)]
+    {
+        use std::os::windows::process::CommandExt;
+        command.creation_flags(0x08000000);
+    }
     let mut child = command.spawn()?;
     let started = Instant::now();
     loop {
@@ -390,6 +416,7 @@ fn open_window(app: &tauri::AppHandle, destination: Option<url::Url>) -> tauri::
     let app_new = app.clone();
     let origin_new = origin.clone();
     let mut builder = WebviewWindowBuilder::new(app, &label, WebviewUrl::External(url));
+    #[cfg(target_os = "macos")]
     if std::env::var_os("PARADISE_PROFILE").is_some() {
         use std::hash::{Hash, Hasher};
         let mut hash = std::collections::hash_map::DefaultHasher::new();
@@ -400,11 +427,19 @@ fn open_window(app: &tauri::AppHandle, destination: Option<url::Url>) -> tauri::
         id[8..].copy_from_slice(&value);
         builder = builder.data_store_identifier(id);
     }
+    #[cfg(target_os = "macos")]
+    {
+        builder = builder
+            .title_bar_style(tauri::TitleBarStyle::Overlay)
+            .hidden_title(true)
+            .traffic_light_position(tauri::LogicalPosition::new(13., 17.5));
+    }
+    #[cfg(not(target_os = "macos"))]
+    {
+        builder = builder.data_directory(state.profile.join("webview"));
+    }
     let window = builder
         .title("Paradise Code")
-        .title_bar_style(tauri::TitleBarStyle::Overlay)
-        .hidden_title(true)
-        .traffic_light_position(tauri::LogicalPosition::new(13., 14.))
         .background_color(tauri::webview::Color(24, 24, 27, 255))
         .inner_size(1320., 860.)
         .min_inner_size(800., 520.)
@@ -426,6 +461,29 @@ fn open_window(app: &tauri::AppHandle, destination: Option<url::Url>) -> tauri::
                                     url.query_pairs().find(|(k, _)| k == "payload")
                                 {
                                     picker::show(window.clone(), &payload);
+                                }
+                            }
+                            Some("window-title") => {
+                                if let Some((_, title)) =
+                                    url.query_pairs().find(|(k, _)| k == "payload")
+                                {
+                                    if let Ok(title) = serde_json::from_str::<String>(&title) {
+                                        if title.len() <= 512 {
+                                            let _ = window.set_title(&title);
+                                        }
+                                    }
+                                }
+                            }
+                            #[cfg(target_os = "macos")]
+                            Some("titlebar-height") => {
+                                if let Some((_, height)) =
+                                    url.query_pairs().find(|(k, _)| k == "payload")
+                                {
+                                    if let Ok(height) = height.parse::<f64>() {
+                                        if (28.0..=80.0).contains(&height) {
+                                            chrome::align(&window, height);
+                                        }
+                                    }
                                 }
                             }
                             Some("drag") => {
@@ -543,12 +601,15 @@ fn menu(app: &tauri::AppHandle) -> tauri::Result<Menu<tauri::Wry>> {
             &item("updates", "Check for Updates…", None)?,
             &item("creator", "Made by Paradise Code", None)?,
             &PredefinedMenuItem::separator(app)?,
-            &item("settings", "Settings…", Some("Cmd+,"))?,
+            &item("settings", "Settings…", Some("CmdOrCtrl+,"))?,
+            #[cfg(target_os = "macos")]
             &PredefinedMenuItem::hide(app, None)?,
+            #[cfg(target_os = "macos")]
             &PredefinedMenuItem::hide_others(app, None)?,
+            #[cfg(target_os = "macos")]
             &PredefinedMenuItem::show_all(app, None)?,
             &PredefinedMenuItem::separator(app)?,
-            &item("quit", "Quit Paradise Code", Some("Cmd+Q"))?,
+            &item("quit", "Quit Paradise Code", Some("CmdOrCtrl+Q"))?,
         ],
     )?;
     let file = Submenu::with_items(
@@ -556,12 +617,12 @@ fn menu(app: &tauri::AppHandle) -> tauri::Result<Menu<tauri::Wry>> {
         "File",
         true,
         &[
-            &item("new", "New Window", Some("Cmd+Shift+N"))?,
-            &item("open-file", "Open File…", Some("Cmd+O"))?,
-            &item("open-folder", "Open Folder…", Some("Cmd+Alt+O"))?,
-            &item("save", "Save", Some("Cmd+S"))?,
-            &item("save-all", "Save All", Some("Cmd+Alt+S"))?,
-            &item("close", "Close Window", Some("Cmd+Shift+W"))?,
+            &item("new", "New Window", Some("CmdOrCtrl+Shift+N"))?,
+            &item("open-file", "Open File…", Some("CmdOrCtrl+O"))?,
+            &item("open-folder", "Open Folder…", Some("CmdOrCtrl+Alt+O"))?,
+            &item("save", "Save", Some("CmdOrCtrl+S"))?,
+            &item("save-all", "Save All", Some("CmdOrCtrl+Alt+S"))?,
+            &item("close", "Close Window", Some("CmdOrCtrl+Shift+W"))?,
         ],
     )?;
     let edit = Submenu::with_items(
@@ -583,7 +644,7 @@ fn menu(app: &tauri::AppHandle) -> tauri::Result<Menu<tauri::Wry>> {
         "View",
         true,
         &[
-            &item("palette", "Command Palette…", Some("Cmd+Shift+P"))?,
+            &item("palette", "Command Palette…", Some("CmdOrCtrl+Shift+P"))?,
             &item("terminal", "Terminal", Some("Ctrl+`"))?,
             &item("reload", "Reload Window", None)?,
         ],
@@ -742,6 +803,7 @@ fn main() {
                 }
             }
         }
+        #[cfg(any(target_os = "macos", target_os = "ios"))]
         tauri::RunEvent::Opened { urls } => {
             if handle.try_state::<Runtime>().is_none() {
                 return;
