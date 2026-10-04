@@ -29,7 +29,11 @@ with archive.open('rb') as stream:
         digest.update(chunk)
 sha = digest.hexdigest()
 (output / 'Paradise-Code-macos-arm64.zip.sha256').write_text(sha + '  Paradise-Code-macos-arm64.zip\n')
+dmg = artifacts / f'Paradise-Code-{version}-macos-arm64.dmg'
+shutil.copy2(dmg, output / 'Paradise-Code-macos-arm64.dmg')
+dmg_sha = hashlib.sha256(dmg.read_bytes()).hexdigest()
+(output / 'Paradise-Code-macos-arm64.dmg.sha256').write_text(dmg_sha + '  Paradise-Code-macos-arm64.dmg\n')
 base = f'https://github.com/alimortazavi-pr/paradise-code/releases/download/v{version}'
-feed = {'version': version, 'notes': 'Native Mac title bar and file dialogs, new Paradise identity, signed updates, and standalone local Code - OSS tools.', 'pub_date': datetime.now(timezone.utc).isoformat(), 'platforms': {'darwin-aarch64': {'signature': signature, 'url': base + '/Paradise-Code.app.tar.gz'}}}
+feed = {'version': version, 'notes': 'Drag-to-Applications DMG installer and safe recovery for disconnected profile storage.', 'pub_date': datetime.now(timezone.utc).isoformat(), 'platforms': {'darwin-aarch64': {'signature': signature, 'url': base + '/Paradise-Code.app.tar.gz'}}}
 (output / 'latest.json').write_text(json.dumps(feed, indent=2) + '\n')
 print(output)

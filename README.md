@@ -2,13 +2,13 @@
 
 A local, open-source editor for Apple Silicon Macs. The real Code – OSS workbench, a Tauri 2 / Rust shell, and a bundled Node.js extension host. Built by [Paradise Code](https://paradisecode.ir).
 
-[Website](https://ide.paradisecode.ir) · [Download for Apple Silicon](https://github.com/alimortazavi-pr/paradise-code/releases/latest/download/Paradise-Code-macos-arm64.zip) · [Releases](https://github.com/alimortazavi-pr/paradise-code/releases) · [Measured results](validation/REPORT.md)
+[Website](https://ide.paradisecode.ir) · [Download for Apple Silicon](https://github.com/alimortazavi-pr/paradise-code/releases/latest/download/Paradise-Code-macos-arm64.dmg) · [Releases](https://github.com/alimortazavi-pr/paradise-code/releases) · [Measured results](validation/REPORT.md)
 
 ![Paradise Code](website/assets/workbench.jpg)
 
 ## Install
 
-Download the ZIP, verify its accompanying SHA-256 checksum, extract it, and move **Paradise Code.app** to a writable folder such as Applications. Node and npm are included. macOS 14+ is configured; testing currently covers Apple Silicon on macOS 27. This preview is ad-hoc signed, **not Apple notarized**. If macOS blocks the app, use **System Settings → Privacy & Security → Open Anyway** after verifying the source.
+Download the DMG, verify its accompanying SHA-256 checksum, open it, and drag **Paradise Code** onto **Applications**. Eject the installer and launch the app from Applications. A ZIP alternative is also available. Node and npm are included. macOS 14+ is configured; testing currently covers Apple Silicon on macOS 27. This preview is ad-hoc signed, **not Apple notarized**. If macOS blocks the app, use **System Settings → Privacy & Security → Open Anyway** after verifying the source.
 
 **Paradise Code → Check for Updates…** downloads a signed update from this repository. The application verifies its signature and version before installation, asks you to save your work, and restarts. No GitHub credentials are stored in the application. Versions before 0.2.0 require one manual upgrade.
 
@@ -23,7 +23,7 @@ This is a **public preview**. The memory-performance target has **not been met**
 
 ## Storage
 
-On a new Mac, user data lives in `~/Library/Application Support/ParadiseCodeData`. Existing external-SSD installations keep their original profile and require that drive; a missing drive never silently creates an internal replacement. A small preferences file remembers the storage location. VS Code settings are not imported automatically.
+On a new Mac, user data lives in `~/Library/Application Support/ParadiseCodeData`. Existing external-SSD installations keep their original profile and require that drive; a missing drive never silently creates an internal replacement. If a saved drive is unavailable, the recovery screen lets you retry after reconnecting it, choose an existing data folder, or explicitly select a separate local profile without deleting previous data. A small preferences file remembers the storage location. VS Code settings are not imported automatically.
 
 The project’s build environment is entirely on `/Volumes/ParadiseCodeBuild`, an APFS sparsebundle stored on the external SSD. Source, dependencies, caches, profiles, temporary files and artifacts remain there. `scripts/env.sh` fails if the volume is absent. System-managed swap and caches are outside application control.
 
@@ -41,7 +41,7 @@ bash scripts/bootstrap.sh
 
 The packaged product's `commit` field is a content-derived asset/protocol revision so patched builds cannot reuse incompatible web caches. The original source commit remains in `upstream.json` and the packaged `paradiseUpstreamCommit` field.
 
-`scripts/prepare-release.py` prepares the ZIP, checksum, updater archive, signature and versioned `latest.json` after packaging. The static `website/` directory deploys to Vercel. Release metadata is updated only after assets are published.
+`scripts/prepare-release.py` prepares the drag-to-Applications DMG, ZIP alternative, checksums, updater archive, signature and versioned `latest.json` after packaging. The static `website/` directory deploys to Vercel. Release metadata is updated only after assets are published.
 
 ## Security and verification
 

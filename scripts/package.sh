@@ -15,3 +15,27 @@ OUTPUT="$PARADISE_VOLUME/artifacts/Paradise-Code-$(node -p "require('./package.j
 ditto -c -k --sequesterRsrc --keepParent "$APP" "$OUTPUT"
 unzip -t "$OUTPUT" > "$PARADISE_VOLUME/artifacts/archive-check.log"
 (cd "$(dirname "$OUTPUT")" && shasum -a 256 "$(basename "$OUTPUT")" > "$(basename "$OUTPUT").sha256")
+
+# Generate Finder metadata directly: no Finder automation permission is needed.
+DMG_PYTHON="$PARADISE_VOLUME/tools/dmg-venv/bin/python3"
+if [ ! -x "$DMG_PYTHON" ]; then
+  python3 -m venv "$PARADISE_VOLUME/tools/dmg-venv"
+fi
+"$DMG_PYTHON" -m pip --cache-dir "$PARADISE_VOLUME/cache/pip" install -r scripts/dmg-requirements.txt
+DMG_OUTPUT="${OUTPUT%.zip}.dmg"
+"$PARADISE_VOLUME/tools/dmg-venv/bin/dmgbuild" -s scripts/dmg-settings.py "Paradise Code" "$DMG_OUTPUT"
+hdiutil verify "$DMG_OUTPUT"
+(cd "$(dirname "$DMG_OUTPUT")" && shasum -a 256 "$(basename "$DMG_OUTPUT")" > "$(basename "$DMG_OUTPUT").sha256")
+
+# Validate the app inside the actual installer, not just the build directory.
+VERIFY_MOUNT=$(mktemp -d "$TMPDIR/paradise-dmg-check.XXXXXX")
+cleanup_dmg_check() {
+  hdiutil detach "$VERIFY_MOUNT" >/dev/null 2>&1 || true
+  rmdir "$VERIFY_MOUNT" 2>/dev/null || true
+}
+trap cleanup_dmg_check EXIT
+hdiutil attach "$DMG_OUTPUT" -readonly -nobrowse -mountpoint "$VERIFY_MOUNT" >/dev/null
+codesign --verify --deep --strict "$VERIFY_MOUNT/Paradise Code.app"
+test "$(readlink "$VERIFY_MOUNT/Applications")" = /Applications
+cleanup_dmg_check
+trap - EXIT

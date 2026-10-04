@@ -28,6 +28,8 @@ use tauri::{
 use tauri_plugin_dialog::DialogExt;
 use tauri_plugin_opener::OpenerExt;
 mod picker;
+mod startup;
+mod storage;
 mod updates;
 
 const VOLUME: &str = "/Volumes/ParadiseCodeBuild";
@@ -116,21 +118,14 @@ fn write_private(path: &Path, data: &[u8]) -> std::io::Result<()> {
 }
 fn storage(_app: &tauri::AppHandle) -> Result<(PathBuf, PathBuf), Box<dyn std::error::Error>> {
     let home = PathBuf::from(std::env::var_os("HOME").ok_or("Home directory is unavailable")?);
-    let pointer = home.join("Library/Preferences/dev.paradise.code.storage.json");
-    let saved: Option<PathBuf> = if pointer.exists() {
-        Some(serde_json::from_slice(&fs::read(&pointer)?)?)
-    } else {
-        // Preserve the original external installation, including when its SSD is disconnected.
-        fs::read_link(home.join("Library/WebKit/dev.paradise.code"))
-            .ok()
-            .and_then(|p| p.parent().map(Path::to_path_buf))
-    };
+    let pointer = storage::pointer(&home);
+    let saved = storage::saved_profile(&home)?;
     let profile = if let Some(path) = std::env::var_os("PARADISE_PROFILE") {
         PathBuf::from(path)
     } else if let Some(saved) = saved {
         saved
     } else {
-        let profile = home.join("Library/Application Support/ParadiseCodeData");
+        let profile = storage::default_profile(&home);
         fs::create_dir_all(&profile)?;
         profile
     };
@@ -632,12 +627,7 @@ fn main() {
             match start_backend(&resource, app.handle()) {
                 Ok(runtime) => app.manage(runtime),
                 Err(error) => {
-                    let message = serde_json::to_string(&error.to_string())?;
-                    WebviewWindowBuilder::new(app, "startup-error", WebviewUrl::App("index.html".into()))
-                        .title("Paradise Code — Unable to Start")
-                        .inner_size(680., 360.)
-                        .initialization_script(format!("document.addEventListener('DOMContentLoaded',()=>{{document.querySelector('p').textContent={message}}})"))
-                        .build()?;
+                    startup::show(app.handle(), &error.to_string())?;
                     return Ok(());
                 }
             };
@@ -705,7 +695,11 @@ fn main() {
                 });
             }
             "updates" => updates::check(app),
-            "creator" => { let _ = app.opener().open_url("https://paradisecode.ir", None::<&str>); },
+            "creator" => {
+                let _ = app
+                    .opener()
+                    .open_url("https://paradisecode.ir", None::<&str>);
+            }
             "settings" => execute(app, "workbench.action.openSettings"),
             "save" => execute(app, "workbench.action.files.save"),
             "save-all" => execute(app, "workbench.action.files.saveAll"),
