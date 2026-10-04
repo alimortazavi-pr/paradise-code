@@ -9,7 +9,7 @@ icons/
 scripts/
 validation/
 tests/
-extensions/
+/extensions/
 frontend/
 patches/
 website/.vercel/
